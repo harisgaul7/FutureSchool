@@ -38,7 +38,6 @@ public class JurusanActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (ch.isChecked()){
                         isi+=ch.getText();
-                        Toast.makeText(JurusanActivity.this, "Hasil = "+isi, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
