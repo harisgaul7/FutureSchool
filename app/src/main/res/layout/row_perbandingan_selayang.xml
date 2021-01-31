@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1.0"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="#DB8A8A"
+        android:orientation="vertical"
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="0dip">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_margin="10dp"
+            android:background="#D5A0C3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/civ_gambar_berita"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sd_al_ulum" />
+
+            <LinearLayout
+                android:layout_weight=".03"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="1.0"
+                android:layout_weight=".77"
+                android:layout_width="0dip"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_sekolah_banding_1"
+                    android:text="SD Al Ulum Pekanbaru"
+                    android:textColor="#030607"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+                <TextView
+                    android:id="@+id/txt_keterangan_banding_1"
+                    android:text="Selayang Pandang"
+                    android:textColor="#1A40BD"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textAlignment="center"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.codesgood.views.JustifiedTextView
+                    android:text="SMK Farmasi Ikasari Yayasan Univ Riau Pekanbaru merupakan salah satu Institusi pendidikan Tenaga Kesehatan Tingkat Menengah yang saat ini berkembang menjadi Sekolah Menengah Kejuruan yang sudah berdiri sejak tahun 1962 dan telah menghasilkan banyak lulusan yang bekerja pada unit – unit pelayanan kesehatan pemerintah dan swasta Dengan sistem pendidikan yang selalu berinovasi kami telah memberikan pelayanan terbaik. Serta Fasilitas yang lengkap ruangan kelas yang memadai, ditunjang dengan lingkungan yang luas dan nyaman."
+                    android:textColor="#070E0A"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="serif"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Visi"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.codesgood.views.JustifiedTextView
+                    android:text="''Menghasilkan tenaga tingkat dasar yang berjiwa mandiri, cerdas, terampil, berprestasi, berwawasan IPTEK yang bersumber IMTAQ serta kompetitif.''"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Misi"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="1. Mewujudkan pendidikan yang menghasilkan lulusan yang cerdas, terampil, beriman, bertakwa dan memiliki keunggulan kompetitif.\n2. Mewujudkan penilaian yang otentik.\n3. Mewujudkan penyenggaraan pembelajaran aktif, inovatif, kreatif, efektif dan menyenangkan.\n4. Mewujudkan nilai-nilai agama begi kenikmatan hidup peserta didik serta solidaritas bagi kehidupan sekolah.\n5. Mewujudkan perangkat kurikulum yang lengkap, mutakhir dan berwawasan ke depan.\n6. Mewujudkan menajemen berbasis sekolah yang tangguh.\n7. Mewujudkan diversifikasi kurikulum SMKF Ikasari relevan dengan kebutuhan perserta didik, keluarga dan berbagai sector."
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Kurikulum : Kurikulum 2013"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#8A96C0"
+        android:orientation="vertical"
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="0dip">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_margin="10dp"
+            android:background="#8DC4B3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/smkf_ikasari" />
+
+            <LinearLayout
+                android:layout_weight=".03"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="1.0"
+                android:layout_weight=".77"
+                android:layout_width="0dip"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_sekolah_banding_2"
+                    android:text="SMKF Ikasari Pekanbaru"
+                    android:textColor="#030607"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+                <TextView
+                    android:id="@+id/txt_keterangan_banding_2"
+                    android:text="Selayang Pandang"
+                    android:textColor="#D80A0A"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textAlignment="center"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.codesgood.views.JustifiedTextView
+                    android:text="SMK Farmasi Ikasari Yayasan Univ Riau Pekanbaru merupakan salah satu Institusi pendidikan Tenaga Kesehatan Tingkat Menengah yang saat ini berkembang menjadi Sekolah Menengah Kejuruan yang sudah berdiri sejak tahun 1962 dan telah menghasilkan banyak lulusan yang bekerja pada unit – unit pelayanan kesehatan pemerintah dan swasta Dengan sistem pendidikan yang selalu berinovasi kami telah memberikan pelayanan terbaik. Serta Fasilitas yang lengkap ruangan kelas yang memadai, ditunjang dengan lingkungan yang luas dan nyaman."
+                    android:textColor="#070E0A"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="serif"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Visi"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.codesgood.views.JustifiedTextView
+                    android:text="''Menghasilkan tenaga tingkat dasar yang berjiwa mandiri, cerdas, terampil, berprestasi, berwawasan IPTEK yang bersumber IMTAQ serta kompetitif.''"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Misi"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="1. Mewujudkan pendidikan yang menghasilkan lulusan yang cerdas, terampil, beriman, bertakwa dan memiliki keunggulan kompetitif.\n2. Mewujudkan penilaian yang otentik.\n3. Mewujudkan penyenggaraan pembelajaran aktif, inovatif, kreatif, efektif dan menyenangkan.\n4. Mewujudkan nilai-nilai agama begi kenikmatan hidup peserta didik serta solidaritas bagi kehidupan sekolah.\n5. Mewujudkan perangkat kurikulum yang lengkap, mutakhir dan berwawasan ke depan.\n6. Mewujudkan menajemen berbasis sekolah yang tangguh.\n7. Mewujudkan diversifikasi kurikulum SMKF Ikasari relevan dengan kebutuhan perserta didik, keluarga dan berbagai sector."
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Kurikulum : Kurikulum 2013"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="15dp"
+    android:background="#F5F7F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_judul_jurusan"
+        android:text="Pilih Jurusan"
+        android:textColor="#234234"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:fontFamily="serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_keterangan_jurusan"
+        android:text="Silakan pilih jurusan dari topik yang kamu inginkan, kamu dapat memilih lebih dari 1 jurusan"
+        android:textColor="#234234"
+        android:textSize="12sp"
+        android:layout_below="@id/tv_judul_jurusan"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="monospace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/sv_jurusan"
+        android:layout_below="@id/tv_keterangan_jurusan"
+        android:layout_above="@id/btn_penentuan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_tampung_jurusan"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_penentuan"
+        android:layout_alignParentBottom="true"
+        android:text="lanjutkan ke penentuan kriteria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

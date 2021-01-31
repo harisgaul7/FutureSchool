@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FEFFFE"
+    android:layout_marginBottom="20dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight=".05"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_weight=".6"
+            android:layout_width="0dip"
+            android:weightSum="1.0"
+            android:background="@drawable/pencarian_bg"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_weight=".05"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <EditText
+                android:id="@+id/et_pencarian"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".75"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:inputType="text"
+                android:fontFamily="sans-serif"
+                android:hint="@string/hint_cari"
+                android:textColorHint="#080E0B"
+                android:textColor="#030906" />
+
+            <LinearLayout
+                android:layout_weight=".1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/iv_loop"
+                android:layout_weight=".1"
+                android:src="@drawable/kaca_pembesar"
+                android:layout_width="0dip"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight=".05"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+        <Spinner
+            android:background="@drawable/spinner_bg"
+            android:id="@+id/spin_tingkat_sekolah"
+            android:layout_weight=".25"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/rv_sekolah"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

@@ -1,0 +1,3306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#FEFFFE"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dip">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="290dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="10dp"
+                    android:layout_height="200dp">
+
+                    <com.synnapps.carouselview.CarouselView
+                        android:id="@+id/carouselView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        app:fillColor="@color/colorPrimary"
+                        app:pageColor="#00000000"
+                        app:radius="6dp"
+                        app:slideInterval="3000"
+                        app:strokeColor="#FF777777"
+                        app:strokeWidth="2dp"/>
+
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="60dp">
+
+                    <LinearLayout
+                        android:layout_weight=".8"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/txt_detail_nama"
+                            android:text="SMKF Ikasari Pekanbaru"
+                            android:textColor="#070E0A"
+                            android:fontFamily="serif"
+                            android:textSize="17sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/txt_detail_alamat"
+                            android:text="Jl. Mawar No.98, Simpang Baru, Kec.Tampan"
+                            android:textColor="#070E0A"
+                            android:fontFamily="serif"
+                            android:textSize="10sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/txt_detail_akreditasi"
+                            android:text="Akreditasi A"
+                            android:textColor="#EDEFF1"
+                            android:textAlignment="center"
+                            android:background="@drawable/notif_bg"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <com.github.lzyzsd.circleprogress.ArcProgress
+                        android:id="@+id/progress_favorit"
+                        android:layout_width="0dip"
+                        android:layout_weight=".2"
+                        app:arc_progress="80"
+                        app:arc_text_size="24sp"
+                        app:arc_bottom_text_size="12sp"
+                        app:arc_unfinished_color="#09AF5E"
+                        app:arc_finished_color="#D30808"
+                        app:arc_bottom_text="Profil"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_selayang"
+                android:orientation="vertical"
+                android:background="#7A342ABB"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <TextView
+                    android:id="@+id/klik"
+                    android:text="Selayang Pandang"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <com.codesgood.views.JustifiedTextView
+                    android:text="SMK Farmasi Ikasari Yayasan Univ Riau Pekanbaru merupakan salah satu Institusi pendidikan Tenaga Kesehatan Tingkat Menengah yang saat ini berkembang menjadi Sekolah Menengah Kejuruan yang sudah berdiri sejak tahun 1962 dan telah menghasilkan banyak lulusan yang bekerja pada unit – unit pelayanan kesehatan pemerintah dan swasta Dengan sistem pendidikan yang selalu berinovasi kami telah memberikan pelayanan terbaik. Serta Fasilitas yang lengkap ruangan kelas yang memadai, ditunjang dengan lingkungan yang luas dan nyaman."
+                    android:textColor="#070E0A"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="serif"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Visi"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.codesgood.views.JustifiedTextView
+                    android:text="''Menghasilkan tenaga tingkat dasar yang berjiwa mandiri, cerdas, terampil, berprestasi, berwawasan IPTEK yang bersumber IMTAQ serta kompetitif.''"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Misi"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="1. Mewujudkan pendidikan yang menghasilkan lulusan yang cerdas, terampil, beriman, bertakwa dan memiliki keunggulan kompetitif.\n2. Mewujudkan penilaian yang otentik.\n3. Mewujudkan penyenggaraan pembelajaran aktif, inovatif, kreatif, efektif dan menyenangkan.\n4. Mewujudkan nilai-nilai agama begi kenikmatan hidup peserta didik serta solidaritas bagi kehidupan sekolah.\n5. Mewujudkan perangkat kurikulum yang lengkap, mutakhir dan berwawasan ke depan.\n6. Mewujudkan menajemen berbasis sekolah yang tangguh.\n7. Mewujudkan diversifikasi kurikulum SMKF Ikasari relevan dengan kebutuhan perserta didik, keluarga dan berbagai sector."
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Kurikulum : Kurikulum 2013"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Berita Terbaru"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_detail"
+                android:scrollbars="horizontal"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Jurusan / Minat Bakat"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_jurusan"
+                android:scrollbars="vertical"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Fasilitas"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/masjid"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Masjid/Musolla"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lab_bio"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Laboratorium Biologi"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lab_kimia"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Laboratorium Kimia"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lab_komputer"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Laboratorium Komputer"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lab_bahasa"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Laboratorium Bahasa"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/studio_musik"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Studio Musik"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lap_basket"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Lapangan Basket"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lap_voli"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Lapangan Voli"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Jadwal Kegiatan Sekolah"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TableLayout
+                android:id="@+id/row_table"
+                android:clickable="false"
+                android:collapseColumns="*"
+                android:stretchColumns="*"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:id="@+id/rowHeader"
+                    android:background="@android:color/holo_blue_light"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="19dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Hari" />
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="19dp"
+                        android:layout_weight="6"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Kegiatan" />
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="19dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Jam" />
+                </TableRow>
+
+                <TableRow
+                    android:background="#ECEFF1"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="209dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#09090C"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Senin" />
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Upacara Bendera" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 4" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Istirahat" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 6" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 7" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 8" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Ishoma" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="06.45-07.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.15-07.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.50-08.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="08.25-09.00" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.00-09.35" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.35-10.05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.05-10.40" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.40-11.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.15-11.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.50-12.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="12.25-13.00" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:background="#ECEFF1"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="209dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#09090C"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Selasa" />
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 4" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Istirahat" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 6" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 7" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 8" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Ishoma" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 9" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="06.45-07.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.15-07.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.50-08.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="08.25-09.00" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.00-09.35" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.35-10.05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.05-10.40" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.40-11.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.15-11.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.50-12.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="12.25-13.00" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:background="#ECEFF1"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="209dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#09090C"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Rabu" />
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 4" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Istirahat" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 6" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 7" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 8" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Ishoma" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 9" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="06.45-07.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.15-07.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.50-08.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="08.25-09.00" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.00-09.35" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.35-10.05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.05-10.40" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.40-11.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.15-11.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.50-12.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="12.25-13.00" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:background="#ECEFF1"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="209dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#09090C"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Kamis" />
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 4" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Istirahat" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 6" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 7" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 8" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Ishoma" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 9" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="06.45-07.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.15-07.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.50-08.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="08.25-09.00" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.00-09.35" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.35-10.05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.05-10.40" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.40-11.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.15-11.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.50-12.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="12.25-13.00" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:background="#ECEFF1"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="190dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#09090C"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Jumat" />
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Baca Yasin Bersama" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 4" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Istirahat" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 6" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 7" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 8" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="06.45-07.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.15-07.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.50-08.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="08.25-09.00" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.00-09.35" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.35-10.05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.05-10.40" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.40-11.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.15-11.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.50-12.25" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:background="#ECEFF1"
+                    android:layout_weight="1"
+                    android:weightSum="10.0"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="209dp"
+                        android:layout_weight="2"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#09090C"
+                        android:background="@drawable/cell_shape"
+                        android:textAlignment="center"
+                        android:text="Sabtu" />
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Senam/Penjaskes" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 4" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Istirahat" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 6" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 7" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Pelajaran ke 8" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="Ishoma" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:weightSum="1.0"
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="06.45-07.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.15-07.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="07.50-08.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="08.25-09.00" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.00-09.35" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="09.35-10.05" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.05-10.40" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="10.40-11.15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.15-11.50" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="11.50-12.25" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="19dp"
+                            android:textSize="10dp"
+                            android:textColor="#09090C"
+                            android:gravity="center"
+                            android:background="@drawable/cell_shape"
+                            android:textAlignment="center"
+                            android:text="12.25-13.00" />
+
+                    </LinearLayout>
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Kalender Akademik Sekolah"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Ekstrakulikuler"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/sispala"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Siswa Pecinta Alam"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/paskibraka"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Paskibraka"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lap_voli"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Klub Voli"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/lap_basket"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Klub Basket"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/cheerleader"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Cheerleaders"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/pencak_silat"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Pencak Silat"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/pik_remaja"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="PIK Remaja"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/pmr"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Palang Merah Remaja"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/pramuka"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Pramuka"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:src="@drawable/tari_tradisional"
+                    android:layout_weight=".15"
+                    android:layout_width="0dip"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Tari Tradisional"
+                    android:textColor="#234233"
+                    android:gravity="start|center"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".8"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Prestasi"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_prestasi"
+                android:scrollbars="vertical"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Komposisi Guru"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Biaya"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Pendaftaran Awal"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Dana pengembangan pendidikan"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="5.000.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Seragam lengkap"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="575.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Kegiatan Osis"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="50.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Lab. Bahasa Inggris"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="60.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Pembekalan diri"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="70.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Jas almamater"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="120.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Buku paket produktif"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="510.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Photo Kelas 10 dan Kartu Osis"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="25.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Peralatan praktek resep 1 paket"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="100.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Jumlah"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="6.510.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:text="Uang Bulanan"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="SPP"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="490.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Uang Asrama"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="230.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Makan Siang"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="350.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Jumlah"
+                        android:textColor="#234233"
+                        android:gravity="start|center"
+                        android:textSize="12sp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:layout_weight=".73"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="Rp. "
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:layout_weight=".08"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="1.070.000"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#234233"
+                        android:gravity="end|center"
+                        android:fontFamily="serif"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:layout_weight=".2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Beasiswa dan Benefit"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:background="#90D8DBE0"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:text="Persebaran Alumni"
+                android:textColor="#070E0A"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1.0"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight=".3"
+            android:background="@drawable/rounded_image"
+            android:layout_width="0dip"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/question"
+                android:layout_weight=".4"
+                android:layout_width="0dip"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:text="Chat/CS"
+                android:textColor="#234233"
+                android:gravity="start|center"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:layout_weight=".6"
+                android:layout_width="0dip"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_bandingkan"
+            android:layout_margin="5dp"
+            android:layout_weight=".4"
+            android:background="@drawable/rounded_image"
+            android:layout_width="0dip"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/compare"
+                android:layout_weight=".3"
+                android:layout_width="0dip"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:text="Bandingkan"
+                android:textColor="#234233"
+                android:gravity="start|center"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:layout_weight=".7"
+                android:layout_width="0dip"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight=".3"
+            android:background="@drawable/rounded_image"
+            android:layout_width="0dip"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/daftar_sekolah"
+                android:layout_weight=".4"
+                android:layout_width="0dip"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:text="Daftar"
+                android:textColor="#234233"
+                android:gravity="start|center"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:layout_weight=".6"
+                android:layout_width="0dip"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

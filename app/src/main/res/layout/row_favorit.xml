@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_outer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardElevation="3dp" >
+ 
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_inner"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            card_view:cardBackgroundColor="#1DC9C9"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="0dp" >
+
+            <LinearLayout
+                android:weightSum="1.0"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.github.siyamed.shapeimageview.RoundedImageView
+                    android:id="@+id/riv_gambar_sekolah_favorit"
+                    android:layout_width="0dip"
+                    android:layout_weight=".2"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/smkf_ikasari"
+                    app:siRadius="10dp"
+                    app:siBorderWidth="1dp"
+                    app:siBorderColor="#234323"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    app:siSquare="true" />
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight=".6"
+                    android:layout_width="0dip"
+                    android:weightSum="1.0"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_nama_sekolah_favorit"
+                        android:text="SMKF Ikasari Pekanbaru"
+                        android:textColor="#234232"
+                        android:layout_weight=".2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip" />
+
+                    <TextView
+                        android:id="@+id/txt_kuota_sekolah_favorit"
+                        android:text="Kuota : 58 Siswa/i"
+                        android:textColor="#234232"
+                        android:layout_weight=".3"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip" />
+
+                    <TextView
+                        android:id="@+id/txt_beasiswa_sekolah_favorit"
+                        android:text="5 Beasiswa tersisa!"
+                        android:textColor="#D50B0B"
+                        android:layout_weight=".3"
+                        android:textSize="16dp"
+                        android:fontFamily="serif"
+                        android:textStyle="italic"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight=".2"
+                    android:layout_width="0dip"
+                    android:weightSum="1.0"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_weight=".3"
+                        android:weightSum="1.0"
+                        android:layout_height="0dip">
+
+                        <ImageView
+                            android:id="@+id/hapus_favorit"
+                            android:layout_width="0dip"
+                            android:layout_weight=".3"
+                            android:src="@drawable/delete"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_weight=".7"
+                            android:text="Hapus"
+                            android:fontFamily="casual"
+                            android:gravity="center"
+                            android:textColor="#151516"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+                    <com.github.lzyzsd.circleprogress.ArcProgress
+                        android:id="@+id/progress_favorit"
+                        android:layout_width="match_parent"
+                        android:layout_weight=".6"
+                        card_view:arc_text_size="20sp"
+                        card_view:arc_bottom_text="Profil"
+                        android:layout_height="0dip" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="3dp"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="#EFF3F0"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/civ_gambar_berita"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sd_al_ulum" />
+
+            <LinearLayout
+                android:layout_weight=".03"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="1.0"
+                android:layout_weight=".77"
+                android:layout_width="0dip"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_weight=".6"
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip">
+
+                    <ImageView
+                        android:id="@+id/iv_tingkat_sekolah"
+                        android:src="@drawable/sd"
+                        android:layout_weight=".1"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/txt_sekolah_berita"
+                        android:text="SD Al Ulum Pekanbaru"
+                        android:textColor="#030607"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:gravity="center"
+                        android:textAlignment="textStart"
+                        android:layout_weight=".8"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight=".4"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip">
+
+                    <TextView
+                        android:id="@+id/txt_waktu_berita"
+                        android:textColor="#A19FA3"
+                        android:textSize="10dp"
+                        android:text="10 Januari pukul 08:32"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:orientation="vertical"
+            android:weightSum="1.0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_judul_berita"
+                android:text="Kerja Bakti Memeringati Hari Adiwiyata Nasional"
+                android:textColor="#090E0B"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="1.0"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <LinearLayout
+                    android:layout_weight=".05"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/iv_berita_1"
+                    android:src="@drawable/bakti_1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_weight=".9"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_weight=".05"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_preview_berita"
+                    android:text="Dalam memeringati Hari Adiwiyata Nasional, SD Al Ulum mengadakan kegiatan kerja bakti membersihkan seluruh halaman sekolah. (baca selanjutnya)"
+                    android:textSize="10dp"
+                    android:textColor="#060A07"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/beranda_menu"
+        android:title="@string/beranda"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/sekolah_menu"
+        android:title="@string/sekolah"
+        android:icon="@drawable/school"/>
+
+    <item
+        android:id="@+id/berita_menu"
+        android:title="@string/berita"
+        android:icon="@drawable/bulletin"/>
+
+    <item
+        android:id="@+id/inbox_menu"
+        android:title="@string/inbox"
+        android:icon="@drawable/inbox"/>
+
+    <item
+        android:id="@+id/akun_menu"
+        android:title="@string/akun"
+        android:icon="@drawable/account"/>
+</menu>

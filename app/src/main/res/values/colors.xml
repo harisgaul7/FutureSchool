@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EEBA0C</color>
+    <color name="colorPrimaryDark">#9F0DC0</color>
+    <color name="colorAccent">#D81B60</color>
+
+    // TODO: 30/01/20
+    <color name="colorNavigationIcon">#dae9f6</color>
+    <color name="colorNavigationText">#ffffff</color>
+</resources>

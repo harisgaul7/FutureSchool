@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/doodle"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                    <LinearLayout
+                        android:layout_weight=".55"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent">
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight=".45"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dip"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/share"
+                            android:layout_weight=".5"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:src="@drawable/plane"
+                            android:layout_weight=".5"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:src="@drawable/cogwheel"
+                            android:layout_weight=".5"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:weightSum="1.0"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:textColor="#654654"
+                        android:text="Arifin ilham"
+                        android:textAlignment="center"
+                        android:textSize="25dp"
+                        android:fontFamily="serif"
+                        android:layout_width="0dip"
+                        android:layout_weight=".55"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:textColor="#654654"
+                    android:text="Aktivitas anda baru-baru ini"
+                    android:textSize="18dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?actionBarSize"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="#234333"
+                    app:tabIndicatorHeight="4dp"
+                    app:tabTextColor="#234323"
+                    app:tabMode="fixed">
+                </android.support.design.widget.TabLayout>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_marginBottom="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+                </android.support.v4.view.ViewPager>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bg_akun"
+            android:layout_marginLeft="30dp"
+            android:layout_width="130dp"
+            android:layout_height="220dp"
+            android:src="@drawable/akun" />
+
+    </FrameLayout>
+
+</ScrollView>

@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1.0"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="#DB8A8A"
+        android:orientation="vertical"
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="0dip">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_margin="10dp"
+            android:background="#D5A0C3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/civ_gambar_berita"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sd_al_ulum" />
+
+            <LinearLayout
+                android:layout_weight=".03"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="1.0"
+                android:layout_weight=".77"
+                android:layout_width="0dip"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_sekolah_banding_1"
+                    android:text="SD Al Ulum Pekanbaru"
+                    android:textColor="#030607"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+                <TextView
+                    android:id="@+id/txt_keterangan_banding_1"
+                    android:text="Biaya"
+                    android:textColor="#1A40BD"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textAlignment="center"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Pendaftaran Awal"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Dana pengembangan pendidikan"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="5.000.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Seragam lengkap"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="575.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Kegiatan Osis"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="50.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Lab. Bahasa Inggris"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="60.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Pembekalan diri"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="70.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Jas almamater"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="120.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Buku paket produktif"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="510.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Photo Kelas 10 dan Kartu Osis"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="25.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Peralatan praktek resep 1 paket"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="100.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Jumlah"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="6.510.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:text="Uang Bulanan"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="SPP"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="490.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Uang Asrama"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="230.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Makan Siang"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="350.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Jumlah"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="bold"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="bold"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="1.070.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="bold"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#8A96C0"
+        android:orientation="vertical"
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="0dip">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_margin="10dp"
+            android:background="#8DC4B3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/smkf_ikasari" />
+
+            <LinearLayout
+                android:layout_weight=".03"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="1.0"
+                android:layout_weight=".77"
+                android:layout_width="0dip"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_sekolah_banding_2"
+                    android:text="SMKF Ikasari Pekanbaru"
+                    android:textColor="#030607"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+                <TextView
+                    android:id="@+id/txt_keterangan_banding_2"
+                    android:text="Biaya"
+                    android:textColor="#D80A0A"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textAlignment="center"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Pendaftaran Awal"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Dana pengembangan pendidikan"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="5.000.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Seragam lengkap"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="575.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Kegiatan Osis"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="50.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Lab. Bahasa Inggris"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="60.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Pembekalan diri"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="70.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Jas almamater"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="120.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Buku paket produktif"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="510.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Photo Kelas 10 dan Kartu Osis"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="25.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Peralatan praktek resep 1 paket"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="100.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Jumlah"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="6.510.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:text="Uang Bulanan"
+                    android:textColor="#070E0A"
+                    android:fontFamily="serif"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="SPP"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="490.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Uang Asrama"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="230.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Makan Siang"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="350.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:weightSum="1.0"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Jumlah"
+                            android:textColor="#234233"
+                            android:gravity="start|center"
+                            android:textSize="12sp"
+                            android:fontFamily="serif"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="bold"
+                            android:layout_weight=".73"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="Rp. "
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="bold"
+                            android:layout_weight=".08"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:text="1.070.000"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#234233"
+                            android:gravity="end|center"
+                            android:fontFamily="serif"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="bold"
+                            android:layout_weight=".2"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
