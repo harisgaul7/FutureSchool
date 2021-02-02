@@ -17,6 +17,7 @@
         <activity android:name=".PerbandinganActivity"/>
         <activity android:name=".PilihTopikActivity"/>
         <activity android:name=".JurusanActivity"/>
+        <activity android:name=".PilihKriteria"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

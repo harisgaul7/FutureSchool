@@ -1,6 +1,7 @@
 package haris.org.futureschool;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -59,7 +60,10 @@ public class JurusanActivity extends AppCompatActivity {
                 for (int i = 0; i < cekbox.size(); i++) {
                     isi+=cekbox.get(i);
                 }
-                Toast.makeText(JurusanActivity.this, "Hasil = "+isi, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(JurusanActivity.this, "Hasil = "+isi, Toast.LENGTH_SHORT).show();
+                Intent go = new Intent(view.getContext(), PilihKriteria.class);
+                view.getContext().startActivity(go);
+
             }
         });
 
