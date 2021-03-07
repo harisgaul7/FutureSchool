@@ -4,8 +4,7 @@
     // TODO: 30/01/20
     <string name="beranda">Beranda</string>
     <string name="sekolah">Sekolah</string>
-    <string name="berita">Berita</string>
-    <string name="inbox">Kotak Masuk</string>
+    <string name="rekomendasi">Rekomendasi</string>
     <string name="akun">Akun</string>
 
     <string name="hint_cari">Pencarian Sekolah</string>

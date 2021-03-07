@@ -18,6 +18,7 @@ import haris.org.futureschool.fragment.AkunFragment;
 import haris.org.futureschool.fragment.BerandaFragment;
 import haris.org.futureschool.fragment.BeritaFragment;
 import haris.org.futureschool.fragment.InboxFragment;
+import haris.org.futureschool.fragment.RekomendasiFragment;
 import haris.org.futureschool.fragment.SekolahFragment;
 
 public class MainActivity extends AppCompatActivity  implements BottomNavigationView.OnNavigationItemSelectedListener{
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         btnNavView = findViewById(R.id.bn_main);
         btnNavView.setOnNavigationItemSelectedListener(this);
 
-        showBadge(this, btnNavView, R.id.berita_menu, "3");
-        showBadge(this, btnNavView, R.id.inbox_menu, "2");
+//        showBadge(this, btnNavView, R.id.berita_menu, "3");
+//        showBadge(this, btnNavView, R.id.inbox_menu, "2");
     }
 
     private boolean loadFragmentUtama(Fragment fr){
@@ -57,14 +58,13 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
             case R.id.sekolah_menu:
                 fragment = new SekolahFragment();
                 break;
-            case R.id.berita_menu:
-                fragment = new BeritaFragment();
-                removeBadge(btnNavView, R.id.berita_menu);
+            case R.id.rekomendasi_menu:
+                fragment = new RekomendasiFragment();
                 break;
-            case R.id.inbox_menu:
-                fragment = new InboxFragment();
-                removeBadge(btnNavView, R.id.inbox_menu);
-                break;
+//            case R.id.inbox_menu:
+//                fragment = new InboxFragment();
+//                removeBadge(btnNavView, R.id.inbox_menu);
+//                break;
             case R.id.akun_menu:
                 fragment = new AkunFragment();
                 break;

@@ -1,0 +1,117 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#A5DFB6"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:layout_height="95dp">
+
+    <LinearLayout
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight=".025"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/riv_sekolah_rekomendasi"
+            android:layout_width="0dip"
+            android:layout_weight=".2"
+            android:layout_height="match_parent"
+            android:src="@drawable/smkf_ikasari"
+            app:siRadius="10dp"
+            app:siBorderWidth="1dp"
+            android:layout_gravity="center"
+            app:siBorderColor="#234323"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:siSquare="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight=".025"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight=".5"
+            android:layout_width="0dip"
+            android:weightSum="1.0"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"/>
+
+            <TextView
+                android:id="@+id/tv_sekolah_rekomendasi"
+                android:text="SMKF Ikasari Pekanbaru"
+                android:textColor="#234232"
+                android:textStyle="bold"
+                android:layout_weight=".2"
+                android:layout_width="match_parent"
+                android:layout_height="0dip" />
+
+            <View
+                android:layout_weight=".05"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:background="#050404"/>
+
+
+            <TextView
+                android:id="@+id/tv_skor_rekomendasi"
+                android:text="Skor 9,5"
+                android:textColor="#234232"
+                android:layout_weight=".3"
+                android:gravity="center"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="0dip" />
+
+            <TextView
+                android:text="Lihat rincian skor"
+                android:textColor="#EDEFF1"
+                android:layout_weight=".2"
+                android:textAlignment="center"
+                android:background="@drawable/notif_bg"
+                android:layout_gravity="center_vertical"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="0dip" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight=".025"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/iv_peringkat_sekolah"
+            android:src="@drawable/recomended"
+            android:layout_weight=".2"
+            android:layout_width="0dip"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight=".025"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

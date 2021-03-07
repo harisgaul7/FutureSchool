@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/frame_rekomendasi"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Rekomendasi"
+            android:textColor="#234234"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            android:fontFamily="serif"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.codesgood.views.JustifiedTextView
+        android:text="Menu rekomendasi adalah fitur Future School yang membantu kamu untuk menemukan sekolah menengah atas terbaik sesuai profil kamu. Berikut tutorial cara menggunakan fitur rekomendasi Future School :"
+        android:textColor="#070C0A"
+        android:fontFamily="serif"
+        android:textSize="12dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="1. Memilih topik"
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.codesgood.views.JustifiedTextView
+            android:text="Kamu bisa memilih kecendrungan sekolah yang diinginkan, pilih salah satu topik dan kami akan menampilkan semua jurusan yang relevan dengan topik yang kamu inginkan. "
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="2. Memilih jurusan"
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.codesgood.views.JustifiedTextView
+            android:text="Kamu bisa memilih satu atau lebih jurusan yang kamu inginkan. Dengan memilih jurusan, aplikasi akan meneruskan rekomendasi hanya kepada sekolah yang memiliki jurusan tersebut."
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="3. Memilih kriteria"
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.codesgood.views.JustifiedTextView
+            android:text="Kamu bisa memilih beberapa kriteria yang menjadi pertimbanganmu dalam memilih suatu sekolah. Kamu juga bisa menentukan bobot kepentingan atau bobot prioritasmu dalam memilih sekolah, seberapa penting sebuah kriteria tersebut dalam memilih sekolah."
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="4. Sekolah terpilih"
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.codesgood.views.JustifiedTextView
+            android:text="Setelah memilih kriteria, aplikasi akan menampilkan sekolah terbaik yang sesuai dengan kriteria yang kamu inginkan, kamu juga bisa melihat kelebihan dan kekurangan antar sekolah dari nilai kriteria yang kamu tetapkan."
+            android:textColor="#070C0A"
+            android:fontFamily="serif"
+            android:textSize="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_rekomendasi"
+                android:layout_marginRight="100dp"
+                android:layout_marginLeft="100dp"
+                android:fontFamily="serif"
+                android:textColor="#111616"
+                android:layout_marginTop="20dp"
+                android:text="Mulai Rekomendasi"
+                android:background="@drawable/button_rekomendasi"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

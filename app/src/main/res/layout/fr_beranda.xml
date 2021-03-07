@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#FEFFFE"
+    android:background="@drawable/blue_bg"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -11,20 +11,50 @@
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:weightSum="1.0"
-            android:orientation="horizontal"
+        <TextView
+            android:text="Welcome ,\nFind your Future School"
+            android:textColor="#070C0A"
+            android:textSize="20dp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" />
 
-            <Button
-                android:id="@+id/btn_rekomendasi"
-                android:text="Rekomendasi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <TextView
+            android:text="Sekolah terfavorit"
+            android:textColor="#070C0A"
+            android:textSize="18dp"
+            android:fontFamily="casual"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_terfavorit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <TextView
+            android:text="Mostly Visited"
+            android:textColor="#070C0A"
+            android:textSize="18dp"
+            android:fontFamily="casual"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_kunjungan"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

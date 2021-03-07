@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class PilihKriteria extends AppCompatActivity {
+public class PilihKriteriaActivity extends AppCompatActivity {
 
     ArrayList<String> cb_fasilitas, cb_ekstrakulikuler;
     CheckBox lokasi, kualitas, prestasi, akreditasi, biaya, fasilitas, ekstrakulikuler;
@@ -25,6 +26,7 @@ public class PilihKriteria extends AppCompatActivity {
     SeekBar presentasi_lokasi, presentasi_kualitas, presentasi_prestasi, presentasi_akreditasi, presentasi_biaya, presentasi_fasilitas, presentasi_ekstrakulikuler;
     TextView nilai_lokasi, nilai_kualitas, nilai_prestasi, nilai_akreditasi, nilai_biaya, nilai_fasilitas, nilai_ekstrakulikuler;
     EditText input_biaya, input_daftar;
+    Button sekolah;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,8 +71,12 @@ public class PilihKriteria extends AppCompatActivity {
         input_biaya = findViewById(R.id.et_biaya_spp);
         input_daftar = findViewById(R.id.et_biaya_masuk);
 
+        sekolah = findViewById(R.id.btn_kriteria);
+
         cb_fasilitas = new ArrayList<>();
         cb_ekstrakulikuler = new ArrayList<>();
+
+
 
         lokasi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -406,6 +412,14 @@ public class PilihKriteria extends AppCompatActivity {
                 }
             });
         }
+
+        sekolah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go = new Intent(PilihKriteriaActivity.this, SekolahRekomendasiActivity.class);
+                startActivity(go);
+            }
+        });
     }
 
     public static String getDecimalFormattedString(String value)

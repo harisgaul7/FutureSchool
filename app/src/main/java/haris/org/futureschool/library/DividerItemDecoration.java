@@ -1,4 +1,4 @@
-package haris.org.futureschool;
+package haris.org.futureschool.library;
 
 import android.content.Context;
 import android.content.res.TypedArray;

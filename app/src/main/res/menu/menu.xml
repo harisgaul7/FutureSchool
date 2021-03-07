@@ -11,14 +11,9 @@
         android:icon="@drawable/school"/>
 
     <item
-        android:id="@+id/berita_menu"
-        android:title="@string/berita"
-        android:icon="@drawable/bulletin"/>
-
-    <item
-        android:id="@+id/inbox_menu"
-        android:title="@string/inbox"
-        android:icon="@drawable/inbox"/>
+        android:id="@+id/rekomendasi_menu"
+        android:title="@string/rekomendasi"
+        android:icon="@drawable/suggestion"/>
 
     <item
         android:id="@+id/akun_menu"
