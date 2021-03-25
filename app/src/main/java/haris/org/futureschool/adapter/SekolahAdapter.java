@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 
 import haris.org.futureschool.DetailSekolahActivity;
 import haris.org.futureschool.R;
+import haris.org.futureschool.database.BaseUrl;
+import haris.org.futureschool.library.DownloadImageTask;
 import haris.org.futureschool.model.SekolahModel;
 
 public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.SekolahViewHolder> {
@@ -38,7 +41,9 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.SekolahV
 
     @Override
     public void onBindViewHolder(@NonNull final SekolahViewHolder sekolahViewHolder, int position) {
-        sekolahViewHolder.riv_gambar.setImageResource(dataList.get(position).getGambar());
+
+        new DownloadImageTask((RoundedImageView) sekolahViewHolder.riv_gambar)
+                .execute(dataList.get(position).getGambar());
         sekolahViewHolder.nama.setText(dataList.get(position).getNama());
         sekolahViewHolder.alamat.setText(dataList.get(position).getAlamat());
         sekolahViewHolder.deskripsi.setText(dataList.get(position).getDeskripsi());

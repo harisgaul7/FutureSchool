@@ -21,6 +21,8 @@ import java.util.ArrayList;
 
 import haris.org.futureschool.R;
 import haris.org.futureschool.adapter.SekolahAdapter;
+import haris.org.futureschool.database.BaseUrl;
+import haris.org.futureschool.library.DownloadImageTask;
 import haris.org.futureschool.model.SekolahModel;
 
 public class SekolahFragment extends Fragment {
@@ -73,11 +75,16 @@ public class SekolahFragment extends Fragment {
 
         sekolahModelArrayList = new ArrayList<>();
 
-        sekolahModelArrayList.add(new SekolahModel(R.drawable.smkf_ikasari, "SMKF Ikasari Pekanbaru", "Jl. Mawar No.98, Simpang Baru, Kec.Tampan", "''SMK Farmasi Ikasari Yayasan UR Pekanbaru merupakan salah satu Institusi pendidikan Tenaga Kesehatan Tingkat Menengah yang saat ini berkembang menjadi Sekolah Menengah Kejuruan yang sudah berdiri sejak tahun 1962.''", jarak));
+
+        String url = new BaseUrl().BASE_URL;
+
+
+
+        sekolahModelArrayList.add(new SekolahModel(url+"future_picture/slider/lomba_1.jpg", "SMKF Ikasari Pekanbaru", "Jl. Mawar No.98, Simpang Baru, Kec.Tampan", "''SMK Farmasi Ikasari Yayasan UR Pekanbaru merupakan salah satu Institusi pendidikan Tenaga Kesehatan Tingkat Menengah yang saat ini berkembang menjadi Sekolah Menengah Kejuruan yang sudah berdiri sejak tahun 1962.''", jarak));
         adapter = new SekolahAdapter(sekolahModelArrayList);
         rv.setAdapter(adapter);
 
-        sekolahModelArrayList.add(new SekolahModel(R.drawable.sd_al_ulum, "SD Al Ulum Pekanbaru", "Jl. Tuanku Tambusai No.696, Delima, Kec. Tampan", "''SD Al Ulum Islamic School adalah sekolah swasta yang terletak di Pekanbaru, Riau. SD ini berbasis Agama Islam sebagai pengangan utama kurikulum pendidikannya.''", jarak));
+        sekolahModelArrayList.add(new SekolahModel(url+"future_picture/slider/lomba_2.jpg", "SD Al Ulum Pekanbaru", "Jl. Tuanku Tambusai No.696, Delima, Kec. Tampan", "''SD Al Ulum Islamic School adalah sekolah swasta yang terletak di Pekanbaru, Riau. SD ini berbasis Agama Islam sebagai pengangan utama kurikulum pendidikannya.''", jarak));
         adapter = new SekolahAdapter(sekolahModelArrayList);
         rv.setAdapter(adapter);
 

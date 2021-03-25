@@ -9,9 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retroserver {
     private static Retrofit retro;
+    private final static String URL = "future-school/public/api/";
 
     // Method untuk menghubungkan ke server
-    public static Retrofit getClient(String url){
+    public static Retrofit getClient(){
         final OkHttpClient cobaOk = new OkHttpClient.Builder()
                 .readTimeout(5, TimeUnit.SECONDS)
                 .connectTimeout(5, TimeUnit.SECONDS)
@@ -19,7 +20,7 @@ public class Retroserver {
 
         if (retro == null){
             retro = new Retrofit.Builder()
-                    .baseUrl(url)
+                    .baseUrl(new BaseUrl().BASE_URL+URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(cobaOk)
                     .build();

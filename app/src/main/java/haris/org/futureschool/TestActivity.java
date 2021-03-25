@@ -12,6 +12,9 @@ import android.widget.ImageView;
 
 import java.io.InputStream;
 
+import haris.org.futureschool.database.BaseUrl;
+import haris.org.futureschool.library.DownloadImageTask;
+
 
 public class TestActivity extends AppCompatActivity {
 
@@ -25,33 +28,9 @@ public class TestActivity extends AppCompatActivity {
 
         ivTes = findViewById(R.id.iv_tes);
 
+        String url = new BaseUrl().BASE_URL;
         new DownloadImageTask((ImageView) findViewById(R.id.iv_tes))
-                .execute("http://192.168.43.41/future_picture/slider/lomba_1.jpg");
+                .execute(url+"future_picture/slider/lomba_1.jpg");
 
-    }
-
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
-
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
     }
 }

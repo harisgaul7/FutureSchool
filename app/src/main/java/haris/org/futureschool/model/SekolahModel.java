@@ -1,12 +1,11 @@
 package haris.org.futureschool.model;
 
 public class SekolahModel {
-    private int Gambar;
-    private String nama, alamat, deskripsi;
+    private String nama, alamat, deskripsi, gambar;
     private double jarak;
 
-    public SekolahModel(int gambar, String nama, String alamat, String deskripsi, double jarak){
-        this.Gambar = gambar;
+    public SekolahModel(String gambar, String nama, String alamat, String deskripsi, double jarak){
+        this.gambar = gambar;
         this.nama = nama;
         this.alamat = alamat;
         this.deskripsi = deskripsi;
@@ -21,12 +20,12 @@ public class SekolahModel {
         this.jarak = jarak;
     }
 
-    public int getGambar() {
-        return Gambar;
+    public String getGambar() {
+        return gambar;
     }
 
     public void setGambar(int gambar) {
-        Gambar = gambar;
+        gambar = gambar;
     }
 
     public String getNama() {

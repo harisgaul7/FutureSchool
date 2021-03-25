@@ -10,12 +10,12 @@ import retrofit2.http.POST;
 public interface ApiRequest {
 
     // Untuk mendapatkan data topik rekomendasi
-    @GET("api/getTopik")
+    @GET("tampil_topik")
     Call<ResponseModel> getDataTopikRekomendasi();
 
     // Untuk mendapatkan data jurusan rekomendasi
     @FormUrlEncoded
-    @POST("api/getJurusan")
+    @POST("tampil_jurusan")
     Call<ResponseModel> getDataJurusanRekomendasi(@Field("topik_id") int topik_id);
 
 

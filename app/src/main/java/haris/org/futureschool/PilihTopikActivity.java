@@ -40,10 +40,7 @@ public class PilihTopikActivity extends AppCompatActivity {
         pd = new ProgressDialog(PilihTopikActivity.this);
         pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
 
-
-
-
-        ApiRequest api = Retroserver.getClient("http://192.168.43.41/coba_fs/").create(ApiRequest.class);
+        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
         Call<ResponseModel> send = api.getDataTopikRekomendasi();
         send.enqueue(new Callback<ResponseModel>() {
             @Override

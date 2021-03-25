@@ -19,7 +19,8 @@
             android:fontFamily="serif"
             android:layout_marginTop="50dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
 
         <com.codesgood.views.JustifiedTextView
         android:text="Menu rekomendasi adalah fitur Future School yang membantu kamu untuk menemukan sekolah menengah atas terbaik sesuai profil kamu. Berikut tutorial cara menggunakan fitur rekomendasi Future School :"

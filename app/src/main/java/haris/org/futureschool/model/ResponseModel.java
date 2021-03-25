@@ -5,6 +5,15 @@ import java.util.List;
 public class ResponseModel {
     String kode, pesan;
     List<TopikRekomendasiModel> hasilTopik;
+    List<JurusanRekomendasiModel> hasilJurusan;
+
+    public List<JurusanRekomendasiModel> getHasilJurusan() {
+        return hasilJurusan;
+    }
+
+    public void setHasilJurusan(List<JurusanRekomendasiModel> hasilJurusan) {
+        this.hasilJurusan = hasilJurusan;
+    }
 
     public List<TopikRekomendasiModel> getHasilTopik() {
         return hasilTopik;
