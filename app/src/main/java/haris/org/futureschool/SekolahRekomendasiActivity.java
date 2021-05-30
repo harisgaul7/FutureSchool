@@ -30,14 +30,14 @@ public class SekolahRekomendasiActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rv_rekomendasi.setLayoutManager(layoutManager);
 
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.smkf_ikasari, R.drawable.rank1, "SMKF Ikasari Pekanbaru", "Skor 9,5"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_rekomendasi.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank2, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_rekomendasi.setAdapter(rekAd);
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.smkf_ikasari, R.drawable.rank1, "SMKF Ikasari Pekanbaru", "Skor 9,5"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_rekomendasi.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank2, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_rekomendasi.setAdapter(rekAd);
     }
 }

@@ -38,25 +38,25 @@ public class InboxFragment extends Fragment {
 //        RecyclerViewLayoutManager = new LinearLayoutManager(view.getContext());
 //        HorizontalLayout = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
 
-        inboxModels = new ArrayList<>();
-
-        inboxModels.add(new InboxModel(R.drawable.smkf_ikasari, "SMKF Ikasari Pekanbaru", "Penawaran Beasiswa", "Dalam rangka memenuhi niat kami memajukan pendidikan di Indonesia, khususnya bagi calon siswa yang ber", "15 Jun", "Promo", R.drawable.promo));
-        inboxAdapter = new InboxAdapter(inboxModels);
-//        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-//        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
-
-        inboxModels.add(new InboxModel(R.drawable.sd_al_ulum, "SD Al Ulum Pekanbaru", "Diskon Biaya Masuk", "Bapak Ibu calon murid yang kami hormati, berkaitan dengan kondisi bencana non alam yang sedang ", "14 Jun", "Promo", R.drawable.promo));
-        inboxAdapter = new InboxAdapter(inboxModels);
-//        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-//        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
-
-        inboxModels.add(new InboxModel(R.drawable.education, "Developer Future School", "Fitur Baru", "Hai calon murid masa depan, kami baru saja meluncurkan fitur baru, lho! Sekarang kamu bisa melakukan pendaftaran melalui fitur daftar ketika melihat sekolah yang kamu inginkan", "13 Jun", "Info", R.drawable.ic_info_black_24dp));
-        inboxAdapter = new InboxAdapter(inboxModels);
-//        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-//        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
+//        inboxModels = new ArrayList<>();
+//
+//        inboxModels.add(new InboxModel(R.drawable.smkf_ikasari, "SMKF Ikasari Pekanbaru", "Penawaran Beasiswa", "Dalam rangka memenuhi niat kami memajukan pendidikan di Indonesia, khususnya bagi calon siswa yang ber", "15 Jun", "Promo", R.drawable.promo));
+//        inboxAdapter = new InboxAdapter(inboxModels);
+////        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+////        recyclerView.setLayoutManager(HorizontalLayout);
+//        recyclerView.setAdapter(inboxAdapter);
+//
+//        inboxModels.add(new InboxModel(R.drawable.sd_al_ulum, "SD Al Ulum Pekanbaru", "Diskon Biaya Masuk", "Bapak Ibu calon murid yang kami hormati, berkaitan dengan kondisi bencana non alam yang sedang ", "14 Jun", "Promo", R.drawable.promo));
+//        inboxAdapter = new InboxAdapter(inboxModels);
+////        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+////        recyclerView.setLayoutManager(HorizontalLayout);
+//        recyclerView.setAdapter(inboxAdapter);
+//
+//        inboxModels.add(new InboxModel(R.drawable.education, "Developer Future School", "Fitur Baru", "Hai calon murid masa depan, kami baru saja meluncurkan fitur baru, lho! Sekarang kamu bisa melakukan pendaftaran melalui fitur daftar ketika melihat sekolah yang kamu inginkan", "13 Jun", "Info", R.drawable.ic_info_black_24dp));
+//        inboxAdapter = new InboxAdapter(inboxModels);
+////        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+////        recyclerView.setLayoutManager(HorizontalLayout);
+//        recyclerView.setAdapter(inboxAdapter);
 
         return view;
     }

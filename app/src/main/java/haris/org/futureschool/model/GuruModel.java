@@ -1,44 +1,21 @@
 package haris.org.futureschool.model;
 
 public class GuruModel {
-    private String nama, jenisKelamin, gelar, mapel;
+    private String nama_guru, jk_guru, pendidikan_guru, mapel_guru;
 
-    public GuruModel(String nama, String jenisKelamin, String gelar, String mapel) {
-        this.nama = nama;
-        this.jenisKelamin = jenisKelamin;
-        this.gelar = gelar;
-        this.mapel = mapel;
+    public String getNama_guru() {
+        return nama_guru;
     }
 
-    public String getNama() {
-        return nama;
+    public String getJk_guru() {
+        return jk_guru;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public String getPendidikan_guru() {
+        return pendidikan_guru;
     }
 
-    public String getJenisKelamin() {
-        return jenisKelamin;
-    }
-
-    public void setJenisKelamin(String jenisKelamin) {
-        this.jenisKelamin = jenisKelamin;
-    }
-
-    public String getGelar() {
-        return gelar;
-    }
-
-    public void setGelar(String gelar) {
-        this.gelar = gelar;
-    }
-
-    public String getMapel() {
-        return mapel;
-    }
-
-    public void setMapel(String mapel) {
-        this.mapel = mapel;
+    public String getMapel_guru() {
+        return mapel_guru;
     }
 }

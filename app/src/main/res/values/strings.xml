@@ -9,11 +9,20 @@
 
     <string name="hint_cari">Pencarian Sekolah</string>
 
+    <string-array name="sorting">
+        <item>Terbaru</item>
+        <item>Terdahulu</item>
+        <item>Abjad (A-Z)</item>
+        <item>Abjad (Z-A)</item>
+        <item>Jarak</item>
+    </string-array>
+
     <string-array name="tingkat">
-        <item>Pilih</item>
-        <item>SD</item>
-        <item>SMP</item>
         <item>SMA</item>
+        <item>SMP</item>
+        <item>SD</item>
+        <item>TK</item>
+        <item>PAUD</item>
     </string-array>
 
     <string name="menu_item_add">Add</string>

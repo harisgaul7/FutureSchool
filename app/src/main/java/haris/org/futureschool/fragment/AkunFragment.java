@@ -26,9 +26,12 @@ public class AkunFragment extends Fragment {
         viewPager = view.findViewById(R.id.viewPager);
         tabLayout = view.findViewById(R.id.tabLayout);
 
+        Bundle argsBundle = new Bundle();
+        argsBundle.putString("id", "kosong");
+
         tabAdapter = new TabAdapter(getFragmentManager());
-        tabAdapter.addFragment(new Tab1Fragment(), "Sekolah favorit");
-        tabAdapter.addFragment(new Tab2Fragment(), "Baru ini dikunjungi");
+        tabAdapter.addFragmentBundle(new Tab1Fragment(), "Sekolah favorit", argsBundle);
+        tabAdapter.addFragmentBundle(new Tab2Fragment(), "Baru ini dikunjungi", argsBundle);
 
         viewPager.setAdapter(tabAdapter);
         tabLayout.setupWithViewPager(viewPager);

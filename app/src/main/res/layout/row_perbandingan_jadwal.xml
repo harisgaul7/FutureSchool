@@ -26,8 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sd_al_ulum" />
+                android:scaleType="fitCenter"/>
 
             <LinearLayout
                 android:layout_weight=".03"
@@ -1650,8 +1649,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/smkf_ikasari" />
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_weight=".03"

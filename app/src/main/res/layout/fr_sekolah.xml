@@ -37,6 +37,7 @@
             <EditText
                 android:id="@+id/et_pencarian"
                 android:layout_width="0dip"
+                android:background="@null"
                 android:layout_height="wrap_content"
                 android:layout_weight=".75"
                 android:textSize="15sp"
@@ -70,12 +71,35 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"/>
 
-        <Spinner
-            android:background="@drawable/spinner_bg"
-            android:id="@+id/spin_tingkat_sekolah"
+        <LinearLayout
+            android:id="@+id/ll_filter"
+            android:orientation="horizontal"
             android:layout_weight=".25"
+            android:weightSum=".1"
+            android:background="@drawable/rounded_image"
             android:layout_width="0dip"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/filter"
+                android:layout_width="0dip"
+                android:layout_weight=".03"
+                android:padding="3dp"
+                android:adjustViewBounds="true"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Filter"
+                android:textColor="#234234"
+                android:gravity="center"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight=".07"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

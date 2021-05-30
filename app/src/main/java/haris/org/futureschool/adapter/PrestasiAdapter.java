@@ -38,7 +38,7 @@ public class PrestasiAdapter extends RecyclerView.Adapter<PrestasiAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         this.context = parent.getContext();
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.row_prestasi, parent, false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.row_prestasi_ga_dipakai, parent, false));
     }
 
     @Override

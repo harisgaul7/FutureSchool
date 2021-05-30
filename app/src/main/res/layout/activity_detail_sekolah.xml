@@ -263,7 +263,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/masjid"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -294,7 +293,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lab_bio"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -325,7 +323,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lab_kimia"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -356,7 +353,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lab_komputer"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -387,7 +383,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lab_bahasa"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -418,7 +413,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/studio_musik"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -449,7 +443,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lap_basket"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -480,7 +473,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lap_voli"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -2962,7 +2954,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/sispala"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -2993,7 +2984,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/paskibraka"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3024,7 +3014,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lap_voli"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3055,7 +3044,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/lap_basket"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3086,7 +3074,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/cheerleader"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3117,7 +3104,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/pencak_silat"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3148,7 +3134,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/pik_remaja"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3179,7 +3164,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/pmr"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3210,7 +3194,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/pramuka"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"
@@ -3241,7 +3224,6 @@
                 android:layout_height="40dp">
 
                 <ImageView
-                    android:src="@drawable/tari_tradisional"
                     android:layout_weight=".15"
                     android:layout_width="0dip"
                     android:scaleType="fitXY"

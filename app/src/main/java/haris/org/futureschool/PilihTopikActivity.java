@@ -50,8 +50,8 @@ public class PilihTopikActivity extends AppCompatActivity {
                     dataTopik = response.body().getHasilTopik();
                     if (!response.body().getKode().equals("0")){
                         for (int i =0; i<dataTopik.size(); i++){
-                            data.add(response.body().getHasilTopik().get(i).getTopik_nama());
-                            idTopik.add(response.body().getHasilTopik().get(i).getTopik_id());
+                            data.add(response.body().getHasilTopik().get(i).getNama_topik());
+                            idTopik.add(response.body().getHasilTopik().get(i).getId_master_topik());
                         }
                         final ListView tampung = (ListView)findViewById(R.id.lv_topik);
                         ArrayAdapter adapter = new ArrayAdapter(PilihTopikActivity.this, R.layout.style_lv_topik, data);

@@ -88,7 +88,7 @@ public class DetailSekolahActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_detail_sekolah);
 
-        modulSlideGambar();
+//        modulSlideGambar();
         modulSekolahFavorit();
         modulSelayangPandang();
         modulJurusanSekolah();
@@ -99,26 +99,26 @@ public class DetailSekolahActivity extends AppCompatActivity {
         modulAksesSekolah();
     }
 
-    private void modulSlideGambar(){
-        slideImages = new int[7];
-        slideImages[0] = R.drawable.smkf_ikasari;
-        slideImages[1] = R.drawable.bakti_1;
-        slideImages[2] = R.drawable.bakti_2;
-        slideImages[3] = R.drawable.bakti_3;
-        slideImages[4] = R.drawable.lomba_1;
-        slideImages[5] = R.drawable.lomba_2;
-        slideImages[6] = R.drawable.lomba_3;
-
-        ImageListener imageListener = new ImageListener() {
-            @Override
-            public void setImageForPosition(int position, ImageView imageView) {
-                imageView.setImageResource(slideImages[position]);
-            }
-        };
-        carouselView = findViewById(R.id.carousel_view);
-        carouselView.setPageCount(slideImages.length);
-        carouselView.setImageListener(imageListener);
-    }
+//    private void modulSlideGambar(){
+//        slideImages = new int[7];
+//        slideImages[0] = R.drawable.smkf_ikasari;
+//        slideImages[1] = R.drawable.bakti_1;
+//        slideImages[2] = R.drawable.bakti_2;
+//        slideImages[3] = R.drawable.bakti_3;
+//        slideImages[4] = R.drawable.lomba_1;
+//        slideImages[5] = R.drawable.lomba_2;
+//        slideImages[6] = R.drawable.lomba_3;
+//
+//        ImageListener imageListener = new ImageListener() {
+//            @Override
+//            public void setImageForPosition(int position, ImageView imageView) {
+//                imageView.setImageResource(slideImages[position]);
+//            }
+//        };
+//        carouselView = findViewById(R.id.carousel_view);
+//        carouselView.setPageCount(slideImages.length);
+//        carouselView.setImageListener(imageListener);
+//    }
 
     private void modulSekolahFavorit(){
         mfbSekolah = findViewById(R.id.mfb_sekolah_favorit);
@@ -225,34 +225,34 @@ public class DetailSekolahActivity extends AppCompatActivity {
         tabelGuru = findViewById(R.id.tabel_daftar_guru);
         cleanTable(tabelGuru);
 
-        ArrayList<GuruModel> isiGuru = new ArrayList<>();
-        isiGuru.add(new GuruModel("HARIO PERDANA, S.Pd", "L", "S1", "Seni Budaya"));
-        isiGuru.add(new GuruModel("LAILATUL FARHANI, S.Pd", "P", "S1", "Biologi"));
-        isiGuru.add(new GuruModel("PUTRI KARTIKA SARI, S.Pd", "P", "S1", "Bahasa Inggris"));
-        isiGuru.add(new GuruModel("SURYATRI NAWANG SARI, S.Pd", "P", "S1", "Bahasa Indonesia"));
-        isiGuru.add(new GuruModel("DWI PUJIASTUTI S.Pd", "L", "S1", "Geografi"));
-        isiGuru.add(new GuruModel("SHINTA OLIFIA, SE", "L", "S1", "Ekonomi"));
-        isiGuru.add(new GuruModel("SANDI JUMAIGI, S.Pd", "L", "S1", "Sosiologi"));
+//        ArrayList<GuruModel> isiGuru = new ArrayList<>();
+//        isiGuru.add(new GuruModel("HARIO PERDANA, S.Pd", "L", "S1", "Seni Budaya"));
+//        isiGuru.add(new GuruModel("LAILATUL FARHANI, S.Pd", "P", "S1", "Biologi"));
+//        isiGuru.add(new GuruModel("PUTRI KARTIKA SARI, S.Pd", "P", "S1", "Bahasa Inggris"));
+//        isiGuru.add(new GuruModel("SURYATRI NAWANG SARI, S.Pd", "P", "S1", "Bahasa Indonesia"));
+//        isiGuru.add(new GuruModel("DWI PUJIASTUTI S.Pd", "L", "S1", "Geografi"));
+//        isiGuru.add(new GuruModel("SHINTA OLIFIA, SE", "L", "S1", "Ekonomi"));
+//        isiGuru.add(new GuruModel("SANDI JUMAIGI, S.Pd", "L", "S1", "Sosiologi"));
 
-        for (int i = 0; i < isiGuru.size(); i++) {
-            // Isi data row
-            TableRow dataGuru = (TableRow)getLayoutInflater().inflate(R.layout.row_guru, null);
-            no = dataGuru.findViewById(R.id.kolom_nomor_guru);
-            namaGuru = dataGuru.findViewById(R.id.kolom_nama_guru);
-            jenisKelaminGuru = dataGuru.findViewById(R.id.kolom_gender_guru);
-            gelarGuru = dataGuru.findViewById(R.id.kolom_ijazah_guru);
-            mapelGuru = dataGuru.findViewById(R.id.kolom_mapel_guru);
-
-            namaGuru.setSelected(true);
-            mapelGuru.setSelected(true);
-
-            no.setText(String.valueOf(i+1));
-            namaGuru.setText(isiGuru.get(i).getNama());
-            jenisKelaminGuru.setText(isiGuru.get(i).getJenisKelamin());
-            gelarGuru.setText(isiGuru.get(i).getGelar());
-            mapelGuru.setText(isiGuru.get(i).getMapel());
-            tabelGuru.addView(dataGuru);
-        }
+//        for (int i = 0; i < isiGuru.size(); i++) {
+//            // Isi data row
+//            TableRow dataGuru = (TableRow)getLayoutInflater().inflate(R.layout.row_guru, null);
+//            no = dataGuru.findViewById(R.id.kolom_nomor_guru);
+//            namaGuru = dataGuru.findViewById(R.id.kolom_nama_guru);
+//            jenisKelaminGuru = dataGuru.findViewById(R.id.kolom_gender_guru);
+//            gelarGuru = dataGuru.findViewById(R.id.kolom_ijazah_guru);
+//            mapelGuru = dataGuru.findViewById(R.id.kolom_mapel_guru);
+//
+//            namaGuru.setSelected(true);
+//            mapelGuru.setSelected(true);
+//
+//            no.setText(String.valueOf(i+1));
+//            namaGuru.setText(isiGuru.get(i).getNama());
+//            jenisKelaminGuru.setText(isiGuru.get(i).getJenisKelamin());
+//            gelarGuru.setText(isiGuru.get(i).getGelar());
+//            mapelGuru.setText(isiGuru.get(i).getMapel());
+//            tabelGuru.addView(dataGuru);
+//        }
     }
 
     private void modulKalenderPendidikan(){

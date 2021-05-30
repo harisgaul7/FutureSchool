@@ -24,7 +24,6 @@
             android:layout_weight=".15"
             android:layout_gravity="center"
             android:layout_height="match_parent"
-            android:src="@drawable/smkf_ikasari"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter" />
 

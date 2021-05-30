@@ -26,8 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sd_al_ulum" />
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_weight=".03"
@@ -89,7 +88,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/masjid"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -120,7 +118,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_bio"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -151,7 +148,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_kimia"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -182,7 +178,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_komputer"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -213,7 +208,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_bahasa"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -244,7 +238,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/studio_musik"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -275,7 +268,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lap_basket"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -306,7 +298,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lap_voli"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -351,8 +342,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/smkf_ikasari" />
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_weight=".03"
@@ -414,7 +404,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/masjid"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -445,7 +434,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_bio"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -476,7 +464,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_kimia"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -507,7 +494,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_komputer"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -538,7 +524,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lab_bahasa"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -569,7 +554,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/studio_musik"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -600,7 +584,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lap_basket"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"
@@ -631,7 +614,6 @@
                     android:layout_height="40dp">
 
                     <ImageView
-                        android:src="@drawable/lap_voli"
                         android:layout_weight=".15"
                         android:layout_width="0dip"
                         android:scaleType="fitXY"

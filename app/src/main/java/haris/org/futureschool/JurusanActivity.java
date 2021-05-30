@@ -54,8 +54,8 @@ public class JurusanActivity extends AppCompatActivity {
                         dataJurusan = response.body().getHasilJurusan();
                         if (!response.body().getKode().equals("0")){
                             for (int i =0; i<dataJurusan.size(); i++){
-                                jurusan.add(response.body().getHasilJurusan().get(i).getJurusan_nama());
-                                idJurusan.add(response.body().getHasilJurusan().get(i).getJurusan_id());
+                                jurusan.add(response.body().getHasilJurusan().get(i).getNama_jurusan());
+                                idJurusan.add(response.body().getHasilJurusan().get(i).getId_master_jurusan());
                             }
                             final LinearLayout tampung = findViewById(R.id.ll_tampung_jurusan);
                             cekbox = new ArrayList<>();
@@ -83,11 +83,7 @@ public class JurusanActivity extends AppCompatActivity {
                             hasil.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    String isi = "";
-                                    for (int i = 0; i < idJurusan.size(); i++) {
-                                        isi+=idJurusan.get(i)+"\n";
-                                    }
-                                    Toast.makeText(JurusanActivity.this, "Hasil = \n"+isi, Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(JurusanActivity.this, "Hasil = \n"+cekbox.get(0), Toast.LENGTH_SHORT).show();
                                     Intent go = new Intent(view.getContext(), PilihKriteriaActivity.class);
                                     view.getContext().startActivity(go);
 

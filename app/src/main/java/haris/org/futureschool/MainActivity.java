@@ -1,11 +1,16 @@
 package haris.org.futureschool;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,10 +26,19 @@ import haris.org.futureschool.fragment.InboxFragment;
 import haris.org.futureschool.fragment.RekomendasiFragment;
 import haris.org.futureschool.fragment.SekolahFragment;
 
+// Ask perizinan
+import static android.Manifest.permission.CALL_PHONE;
+import static android.Manifest.permission.INTERNET;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_NETWORK_STATE;
+import static android.Manifest.permission.SEND_SMS;
+
 public class MainActivity extends AppCompatActivity  implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     BottomNavigationView btnNavView;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +47,16 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 
         loadFragmentUtama(new BerandaFragment());
 
+        Intent intent = getIntent();
+
+        if (intent.hasExtra("id")) {
+            loadFragmentUtama(new SekolahFragment());
+        }
+
         btnNavView = findViewById(R.id.bn_main);
         btnNavView.setOnNavigationItemSelectedListener(this);
+
+        tanyaPerizinan();
 
 //        showBadge(this, btnNavView, R.id.berita_menu, "3");
 //        showBadge(this, btnNavView, R.id.inbox_menu, "2");
@@ -87,6 +109,30 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
         if (itemView.getChildCount() == 3) {
             itemView.removeViewAt(2);
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void tanyaPerizinan(){
+        for (int i = 0; i < 6; i++) {
+            if (i==0 && ContextCompat.checkSelfPermission(MainActivity.this, CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{CALL_PHONE}, 1);
+            }
+            if (i==1 && ContextCompat.checkSelfPermission(MainActivity.this, INTERNET) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{INTERNET}, 1);
+            }
+            if (i==2 && ContextCompat.checkSelfPermission(MainActivity.this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{ACCESS_FINE_LOCATION}, 1);
+            }
+            if (i==3 && ContextCompat.checkSelfPermission(MainActivity.this, ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{ACCESS_COARSE_LOCATION}, 1);
+            }
+            if (i==4 && ContextCompat.checkSelfPermission(MainActivity.this, ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{ACCESS_NETWORK_STATE}, 1);
+            }
+            if (i==5 && ContextCompat.checkSelfPermission(MainActivity.this, SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{SEND_SMS}, 1);
+            }
         }
     }
 }

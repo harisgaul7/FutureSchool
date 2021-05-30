@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
 
     <application
@@ -21,10 +23,13 @@
         android:theme="@style/Theme.Design.NoActionBar">
         <activity android:name=".DetailSekolahActivity"/>
         <activity android:name=".PerbandinganActivity"/>
+        <activity android:name=".KontakActivity"/>
         <activity android:name=".PilihTopikActivity"/>
         <activity android:name=".JurusanActivity"/>
         <activity android:name=".PilihKriteriaActivity"/>
         <activity android:name=".TestActivity"/>
+        <activity android:name=".FilterActivity"/>
+        <activity android:name=".SekolahActivity"/>
         <activity android:name=".SekolahRekomendasiActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>

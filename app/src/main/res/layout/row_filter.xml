@@ -1,0 +1,38 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:weightSum="1.0"
+    android:layout_width="match_parent"
+    android:layout_height="35dp">
+
+    <ImageView
+        android:id="@+id/iv_centang_filter"
+        android:src="@drawable/checked"
+        android:padding="10dp"
+        android:visibility="invisible"
+        android:layout_weight=".1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/txt_nama_filter"
+        android:textColor="#234233"
+        android:gravity="start|center"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:layout_weight=".9"
+        android:layout_width="0dip"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/txt_id_filter"
+        android:textColor="#234233"
+        android:visibility="gone"
+        android:gravity="start|center"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:layout_weight=".9"
+        android:layout_width="0dip"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

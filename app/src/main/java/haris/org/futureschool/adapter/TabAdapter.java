@@ -1,4 +1,5 @@
 package haris.org.futureschool.adapter;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,7 +17,8 @@ public class TabAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         return mFragmentList.get(position);
     }
-    public void addFragment(Fragment fragment, String title) {
+    public void addFragmentBundle(Fragment fragment, String title, Bundle args) {
+        fragment.setArguments(args);
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
     }

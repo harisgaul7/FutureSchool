@@ -48,77 +48,77 @@ public class BerandaFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv_favorit.setLayoutManager(layoutManager);
 
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.smkf_ikasari, R.drawable.rank1, "SMKF Ikasari Pekanbaru", "Skor 9,5"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.smkf_ikasari, R.drawable.rank1, "SMKF Ikasari Pekanbaru", "Skor 9,5"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank2, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank3, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank4, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank5, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank6, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank7, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank8, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank9, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
+//        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank10, "SD Al Ulum Pekanbaru", "Skor 9,3"));
+//        rekAd = new RekomendasiAdapter(rekomendasiModels);
+//
+//        rv_favorit.setAdapter(rekAd);
 
-        rv_favorit.setAdapter(rekAd);
 
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank2, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank3, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank4, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank5, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank6, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank7, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank8, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank9, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-        rekomendasiModels.add(new RekomendasiModel(R.drawable.sd_al_ulum, R.drawable.rank10, "SD Al Ulum Pekanbaru", "Skor 9,3"));
-        rekAd = new RekomendasiAdapter(rekomendasiModels);
-
-        rv_favorit.setAdapter(rekAd);
-
-
-        recyclerView = (RecyclerView)view.findViewById(R.id.rv_kunjungan);
-        recyclerViewLayoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(recyclerViewLayoutManager);
-        addItemsToRecyclerViewArrayList();
-        adapter = new DetailAdapter(source, news, date);
-        horizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(horizontalLayout);
-        recyclerView.setAdapter(adapter);
+//        recyclerView = (RecyclerView)view.findViewById(R.id.rv_kunjungan);
+//        recyclerViewLayoutManager = new LinearLayoutManager(getContext());
+//        recyclerView.setLayoutManager(recyclerViewLayoutManager);
+//        addItemsToRecyclerViewArrayList();
+//        adapter = new DetailAdapter(source, news, date);
+//        horizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+//        recyclerView.setLayoutManager(horizontalLayout);
+//        recyclerView.setAdapter(adapter);
 
         return view;
     }
 
     public void addItemsToRecyclerViewArrayList() {
-        // Tambahkan item ke arraylist
-        source = new ArrayList<>();
-        source.add(R.drawable.bakti_1);
-        source.add(R.drawable.bakti_2);
-        source.add(R.drawable.bakti_3);
-        source.add(R.drawable.lomba_1);
-        source.add(R.drawable.lomba_2);
-        source.add(R.drawable.lomba_3);
+//        // Tambahkan item ke arraylist
+//        source = new ArrayList<>();
+//        source.add(R.drawable.bakti_1);
+//        source.add(R.drawable.bakti_2);
+//        source.add(R.drawable.bakti_3);
+//        source.add(R.drawable.lomba_1);
+//        source.add(R.drawable.lomba_2);
+//        source.add(R.drawable.lomba_3);
 
         news = new ArrayList<>();
         news.add("SMKF Ikasari Mengajarkan Gotong Royong ke SD Al Ulum");
