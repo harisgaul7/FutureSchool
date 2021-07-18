@@ -2,8 +2,6 @@ package haris.org.futureschool.fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,20 +10,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.github.aakira.expandablelayout.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import haris.org.futureschool.R;
-import haris.org.futureschool.adapter.EkstrakulikulerAdapter;
-import haris.org.futureschool.adapter.PrestasiAdapter;
 import haris.org.futureschool.database.ApiRequest;
 import haris.org.futureschool.database.Retroserver;
-import haris.org.futureschool.library.DividerItemDecoration;
-import haris.org.futureschool.model.EkstrakulikulerModel;
-import haris.org.futureschool.model.ExpandableModel;
 import haris.org.futureschool.model.PrestasiModel;
 import haris.org.futureschool.model.ResponseModel;
 import retrofit2.Call;

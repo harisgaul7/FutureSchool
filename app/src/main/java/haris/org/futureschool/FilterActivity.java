@@ -10,34 +10,26 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import haris.org.futureschool.adapter.FasilitasAdapter;
-import haris.org.futureschool.adapter.FilterEkstrakulikulerAdapter;
+import haris.org.futureschool.adapter.FilterEkstrakurikulerAdapter;
 import haris.org.futureschool.adapter.FilterFasilitasAdapter;
 import haris.org.futureschool.database.ApiRequest;
 import haris.org.futureschool.database.Retroserver;
 import haris.org.futureschool.library.OnFilterClickListener;
-import haris.org.futureschool.model.FasilitasModel;
-import haris.org.futureschool.model.FilterEkstrakulikulerModel;
+import haris.org.futureschool.model.FilterEkstrakurikulerModel;
 import haris.org.futureschool.model.FilterFasilitasModel;
 import haris.org.futureschool.model.ResponseModel;
 import retrofit2.Call;
@@ -50,16 +42,16 @@ import static haris.org.futureschool.PilihKriteriaActivity.getDecimalFormattedSt
 public class FilterActivity extends AppCompatActivity {
 
     private ImageView cancel;
-    private TextView hasilFasilitas, hasilEkstrakulikuler, terapkan;
+    private TextView hasilFasilitas, hasilEkstrakurikuler, terapkan;
     private Spinner sort, tingkat;
     private EditText dariAwal, sampaiAwal, dariBulanan, sampaiBulanan;
-    private RecyclerView rvFasilitas, rvEkstrakulikuler;
+    private RecyclerView rvFasilitas, rvEkstrakurikuler;
     private FilterFasilitasAdapter filterFasilitasAdapter;
-    private FilterEkstrakulikulerAdapter filterEkstrakulikulerAdapter;
+    private FilterEkstrakurikulerAdapter filterEkstrakurikulerAdapter;
     private ArrayList<FilterFasilitasModel> filterFasilitasModels;
-    private ArrayList<FilterEkstrakulikulerModel> filterEkstrakulikulerModels;
+    private ArrayList<FilterEkstrakurikulerModel> filterEkstrakurikulerModels;
     private List<FilterFasilitasModel> dataFilterFasilitas = new ArrayList<>();
-    private List<FilterEkstrakulikulerModel> dataFilterEkstrakulikuler = new ArrayList<>();
+    private List<FilterEkstrakurikulerModel> dataFilterEkstrakurikuler = new ArrayList<>();
     private ProgressDialog pd;
     private OnFilterClickListener onFilterClickListener;
     
@@ -74,7 +66,7 @@ public class FilterActivity extends AppCompatActivity {
         setResult(RESULT_OK, intent);
 
         hasilFasilitas = findViewById(R.id.hasil_filter_fasilitas);
-        hasilEkstrakulikuler = findViewById(R.id.hasil_filter_ekstrakulikuler);
+        hasilEkstrakurikuler = findViewById(R.id.hasil_filter_ekstrakurikuler);
 
         onFilterClickListener = new OnFilterClickListener() {
             @Override
@@ -86,8 +78,8 @@ public class FilterActivity extends AppCompatActivity {
                 if (jenis.equals("fasilitas")){
                     setTextHasil(tampil, hasilFasilitas);
                 }
-                else if (jenis.equals("ekstrakulikuler")){
-                    setTextHasil(tampil, hasilEkstrakulikuler);
+                else if (jenis.equals("ekstrakurikuler")){
+                    setTextHasil(tampil, hasilEkstrakurikuler);
                 }
             }
         };
@@ -157,25 +149,25 @@ public class FilterActivity extends AppCompatActivity {
         });
 
 
-        rvEkstrakulikuler = findViewById(R.id.rv_filter_ekstrakulikuler);
+        rvEkstrakurikuler = findViewById(R.id.rv_filter_ekstrakurikuler);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(FilterActivity.this);
-        rvEkstrakulikuler.setLayoutManager(layoutManager2);
+        rvEkstrakurikuler.setLayoutManager(layoutManager2);
 
-        filterEkstrakulikulerModels = new ArrayList<>();
+        filterEkstrakurikulerModels = new ArrayList<>();
 
         ApiRequest api2 = Retroserver.getClient().create(ApiRequest.class);
-        Call<ResponseModel> send2 = api.getFilterEkstrakulikuler();
+        Call<ResponseModel> send2 = api2.getFilterEkstrakurikuler();
         send2.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 pd.dismiss();
                 try {
-                    dataFilterEkstrakulikuler = response.body().getFilterEkstrakurikuler();
+                    dataFilterEkstrakurikuler = response.body().getFilterEkstrakurikuler();
                     if (!response.body().getKode().equals("0")){
-                        for (int i = 0; i < dataFilterEkstrakulikuler.size(); i++) {
-                            filterEkstrakulikulerModels.add(new FilterEkstrakulikulerModel(dataFilterEkstrakulikuler.get(i).getNama_ekstrakurikuler(), dataFilterEkstrakulikuler.get(i).getId_master_ekstrakurikuler()));
-                            filterEkstrakulikulerAdapter = new FilterEkstrakulikulerAdapter(filterEkstrakulikulerModels, onFilterClickListener);
-                            rvEkstrakulikuler.setAdapter(filterEkstrakulikulerAdapter);
+                        for (int i = 0; i < dataFilterEkstrakurikuler.size(); i++) {
+                            filterEkstrakurikulerModels.add(new FilterEkstrakurikulerModel(dataFilterEkstrakurikuler.get(i).getNama_ekstrakurikuler(), dataFilterEkstrakurikuler.get(i).getId_master_ekstrakurikuler()));
+                            filterEkstrakurikulerAdapter = new FilterEkstrakurikulerAdapter(filterEkstrakurikulerModels, onFilterClickListener);
+                            rvEkstrakurikuler.setAdapter(filterEkstrakurikulerAdapter);
                         }
                     }
                 } catch (Exception e){
@@ -204,7 +196,7 @@ public class FilterActivity extends AppCompatActivity {
                 intent.putExtra("biayaAwal", dariAwal.getText().toString()+" "+sampaiAwal.getText().toString());
                 intent.putExtra("biayaBulanan", dariBulanan.getText().toString()+" "+sampaiBulanan.getText().toString());
                 intent.putExtra("ketersediaanFasilitas", hasilFasilitas.getText());
-                intent.putExtra("ketersediaanEkstrakulikuler", hasilEkstrakulikuler.getText());
+                intent.putExtra("ketersediaanEkstrakurikuler", hasilEkstrakurikuler.getText());
                 setResult(RESULT_OK, intent);
                 finish();
             }

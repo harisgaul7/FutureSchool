@@ -1,9 +1,9 @@
 package haris.org.futureschool.model;
 
-public class EkstrakulikulerModel {
+public class EkstrakurikulerModel {
     private String nama_ekstrakurikuler, gambar_ekstrakurikuler;
 
-    public EkstrakulikulerModel(String nama_ekstrakurikuler, String gambar_ekstrakurikuler) {
+    public EkstrakurikulerModel(String nama_ekstrakurikuler, String gambar_ekstrakurikuler) {
         this.nama_ekstrakurikuler = nama_ekstrakurikuler;
         this.gambar_ekstrakurikuler = gambar_ekstrakurikuler;
     }

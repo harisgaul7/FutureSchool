@@ -17,6 +17,11 @@ public interface ApiRequest {
     @GET("tampilan_sekolah")
     Call<ResponseModel> getDataTampilanSekolah();
 
+    // Untuk mendapatkan data tampilan sekolah by id
+    @FormUrlEncoded
+    @POST("tampilan_sekolah_id")
+    Call<ResponseModel> getDataTampilanSekolahById(@Field("id_sekolah") int id_sekolah);
+
     // Untuk mendapatkan data jurusan rekomendasi
     @FormUrlEncoded
     @POST("tampil_jurusan")
@@ -32,10 +37,10 @@ public interface ApiRequest {
     @POST("tampil_fasilitas")
     Call<ResponseModel> getDataFasilitas(@Field("id_sekolah") int sekolah_id);
 
-    // Untuk mendapatkan data ekstrakulikuler dari id sekolah
+    // Untuk mendapatkan data ekstrakurikuler dari id sekolah
     @FormUrlEncoded
-    @POST("tampil_ekstrakulikuler")
-    Call<ResponseModel> getDataEkstrakulikuler(@Field("id_sekolah") int sekolah_id);
+    @POST("tampil_ekstrakurikuler")
+    Call<ResponseModel> getDataEkstrakurikuler(@Field("id_sekolah") int sekolah_id);
 
     // Untuk mendapatkan data prestasi dari id sekolah
     @FormUrlEncoded
@@ -66,20 +71,19 @@ public interface ApiRequest {
     @GET("filter_fasilitas")
     Call<ResponseModel> getFilterFasilitas();
 
-    // Untuk mendapatkan data filter ekstrakulikuler
-    @GET("filter_ekstrakulikuler")
-    Call<ResponseModel> getFilterEkstrakulikuler();
+    // Untuk mendapatkan data filter ekstrakurikuler
+    @GET("filter_ekstrakurikuler")
+    Call<ResponseModel> getFilterEkstrakurikuler();
 
     // Untuk mendapatkan filter sekolah
     @FormUrlEncoded
     @POST("filter_sekolah")
-    Call<ResponseModel> getFilterSekolah(@Field("id_master_fasilitas") String fasilitas);
-
-    @FormUrlEncoded
-    @POST("api/insert_terhubung")
-    Call<ResponseModel> sendDataKepuasan(@Field("kpsn_petugas") int petugas,
-                                         @Field("kpsn_ptn") int pertanyaan,
-                                         @Field("kpsn_lynn") int layanan,
-                                         @Field("kpsn_jwb") int jawaban,
-                                         @Field("kpsn_klhn") String keluhan);
+    Call<ResponseModel> getFilterSekolah(@Field("sortir") String sortir,
+                                         @Field("tingkat") String tingkat,
+                                         @Field("awal_kecil") int awal_kecil,
+                                         @Field("awal_besar") int awal_besar,
+                                         @Field("bulanan_kecil") int bulanan_kecil,
+                                         @Field("bulanan_besar") int bulanan_besar,
+                                         @Field("id_master_fasilitas") String fasilitas,
+                                         @Field("id_master_ekstrakurikuler") String ekstrakurikuler);
 }

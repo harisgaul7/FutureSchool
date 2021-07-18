@@ -9,31 +9,46 @@ public class ResponseModel {
     private List<TampilanSekolahModel> hasilTampilanSekolah;
     private List<DeskripsiJurusanModel> hasilDeskripsiJurusan;
     private List<FasilitasModel> hasilFasilitas;
-    private List<EkstrakulikulerModel> hasilEkstrakurikuler;
+    private List<EkstrakurikulerModel> hasilEkstrakurikuler;
     private List<PrestasiModel> hasilPrestasi;
     private List<GuruModel> hasilGuru;
     private List<BiayaModel> hasilBiaya;
     private List<KontakModel> hasilKontak;
     private List<TampilanSekolahModel> hasilCariSekolah;
-    private List<FilterEkstrakulikulerModel> filterEkstrakurikuler;
+    private List<FilterEkstrakurikulerModel> filterEkstrakurikuler;
     private List<FilterFasilitasModel> filterFasilitas;
     private List<TampilanSekolahModel> hasilFilterSekolah;
-    private List<IdFasilitasModel> hasilIdSekolah;
+    private List<FilterEkstrakurikulerSekolahModel> hasilFilterEkstrakurikulerSekolah;
+    private List<FilterFasilitasSekolahModel> hasilFilterFasilitasSekolah;
+    private List<FilterBiayaAwalModel> hasilFilterAwalSekolah;
+    private List<FilterBiayaBulananModel> hasilFilterBulananSekolah;
 
     public ResponseModel(String kode, String pesan) {
         this.kode = kode;
         this.pesan = pesan;
     }
 
-    public List<IdFasilitasModel> getHasilIdSekolah() {
-        return hasilIdSekolah;
+    public List<FilterEkstrakurikulerSekolahModel> getHasilFilterEkstrakurikulerSekolah() {
+        return hasilFilterEkstrakurikulerSekolah;
+    }
+
+    public List<FilterFasilitasSekolahModel> getHasilFilterFasilitasSekolah() {
+        return hasilFilterFasilitasSekolah;
+    }
+
+    public List<FilterBiayaAwalModel> getHasilFilterAwalSekolah() {
+        return hasilFilterAwalSekolah;
+    }
+
+    public List<FilterBiayaBulananModel> getHasilFilterBulananSekolah() {
+        return hasilFilterBulananSekolah;
     }
 
     public List<TampilanSekolahModel> getHasilFilterSekolah() {
         return hasilFilterSekolah;
     }
 
-    public List<FilterEkstrakulikulerModel> getFilterEkstrakurikuler() {
+    public List<FilterEkstrakurikulerModel> getFilterEkstrakurikuler() {
         return filterEkstrakurikuler;
     }
 
@@ -61,7 +76,7 @@ public class ResponseModel {
         return hasilPrestasi;
     }
 
-    public List<EkstrakulikulerModel> getHasilEkstrakurikuler() {
+    public List<EkstrakurikulerModel> getHasilEkstrakurikuler() {
         return hasilEkstrakurikuler;
     }
 

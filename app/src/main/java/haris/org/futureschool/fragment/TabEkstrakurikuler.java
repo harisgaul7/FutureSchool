@@ -14,54 +14,51 @@ import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import haris.org.futureschool.R;
-import haris.org.futureschool.adapter.EkstrakulikulerAdapter;
-import haris.org.futureschool.adapter.FasilitasAdapter;
+import haris.org.futureschool.adapter.EkstrakurikulerAdapter;
 import haris.org.futureschool.database.ApiRequest;
-import haris.org.futureschool.database.BaseUrl;
 import haris.org.futureschool.database.Retroserver;
-import haris.org.futureschool.model.EkstrakulikulerModel;
-import haris.org.futureschool.model.FasilitasModel;
+import haris.org.futureschool.model.EkstrakurikulerModel;
 import haris.org.futureschool.model.ResponseModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TabEkstrakulikuler extends Fragment {
+public class TabEkstrakurikuler extends Fragment {
 
-    private RecyclerView rv_ekstrakulikuler;
-    private EkstrakulikulerAdapter ekstrakulikulerAdapter;
-    private ArrayList<EkstrakulikulerModel> ekstrakulikulerModels;
-    private List<EkstrakulikulerModel> dataEkstrakulikuler = new ArrayList<>();
+    private RecyclerView rv_ekstrakurikuler;
+    private EkstrakurikulerAdapter ekstrakurikulerAdapter;
+    private ArrayList<EkstrakurikulerModel> ekstrakurikulerModels;
+    private List<EkstrakurikulerModel> dataEkstrakurikuler = new ArrayList<>();
     private ProgressDialog pd;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tab_ekstrakulikuer, container, false);
+        View view = inflater.inflate(R.layout.tab_ekstrakurikuler, container, false);
 
         pd = new ProgressDialog(getActivity());
         pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
 
-        rv_ekstrakulikuler = (RecyclerView)view.findViewById(R.id.rv_ekstrakulikuler);
+        rv_ekstrakurikuler = (RecyclerView)view.findViewById(R.id.rv_ekstrakurikuler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        rv_ekstrakulikuler.setLayoutManager(layoutManager);
+        rv_ekstrakurikuler.setLayoutManager(layoutManager);
 
-        ekstrakulikulerModels = new ArrayList<>();
+        ekstrakurikulerModels = new ArrayList<>();
 
         if (getArguments().getString("id") != null){
             ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
-            Call<ResponseModel> send = api.getDataEkstrakulikuler(Integer.parseInt(getArguments().getString("id")));
+            Call<ResponseModel> send = api.getDataEkstrakurikuler(Integer.parseInt(getArguments().getString("id")));
             send.enqueue(new Callback<ResponseModel>() {
                 @Override
                 public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                     pd.dismiss();
                     try {
-                        dataEkstrakulikuler = response.body().getHasilEkstrakurikuler();
+                        dataEkstrakurikuler = response.body().getHasilEkstrakurikuler();
                         if (!response.body().getKode().equals("0")){
-                            for (int i = 0; i < dataEkstrakulikuler.size(); i++) {
-                                ekstrakulikulerModels.add(new EkstrakulikulerModel(response.body().getHasilEkstrakurikuler().get(i).getNama_ekstrakurikuler(), response.body().getHasilEkstrakurikuler().get(i).getGambar_ekstrakurikuler()));
-                                ekstrakulikulerAdapter = new EkstrakulikulerAdapter(ekstrakulikulerModels);
-                                rv_ekstrakulikuler.setAdapter(ekstrakulikulerAdapter);
+                            for (int i = 0; i < dataEkstrakurikuler.size(); i++) {
+                                ekstrakurikulerModels.add(new EkstrakurikulerModel(response.body().getHasilEkstrakurikuler().get(i).getNama_ekstrakurikuler(), response.body().getHasilEkstrakurikuler().get(i).getGambar_ekstrakurikuler()));
+                                ekstrakurikulerAdapter = new EkstrakurikulerAdapter(ekstrakurikulerModels);
+                                rv_ekstrakurikuler.setAdapter(ekstrakurikulerAdapter);
                             }
                         }
                     } catch (Exception e){

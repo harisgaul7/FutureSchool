@@ -31,7 +31,7 @@ import haris.org.futureschool.fragment.Tab1Fragment;
 import haris.org.futureschool.fragment.Tab2Fragment;
 import haris.org.futureschool.fragment.TabBiaya;
 import haris.org.futureschool.fragment.TabDaftarGuru;
-import haris.org.futureschool.fragment.TabEkstrakulikuler;
+import haris.org.futureschool.fragment.TabEkstrakurikuler;
 import haris.org.futureschool.fragment.TabFasilitas;
 import haris.org.futureschool.fragment.TabGaleri;
 import haris.org.futureschool.fragment.TabJurusan;
@@ -129,7 +129,7 @@ public class SekolahActivity extends AppCompatActivity {
         tabAdapter.addFragmentBundle(new TabRiwayatSekolah(), "Riwayat Sekolah", argsBundle);
         tabAdapter.addFragmentBundle(new TabJurusan(), "Jurusan", argsBundle);
         tabAdapter.addFragmentBundle(new TabFasilitas(), "Fasilitas", argsBundle);
-        tabAdapter.addFragmentBundle(new TabEkstrakulikuler(), "Ekstrakulikuler", argsBundle);
+        tabAdapter.addFragmentBundle(new TabEkstrakurikuler(), "Ekstrakurikuler", argsBundle);
         tabAdapter.addFragmentBundle(new TabPrestasi(), "Prestasi", argsBundle);
         tabAdapter.addFragmentBundle(new TabDaftarGuru(), "Daftar Guru", argsBundle);
         tabAdapter.addFragmentBundle(new TabBiaya(), "Biaya", argsBundle);

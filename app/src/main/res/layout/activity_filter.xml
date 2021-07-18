@@ -342,7 +342,6 @@
 
         <TextView
             android:id="@+id/hasil_filter_fasilitas"
-            android:text="Hasil"
             android:textColor="#E1A709"
             android:gravity="start|center"
             android:textStyle="bold"
@@ -354,7 +353,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:text="KETERSEDIAAN EKSTRAKULIKULER"
+            android:text="KETERSEDIAAN EKSTRAKURIKULER"
             android:textColor="#E1A709"
             android:gravity="start|center"
             android:textStyle="bold"
@@ -365,7 +364,7 @@
             android:layout_height="wrap_content"/>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_filter_ekstrakulikuler"
+            android:id="@+id/rv_filter_ekstrakurikuler"
             android:layout_marginBottom="10dp"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
@@ -373,8 +372,7 @@
             android:layout_height="120dp"/>
 
         <TextView
-            android:id="@+id/hasil_filter_ekstrakulikuler"
-            android:text="Hasil"
+            android:id="@+id/hasil_filter_ekstrakurikuler"
             android:textColor="#E1A709"
             android:gravity="start|center"
             android:textStyle="bold"
