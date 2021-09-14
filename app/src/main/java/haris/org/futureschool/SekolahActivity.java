@@ -82,7 +82,7 @@ public class SekolahActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent x = new Intent(SekolahActivity.this, MainActivity.class);
-                x.putExtra("id", "ada");
+                x.putExtra("id", getIntent().getStringExtra("id"));
                 startActivity(x);
             }
         });

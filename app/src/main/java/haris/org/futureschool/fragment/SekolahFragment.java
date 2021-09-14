@@ -65,6 +65,8 @@ public class SekolahFragment extends Fragment {
     private List<FilterBiayaAwalModel> filterBiayaAwalModels = new ArrayList<>();
     private List<FilterBiayaBulananModel> filterBiayaBulananModels = new ArrayList<>();
 
+    // Untuk mengubah status sekolah dari tampilan biasa menjadi tampilan perbandingan
+    private String perbandingan = "tampilkan";
 
     private ProgressDialog pd;
 
@@ -72,6 +74,15 @@ public class SekolahFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_sekolah, container, false);
+
+        // Jika sekolah sedang dibandingkan
+        if (getArguments() != null){
+            Bundle arguments = getArguments();
+            // Bandingkan sebelum adanya di MainActivity
+            String id_sekolah = arguments.getString("bandingkan_sebelum");
+            this.perbandingan = "bandingkan "+id_sekolah;
+            Toast.makeText(getActivity(), "Sekolah yang akan dibandingkan = "+id_sekolah, Toast.LENGTH_SHORT).show();
+        }
 
         filter = (LinearLayout)view.findViewById(R.id.ll_filter);
         filter.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +133,7 @@ public class SekolahFragment extends Fragment {
                             dataTampilanSekolah = response.body().getHasilCariSekolah();
                             if (!response.body().getKode().equals("0")){
                                 for (int i =0; i<dataTampilanSekolah.size(); i++){
-                                    sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), jarak, dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah()));
+                                    sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
                                     adapter = new SekolahAdapter(sekolahModelArrayList);
                                     rv.setAdapter(adapter);
                                 }
@@ -181,7 +192,7 @@ public class SekolahFragment extends Fragment {
                     dataTampilanSekolah = response.body().getHasilTampilanSekolah();
                     if (!response.body().getKode().equals("0")){
                         for (int i =0; i<dataTampilanSekolah.size(); i++){
-                            sekolahModelArrayList.add(new TampilanSekolahModel(response.body().getHasilTampilanSekolah().get(i).getId_sekolah(), url+response.body().getHasilTampilanSekolah().get(i).getGambar_sekolah(), response.body().getHasilTampilanSekolah().get(i).getNama_sekolah(), response.body().getHasilTampilanSekolah().get(i).getAlamat_sekolah(), response.body().getHasilTampilanSekolah().get(i).getDeskripsi_sekolah(), jarak, response.body().getHasilTampilanSekolah().get(i).getAkreditasi_sekolah(),response.body().getHasilTampilanSekolah().get(i).getVisi_misi_sekolah(), response.body().getHasilTampilanSekolah().get(i).getKurikulum_sekolah(), response.body().getHasilTampilanSekolah().get(i).getSlide_sekolah()));
+                            sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
                             adapter = new SekolahAdapter(sekolahModelArrayList);
                             rv.setAdapter(adapter);
                         }
@@ -366,7 +377,7 @@ public class SekolahFragment extends Fragment {
                                                     dataTampilanSekolah = response.body().getHasilTampilanSekolah();
                                                     if (!response.body().getKode().equals("0")){
                                                         for (int i =0; i<dataTampilanSekolah.size(); i++){
-                                                            sekolahModelArrayList.add(new TampilanSekolahModel(response.body().getHasilTampilanSekolah().get(i).getId_sekolah(), url+response.body().getHasilTampilanSekolah().get(i).getGambar_sekolah(), response.body().getHasilTampilanSekolah().get(i).getNama_sekolah(), response.body().getHasilTampilanSekolah().get(i).getAlamat_sekolah(), response.body().getHasilTampilanSekolah().get(i).getDeskripsi_sekolah(), jarak, response.body().getHasilTampilanSekolah().get(i).getAkreditasi_sekolah(),response.body().getHasilTampilanSekolah().get(i).getVisi_misi_sekolah(), response.body().getHasilTampilanSekolah().get(i).getKurikulum_sekolah(), response.body().getHasilTampilanSekolah().get(i).getSlide_sekolah()));
+                                                            sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
                                                             adapter = new SekolahAdapter(sekolahModelArrayList);
                                                             rv.setAdapter(adapter);
                                                         }

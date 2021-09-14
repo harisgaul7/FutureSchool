@@ -10,11 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.siyamed.shapeimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
+import haris.org.futureschool.PerbandinganActivity;
 import haris.org.futureschool.R;
 import haris.org.futureschool.library.DownloadImageTask;
 import haris.org.futureschool.SekolahActivity;
@@ -52,18 +54,34 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.SekolahV
         sekolahViewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), SekolahActivity.class);
+                if (dataList.get(sekolahViewHolder.getAdapterPosition()).getStatus_sekolah().equals("tampilkan")){
+                    Intent intent = new Intent(view.getContext(), SekolahActivity.class);
 
-                intent.putExtra("id", dataList.get(sekolahViewHolder.getAdapterPosition()).getId_sekolah());
-                intent.putExtra("nama", dataList.get(sekolahViewHolder.getAdapterPosition()).getNama_sekolah());
-                intent.putExtra("alamat", dataList.get(sekolahViewHolder.getAdapterPosition()).getAlamat_sekolah());
-                intent.putExtra("akreditasi", dataList.get(sekolahViewHolder.getAdapterPosition()).getAkreditasi_sekolah());
-                intent.putExtra("deskripsi", dataList.get(sekolahViewHolder.getAdapterPosition()).getDeskripsi_sekolah());
-                intent.putExtra("visi_misi", dataList.get(sekolahViewHolder.getAdapterPosition()).getVisi_misi_sekolah());
-                intent.putExtra("kurikulum", dataList.get(sekolahViewHolder.getAdapterPosition()).getKurikulum_sekolah());
-                intent.putExtra("slide", dataList.get(sekolahViewHolder.getAdapterPosition()).getSlide_sekolah());
+                    intent.putExtra("id", dataList.get(sekolahViewHolder.getAdapterPosition()).getId_sekolah());
+                    intent.putExtra("nama", dataList.get(sekolahViewHolder.getAdapterPosition()).getNama_sekolah());
+                    intent.putExtra("alamat", dataList.get(sekolahViewHolder.getAdapterPosition()).getAlamat_sekolah());
+                    intent.putExtra("akreditasi", dataList.get(sekolahViewHolder.getAdapterPosition()).getAkreditasi_sekolah());
+                    intent.putExtra("deskripsi", dataList.get(sekolahViewHolder.getAdapterPosition()).getDeskripsi_sekolah());
+                    intent.putExtra("visi_misi", dataList.get(sekolahViewHolder.getAdapterPosition()).getVisi_misi_sekolah());
+                    intent.putExtra("kurikulum", dataList.get(sekolahViewHolder.getAdapterPosition()).getKurikulum_sekolah());
+                    intent.putExtra("slide", dataList.get(sekolahViewHolder.getAdapterPosition()).getSlide_sekolah());
 
-                ((Activity) context).startActivityForResult(intent, 1);
+                    ((Activity) context).startActivityForResult(intent, 1);
+                }
+
+                // Menuju tempat perbandingan
+                else if (dataList.get(sekolahViewHolder.getAdapterPosition()).getStatus_sekolah().contains("bandingkan")){
+                    Intent i = new Intent(view.getContext(), PerbandinganActivity.class);
+
+                    String id[] = dataList.get(sekolahViewHolder.getAdapterPosition()).getStatus_sekolah().split(" ");
+
+                    i.putExtra("sekolah_awal", id[1]);
+                    i.putExtra("sekolah_akhir", dataList.get(sekolahViewHolder.getAdapterPosition()).getId_sekolah());
+
+                    ((Activity) context).startActivityForResult(i, 1);
+                }
+
+
             }
         });
     }

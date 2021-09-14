@@ -1,11 +1,15 @@
 package haris.org.futureschool;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.github.aakira.expandablelayout.Utils;
 
@@ -14,16 +18,22 @@ import java.util.List;
 
 import haris.org.futureschool.adapter.JurusanAdapter;
 import haris.org.futureschool.adapter.PerbandinganAdapter;
+import haris.org.futureschool.adapter.TabAdapter;
+import haris.org.futureschool.fragment.TabBiaya;
+import haris.org.futureschool.fragment.TabDaftarGuru;
+import haris.org.futureschool.fragment.TabEkstrakurikuler;
+import haris.org.futureschool.fragment.TabFasilitas;
+import haris.org.futureschool.fragment.TabJurusan;
+import haris.org.futureschool.fragment.TabPrestasi;
+import haris.org.futureschool.fragment.TabRiwayatSekolah;
 import haris.org.futureschool.model.ExpandableModel;
 import haris.org.futureschool.model.InboxModel;
 
 public class PerbandinganActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private PerbandinganAdapter inboxAdapter;
-    private ArrayList<InboxModel>inboxModels;
-    RecyclerView.LayoutManager RecyclerViewLayoutManager;
-    LinearLayoutManager HorizontalLayout;
+    private TabAdapter tabAdapter;
+    private TabLayout tabLayout;
+    private ViewPager viewPager, viewPager2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,38 +41,28 @@ public class PerbandinganActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_perbandingan);
 
-        recyclerView = (RecyclerView)findViewById(R.id.rv_perbandingan);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        Intent intent = getIntent();
+        Toast.makeText(this, "Sekolah dengan id "+intent.getStringExtra("sekolah_awal")+" akan dibandingkan dengan sekolah "+intent.getStringExtra("sekolah_akhir"), Toast.LENGTH_SHORT).show();
 
-        // Kepentingan horizontal
-        RecyclerViewLayoutManager = new LinearLayoutManager(this);
-        HorizontalLayout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        viewPager = findViewById(R.id.view_pager_sekolah);
 
-        inboxModels = new ArrayList<>();
+        tabLayout = findViewById(R.id.tab_layout_sekolah);
 
-        inboxModels.add(new InboxModel(1, "SMKF Ikasari Pekanbaru", "Penawaran Beasiswa", "Dalam rangka memenuhi niat kami memajukan pendidikan di Indonesia, khususnya bagi calon siswa yang ber", "15 Jun", "Promo", R.drawable.promo));
-        inboxAdapter = new PerbandinganAdapter(inboxModels);
-        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
+        tabAdapter = new TabAdapter(getSupportFragmentManager());
 
-        inboxModels.add(new InboxModel(2, "SD Al Ulum Pekanbaru", "Diskon Biaya Masuk", "Bapak Ibu calon murid yang kami hormati, berkaitan dengan kondisi bencana non alam yang sedang ", "14 Jun", "Promo", R.drawable.promo));
-        inboxAdapter = new PerbandinganAdapter(inboxModels);
-        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
+        Bundle argsBundle = new Bundle();
+        argsBundle.putString("id",intent.getStringExtra("sekolah_awal"));
 
-        inboxModels.add(new InboxModel(3, "Developer Future School", "Fitur Baru", "Hai calon murid masa depan, kami baru saja meluncurkan fitur baru, lho! Sekarang kamu bisa melakukan pendaftaran melalui fitur daftar ketika melihat sekolah yang kamu inginkan", "13 Jun", "Info", R.drawable.ic_info_black_24dp));
-        inboxAdapter = new PerbandinganAdapter(inboxModels);
-        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
+        tabAdapter.addFragmentBundle(new TabJurusan(), "Jurusan", argsBundle);
+        tabAdapter.addFragmentBundle(new TabFasilitas(), "Fasilitas", argsBundle);
+        tabAdapter.addFragmentBundle(new TabEkstrakurikuler(), "Ekstrakurikuler", argsBundle);
+        tabAdapter.addFragmentBundle(new TabPrestasi(), "Prestasi", argsBundle);
+        tabAdapter.addFragmentBundle(new TabDaftarGuru(), "Daftar Guru", argsBundle);
+        tabAdapter.addFragmentBundle(new TabBiaya(), "Biaya", argsBundle);
 
-        inboxModels.add(new InboxModel(4, "Developer Future School", "Fitur Baru", "Hai calon murid masa depan, kami baru saja meluncurkan fitur baru, lho! Sekarang kamu bisa melakukan pendaftaran melalui fitur daftar ketika melihat sekolah yang kamu inginkan", "13 Jun", "Info", R.drawable.ic_info_black_24dp));
-        inboxAdapter = new PerbandinganAdapter(inboxModels);
-        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-        recyclerView.setLayoutManager(HorizontalLayout);
-        recyclerView.setAdapter(inboxAdapter);
+        viewPager.setAdapter(tabAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        viewPager2 = findViewById(R.id.view_pager_sekolah2);
     }
 }

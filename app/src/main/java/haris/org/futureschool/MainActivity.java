@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import haris.org.futureschool.fragment.AkunFragment;
 import haris.org.futureschool.fragment.BerandaFragment;
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         Intent intent = getIntent();
 
         if (intent.hasExtra("id")) {
-            loadFragmentUtama(new SekolahFragment());
+            loadFragmentUtamaWithMessage(new SekolahFragment(), intent.getStringExtra("id"));
+//            Toast.makeText(this, "Pesan sudah disampaikan = "+intent.getStringExtra("id"), Toast.LENGTH_SHORT).show();
         }
 
         btnNavView = findViewById(R.id.bn_main);
@@ -64,6 +66,17 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 
     private boolean loadFragmentUtama(Fragment fr){
         if (fr != null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, fr).commit();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean loadFragmentUtamaWithMessage(Fragment fr, String id_sekolah){
+        if (fr != null){
+            Bundle arguments = new Bundle();
+            arguments.putString("bandingkan_sebelum" , id_sekolah);
+            fr.setArguments(arguments);
             getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, fr).commit();
             return true;
         }
