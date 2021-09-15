@@ -78,16 +78,20 @@ public class SekolahActivity extends AppCompatActivity {
             }
         });
 
+        // Untuk memasukkan nama sekolah ke perbandingan, ini ditaruh duluan
+        namaSekolah = findViewById(R.id.txt_detail_nama);
+
         perbandingan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent x = new Intent(SekolahActivity.this, MainActivity.class);
                 x.putExtra("id", getIntent().getStringExtra("id"));
+                x.putExtra("nama_sekolah", namaSekolah.getText().toString());
                 startActivity(x);
             }
         });
 
-        namaSekolah = findViewById(R.id.txt_detail_nama);
+
         alamatSekolah = findViewById(R.id.txt_detail_alamat);
         akreditasiSekolah = findViewById(R.id.txt_detail_akreditasi);
         likeSekolah = findViewById(R.id.txt_jumlah_like);
@@ -118,8 +122,8 @@ public class SekolahActivity extends AppCompatActivity {
 
         modulSlideGambar(dataSlide);
 
-        viewPager = findViewById(R.id.view_pager_sekolah);
         tabLayout = findViewById(R.id.tab_layout_sekolah);
+        viewPager = findViewById(R.id.view_pager_sekolah);
 
         tabAdapter = new TabAdapter(getSupportFragmentManager());
 

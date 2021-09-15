@@ -26,55 +26,27 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:weightSum="1.0"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_weight=".5"
-                android:layout_height="0dip">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_weight=".5"
                     android:layout_width="match_parent"
-                    android:layout_height="0dip">
+                    android:layout_height="match_parent">
 
-                    <haris.org.futureschool.library.HeightWrappingViewPager
+                    <haris.org.futureschool.library.WrapContentHeightViewPager
                         android:layout_width="match_parent"
                         android:id="@+id/view_pager_sekolah"
+                        android:isScrollContainer="false"
                         android:layout_height="match_parent">
-                    </haris.org.futureschool.library.HeightWrappingViewPager>
+                    </haris.org.futureschool.library.WrapContentHeightViewPager>
 
                 </LinearLayout>
             </ScrollView>
-
-            <LinearLayout
-                android:background="#90135DD8"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"/>
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_weight=".5"
-                android:layout_height="0dip">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight=".5"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dip">
-
-                    <haris.org.futureschool.library.HeightWrappingViewPager
-                        android:layout_width="match_parent"
-                        android:id="@+id/view_pager_sekolah2"
-                        android:layout_height="match_parent">
-                    </haris.org.futureschool.library.HeightWrappingViewPager>
-
-                </LinearLayout>
-            </ScrollView>
-
         </LinearLayout>
 
     </LinearLayout>

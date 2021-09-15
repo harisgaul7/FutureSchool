@@ -73,10 +73,12 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.SekolahV
                 else if (dataList.get(sekolahViewHolder.getAdapterPosition()).getStatus_sekolah().contains("bandingkan")){
                     Intent i = new Intent(view.getContext(), PerbandinganActivity.class);
 
-                    String id[] = dataList.get(sekolahViewHolder.getAdapterPosition()).getStatus_sekolah().split(" ");
+                    String id[] = dataList.get(sekolahViewHolder.getAdapterPosition()).getStatus_sekolah().split("=");
 
                     i.putExtra("sekolah_awal", id[1]);
+                    i.putExtra("nama_sekolah_awal", id[2]);
                     i.putExtra("sekolah_akhir", dataList.get(sekolahViewHolder.getAdapterPosition()).getId_sekolah());
+                    i.putExtra("nama_sekolah_akhir", dataList.get(sekolahViewHolder.getAdapterPosition()).getNama_sekolah());
 
                     ((Activity) context).startActivityForResult(i, 1);
                 }

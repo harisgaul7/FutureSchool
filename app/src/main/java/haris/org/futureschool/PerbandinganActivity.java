@@ -24,6 +24,7 @@ import haris.org.futureschool.fragment.TabDaftarGuru;
 import haris.org.futureschool.fragment.TabEkstrakurikuler;
 import haris.org.futureschool.fragment.TabFasilitas;
 import haris.org.futureschool.fragment.TabJurusan;
+import haris.org.futureschool.fragment.TabJurusanDouble;
 import haris.org.futureschool.fragment.TabPrestasi;
 import haris.org.futureschool.fragment.TabRiwayatSekolah;
 import haris.org.futureschool.model.ExpandableModel;
@@ -33,7 +34,7 @@ public class PerbandinganActivity extends AppCompatActivity {
 
     private TabAdapter tabAdapter;
     private TabLayout tabLayout;
-    private ViewPager viewPager, viewPager2;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,27 +43,18 @@ public class PerbandinganActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perbandingan);
 
         Intent intent = getIntent();
-        Toast.makeText(this, "Sekolah dengan id "+intent.getStringExtra("sekolah_awal")+" akan dibandingkan dengan sekolah "+intent.getStringExtra("sekolah_akhir"), Toast.LENGTH_SHORT).show();
 
         viewPager = findViewById(R.id.view_pager_sekolah);
-
         tabLayout = findViewById(R.id.tab_layout_sekolah);
-
         tabAdapter = new TabAdapter(getSupportFragmentManager());
 
         Bundle argsBundle = new Bundle();
-        argsBundle.putString("id",intent.getStringExtra("sekolah_awal"));
+        argsBundle.putString("id",intent.getStringExtra("sekolah_awal")+"="+intent.getStringExtra("sekolah_akhir"));
+        argsBundle.putString("nama",intent.getStringExtra("nama_sekolah_awal")+"="+intent.getStringExtra("nama_sekolah_akhir"));
 
-        tabAdapter.addFragmentBundle(new TabJurusan(), "Jurusan", argsBundle);
-        tabAdapter.addFragmentBundle(new TabFasilitas(), "Fasilitas", argsBundle);
-        tabAdapter.addFragmentBundle(new TabEkstrakurikuler(), "Ekstrakurikuler", argsBundle);
-        tabAdapter.addFragmentBundle(new TabPrestasi(), "Prestasi", argsBundle);
-        tabAdapter.addFragmentBundle(new TabDaftarGuru(), "Daftar Guru", argsBundle);
-        tabAdapter.addFragmentBundle(new TabBiaya(), "Biaya", argsBundle);
+        tabAdapter.addFragmentBundle(new TabJurusanDouble(), "Jurusan", argsBundle);
 
         viewPager.setAdapter(tabAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
-        viewPager2 = findViewById(R.id.view_pager_sekolah2);
     }
 }

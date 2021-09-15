@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 
         Intent intent = getIntent();
 
+        // Ini method untuk memilih sekolah yang akan dibandingkan
         if (intent.hasExtra("id")) {
-            loadFragmentUtamaWithMessage(new SekolahFragment(), intent.getStringExtra("id"));
+            loadFragmentUtamaWithMessage(new SekolahFragment(), intent.getStringExtra("id"), intent.getStringExtra("nama_sekolah"));
 //            Toast.makeText(this, "Pesan sudah disampaikan = "+intent.getStringExtra("id"), Toast.LENGTH_SHORT).show();
         }
 
@@ -72,10 +73,11 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         return false;
     }
 
-    private boolean loadFragmentUtamaWithMessage(Fragment fr, String id_sekolah){
+    private boolean loadFragmentUtamaWithMessage(Fragment fr, String id_sekolah, String nama_sekolah){
         if (fr != null){
             Bundle arguments = new Bundle();
             arguments.putString("bandingkan_sebelum" , id_sekolah);
+            arguments.putString("nama_bandingkan_sebelum" , nama_sekolah);
             fr.setArguments(arguments);
             getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, fr).commit();
             return true;

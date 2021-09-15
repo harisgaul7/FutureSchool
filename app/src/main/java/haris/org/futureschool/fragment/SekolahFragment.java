@@ -80,8 +80,10 @@ public class SekolahFragment extends Fragment {
             Bundle arguments = getArguments();
             // Bandingkan sebelum adanya di MainActivity
             String id_sekolah = arguments.getString("bandingkan_sebelum");
-            this.perbandingan = "bandingkan "+id_sekolah;
-            Toast.makeText(getActivity(), "Sekolah yang akan dibandingkan = "+id_sekolah, Toast.LENGTH_SHORT).show();
+            String nama_sekolah = arguments.getString("nama_bandingkan_sebelum");
+            // this.perbandingan akan dipakai di Sekolah Adapter
+            this.perbandingan = "bandingkan="+id_sekolah+"="+nama_sekolah;
+//            Toast.makeText(getActivity(), "Sekolah yang akan dibandingkan = "+id_sekolah, Toast.LENGTH_SHORT).show();
         }
 
         filter = (LinearLayout)view.findViewById(R.id.ll_filter);
