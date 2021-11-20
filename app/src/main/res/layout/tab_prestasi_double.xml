@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <TextView
+            android:id="@+id/txt_prestasi_sekolah_awal"
+            android:text="Prestasi"
+            android:textColor="#070E0A"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:collapseColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:background="#12A8E2"
+                android:layout_weight="1"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".59"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Perlombaan"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".1"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Juara"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".2"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Tingkat"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".11"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Tahun"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tabel_daftar_prestasi"
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/ditengah"
+        android:background="#0DDD7F"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <TextView
+            android:id="@+id/txt_prestasi_sekolah_akhir"
+            android:text="Prestasi"
+            android:textColor="#070E0A"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:collapseColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:background="#12A8E2"
+                android:layout_weight="1"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".59"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Perlombaan"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".1"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Juara"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".2"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Tingkat"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:layout_weight=".11"
+                    android:textSize="10dp"
+                    android:background="@drawable/cell_shape"
+                    android:textAlignment="center"
+                    android:text="Tahun"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tabel_daftar_prestasi2"
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

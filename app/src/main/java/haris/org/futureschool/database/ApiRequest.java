@@ -86,4 +86,9 @@ public interface ApiRequest {
                                          @Field("bulanan_besar") int bulanan_besar,
                                          @Field("id_master_fasilitas") String fasilitas,
                                          @Field("id_master_ekstrakurikuler") String ekstrakurikuler);
+
+    // Untuk dipakai mengambil daftar sekolah yang memiliki jurusan yang dimaksud
+    @FormUrlEncoded
+    @POST("ambil_id_sekolah_dari_jurusan")
+    Call<ResponseModel> getSekolahDariJurusan(@Field("id_jurusan") String id_jurusan);
 }

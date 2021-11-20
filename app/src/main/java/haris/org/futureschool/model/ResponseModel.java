@@ -22,6 +22,7 @@ public class ResponseModel {
     private List<FilterFasilitasSekolahModel> hasilFilterFasilitasSekolah;
     private List<FilterBiayaAwalModel> hasilFilterAwalSekolah;
     private List<FilterBiayaBulananModel> hasilFilterBulananSekolah;
+    private List<SekolahDariJurusanModel> hasilIdSekolah;
 
     public ResponseModel(String kode, String pesan) {
         this.kode = kode;
@@ -98,6 +99,10 @@ public class ResponseModel {
 
     public List<TopikRekomendasiModel> getHasilTopik() {
         return hasilTopik;
+    }
+
+    public List<SekolahDariJurusanModel> getHasilIdSekolah() {
+        return hasilIdSekolah;
     }
 
     public String getKode() {

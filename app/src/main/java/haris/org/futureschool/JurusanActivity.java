@@ -66,14 +66,16 @@ public class JurusanActivity extends AppCompatActivity {
                                 gg.setId(i);
                                 tampung.addView(gg);
 
+                                final Integer id = idJurusan.get(i);
+
                                 gg.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         if (gg.isChecked()){
-                                            cekbox.add(gg.getText().toString());
+                                            cekbox.add(String.valueOf(id));
                                         }
                                         else if (!gg.isChecked()){
-                                            cekbox.remove(gg.getText().toString());
+                                            cekbox.remove(String.valueOf(id));
                                         }
                                     }
                                 });
@@ -83,8 +85,14 @@ public class JurusanActivity extends AppCompatActivity {
                             hasil.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-//                                    Toast.makeText(JurusanActivity.this, "Hasil = \n"+cekbox.get(0), Toast.LENGTH_SHORT).show();
+                                    String kumpulan_id = "";
+
+                                    for (int i = 0; i < cekbox.size(); i++) {
+                                        kumpulan_id+=cekbox.get(i)+" ";
+                                    }
+
                                     Intent go = new Intent(view.getContext(), PilihKriteriaActivity.class);
+                                    go.putExtra("id", kumpulan_id);
                                     view.getContext().startActivity(go);
 
                                 }

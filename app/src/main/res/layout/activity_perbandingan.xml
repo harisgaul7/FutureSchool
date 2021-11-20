@@ -38,12 +38,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <haris.org.futureschool.library.WrapContentHeightViewPager
+                    <haris.org.futureschool.library.HeightWrappingViewPager
                         android:layout_width="match_parent"
                         android:id="@+id/view_pager_sekolah"
                         android:isScrollContainer="false"
                         android:layout_height="match_parent">
-                    </haris.org.futureschool.library.WrapContentHeightViewPager>
+                    </haris.org.futureschool.library.HeightWrappingViewPager>
 
                 </LinearLayout>
             </ScrollView>

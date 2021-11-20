@@ -402,25 +402,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Pilih fasilitas yang kamu butuhkan"
-                    android:textColor="#234234"
-                    android:layout_marginLeft="32dp"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--                <TextView-->
+<!--                    android:text="Pilih fasilitas yang kamu butuhkan"-->
+<!--                    android:textColor="#234234"-->
+<!--                    android:layout_marginLeft="32dp"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:fontFamily="monospace"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content" />-->
 
-                <LinearLayout
-                    android:id="@+id/ll_cb_fasilitas"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="26dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_cb_fasilitas"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginLeft="26dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
                 <TextView
-                    android:text="Seberapa penting kriteria fasilitas bagimu?"
+                    android:text="Seberapa penting  kelengkapan fasilitas bagimu?"
                     android:textColor="#234234"
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
@@ -473,25 +473,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Pilih ekstrakulikuler yang kamu butuhkan"
-                    android:textColor="#234234"
-                    android:layout_marginLeft="32dp"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--                <TextView-->
+<!--                    android:text="Pilih ekstrakulikuler yang kamu butuhkan"-->
+<!--                    android:textColor="#234234"-->
+<!--                    android:layout_marginLeft="32dp"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:fontFamily="monospace"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content" />-->
 
-                <LinearLayout
-                    android:id="@+id/ll_cb_ekstrakulikuler"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="26dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_cb_ekstrakulikuler"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginLeft="26dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
                 <TextView
-                    android:text="Seberapa penting kemampuan biaya bagimu?"
+                    android:text="Seberapa penting kelengkapan ekstrakulikuler bagimu?"
                     android:textColor="#234234"
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
