@@ -36,7 +36,7 @@ public class SekolahRekomendasiActivity extends AppCompatActivity {
     private ArrayList<RekomendasiModel> rekomendasiModels;
     private ArrayList<String> checklist, nilaiPersentase;
     private List tampung_jurusan;
-    private String id_jurusan, biaya;
+    private String id_jurusan = "", biaya;
     private double jumlah;
     private static final DecimalFormat df = new DecimalFormat("0.00");
     ProgressDialog pd;
@@ -61,12 +61,15 @@ public class SekolahRekomendasiActivity extends AppCompatActivity {
         if (getIntent().getStringArrayListExtra("persentase_checklist") != null){
             nilaiPersentase = getIntent().getStringArrayListExtra("persentase_checklist");
         }
-        if (getIntent().getStringExtra("id") != null){
-            id_jurusan = getIntent().getStringExtra("id");
-        }
+
         if (getIntent().getStringExtra("isi_biaya") != null){
             biaya = getIntent().getStringExtra("isi_biaya");
         }
+        if (getIntent().getStringExtra("id") != null){
+            id_jurusan = getIntent().getStringExtra("id");
+        }
+
+        Log.e("String", "Id = "+id_jurusan+" Biaya = "+biaya);
 
         jumlah = 0;
         for (int i = 0; i < checklist.size(); i++) {
@@ -77,7 +80,8 @@ public class SekolahRekomendasiActivity extends AppCompatActivity {
             double bobot = Double.parseDouble(nilaiPersentase.get(i))/jumlah*100;
             Log.e("Checklist", "Checklist = "+checklist.get(i)+" Percent = "+nilaiPersentase.get(i)+" Bobot = "+df.format(bobot));
         }
-        Log.e("String", "Id = "+id_jurusan+" Biaya = "+biaya);
+
+
 
         // Pecahkan daftar jurusan yang ada lalu cari sekolah yang mempunyai jurusan yang dimaksud
         String [] ambil_jurusan = id_jurusan.split(" ");

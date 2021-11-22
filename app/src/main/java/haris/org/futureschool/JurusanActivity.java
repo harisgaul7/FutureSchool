@@ -72,31 +72,14 @@ public class JurusanActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(View view) {
                                         if (gg.isChecked()){
-                                            cekbox.add(String.valueOf(id));
+                                            addCheckbox(String.valueOf(id));
                                         }
                                         else if (!gg.isChecked()){
-                                            cekbox.remove(String.valueOf(id));
+                                            removeCheckbox(String.valueOf(id));
                                         }
                                     }
                                 });
                             }
-
-                            Button hasil = findViewById(R.id.btn_penentuan);
-                            hasil.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    String kumpulan_id = "";
-
-                                    for (int i = 0; i < cekbox.size(); i++) {
-                                        kumpulan_id+=cekbox.get(i)+" ";
-                                    }
-
-                                    Intent go = new Intent(view.getContext(), PilihKriteriaActivity.class);
-                                    go.putExtra("id", kumpulan_id);
-                                    view.getContext().startActivity(go);
-
-                                }
-                            });
                         }
                     } catch (Exception t){
                         Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
@@ -114,5 +97,40 @@ public class JurusanActivity extends AppCompatActivity {
                 }
             });
         }
+
+        Button hasil = findViewById(R.id.btn_penentuan);
+        hasil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String kumpulan_id = "";
+
+                for (int i = 0; i < getCheckbox().size(); i++) {
+                    kumpulan_id+=getCheckbox().get(i)+" ";
+                }
+
+                Intent go = new Intent(view.getContext(), PilihKriteriaActivity.class);
+                go.putExtra("id", kumpulan_id);
+                view.getContext().startActivity(go);
+
+            }
+        });
+    }
+
+    private ArrayList<String> addCheckbox(String data){
+        if (!this.cekbox.contains(data)){
+            this.cekbox.add(data);
+        }
+        return this.cekbox;
+    }
+
+    private ArrayList<String> removeCheckbox(String data){
+        if (this.cekbox.contains(data)){
+            this.cekbox.remove(data);
+        }
+        return this.cekbox;
+    }
+
+    private ArrayList<String>  getCheckbox (){
+        return this.cekbox;
     }
 }

@@ -14,7 +14,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +41,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
     EditText input_biaya, input_daftar;
     Button sekolah;
     ProgressDialog pd;
-    String tampung_sekolah = "";
-    private ArrayList<String> isi_sekolah;
-
+    private ArrayList<String> isi_sekolah, kualitas_sekolah;
+    String id_sekolah;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pilih_kriteria);
 
         isi_sekolah = new ArrayList<>();
+        this.id_sekolah = "";
 
         pd = new ProgressDialog(PilihKriteriaActivity.this);
         pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
@@ -99,8 +101,6 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         // Untuk menampung checklist yang dipilih pengguna
         checklist = new ArrayList<>();
 
-
-
         lokasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,10 +121,47 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 if (kualitas.isChecked()){
                     tampung_kualitas.setVisibility(View.VISIBLE);
                     checklist.add("kualitas");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    kualitas_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getDataGuru(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                try {
+                                    pd.dismiss();
+                                    String daftar_kualitas = "";
+                                    if (!response.body().getKode().equals("0")){
+                                        for (int i = 0; i < response.body().getHasilGuru().size(); i++) {
+                                            daftar_kualitas+=response.body().getHasilGuru().get(i).getPendidikan_guru()+" ";
+                                        }
+                                        Log.d("ID Sekolah", "ID = "+getData().get(finalI));
+                                        addKualitas(Integer.parseInt(getData().get(finalI)), daftar_kualitas);
+                                    }
+                                } catch (Exception e){
+                                    Log.d("Error getDataGuru = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+e);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
                 else if (!kualitas.isChecked()){
                     tampung_kualitas.setVisibility(View.GONE);
                     checklist.remove("kualitas");
+                    removeKualitas();
                 }
             }
         });
@@ -488,13 +525,13 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 
                 Intent go = new Intent(PilihKriteriaActivity.this, SekolahRekomendasiActivity.class);
 
-                for (int i = 0; i < getData().size(); i++) {
-                    Log.d("ISI DATA", "Isi Data = "+getData().get(i));
-                }
-
                 // Amankan ID jurusan yang akan diteruskan ke proses perankingan sekolah yang paling cocok dengan calon siswa
                 if (getIntent().getStringExtra("id") != null){
                     go.putExtra("id", getIntent().getStringExtra("id"));
+                }
+
+                for (int i = 0; i < getData().size(); i++) {
+                    Log.d("Isi Get Prestasi", "Sekolah = "+getData().get(i)+" mendapat nilai sebesar = "+getKualitas().get(Integer.parseInt(getData().get(i))));
                 }
 
                 go.putStringArrayListExtra("isi_checklist", checklist);
@@ -608,6 +645,20 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 
     private ArrayList<String>  getData (){
         return this.isi_sekolah;
+    }
+
+    private ArrayList<String> addKualitas(int kunci, String data){
+        this.kualitas_sekolah.add(kunci, data);
+
+        return this.kualitas_sekolah;
+    }
+
+    private void removeKualitas(){
+        getKualitas().clear();
+    }
+
+    private ArrayList<String>  getKualitas (){
+        return this.kualitas_sekolah;
     }
 
 }
