@@ -20,6 +20,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -43,6 +44,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
     ProgressDialog pd;
     private ArrayList<String> isi_sekolah, kualitas_sekolah;
     String id_sekolah;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -135,11 +137,26 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                                     pd.dismiss();
                                     String daftar_kualitas = "";
                                     if (!response.body().getKode().equals("0")){
+                                        double nilai = 0;
                                         for (int i = 0; i < response.body().getHasilGuru().size(); i++) {
-                                            daftar_kualitas+=response.body().getHasilGuru().get(i).getPendidikan_guru()+" ";
+                                            if (response.body().getHasilGuru().get(i).getPendidikan_guru().equals("D3")){
+                                                nilai+=0.8;
+                                            }
+                                            else if (response.body().getHasilGuru().get(i).getPendidikan_guru().equals("S1")){
+                                                nilai+=1;
+                                            }
+                                            else if (response.body().getHasilGuru().get(i).getPendidikan_guru().equals("S2")){
+                                                nilai+=2;
+                                            }
+                                            else if (response.body().getHasilGuru().get(i).getPendidikan_guru().equals("S3")){
+                                                nilai+=3;
+                                            }
                                         }
-                                        Log.d("ID Sekolah", "ID = "+getData().get(finalI));
-                                        addKualitas(Integer.parseInt(getData().get(finalI)), daftar_kualitas);
+                                        // Tambahkan hasil rata rata penilaian kualitas guru
+                                        daftar_kualitas+=(df.format(nilai/response.body().getHasilGuru().size()));
+                                        // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
+                                        daftar_kualitas+=" "+getData().get(finalI);
+                                        addKualitas(daftar_kualitas);
                                     }
                                 } catch (Exception e){
                                     Log.d("Error getDataGuru = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+e);
@@ -530,8 +547,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                     go.putExtra("id", getIntent().getStringExtra("id"));
                 }
 
-                for (int i = 0; i < getData().size(); i++) {
-                    Log.d("Isi Get Prestasi", "Sekolah = "+getData().get(i)+" mendapat nilai sebesar = "+getKualitas().get(Integer.parseInt(getData().get(i))));
+                for (int i = 0; i < getKualitas().size(); i++) {
+                    Log.d("Isi Get Kualitas", "Sebesar = "+getKualitas().get(i));
                 }
 
                 go.putStringArrayListExtra("isi_checklist", checklist);
@@ -647,8 +664,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         return this.isi_sekolah;
     }
 
-    private ArrayList<String> addKualitas(int kunci, String data){
-        this.kualitas_sekolah.add(kunci, data);
+    private ArrayList<String> addKualitas(String data){
+        this.kualitas_sekolah.add(data);
 
         return this.kualitas_sekolah;
     }
