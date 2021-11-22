@@ -42,7 +42,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
     EditText input_biaya, input_daftar;
     Button sekolah;
     ProgressDialog pd;
-    private ArrayList<String> isi_sekolah, kualitas_sekolah;
+    private ArrayList<String> isi_sekolah, kualitas_sekolah, prestasi_sekolah;
     String id_sekolah;
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
@@ -189,6 +189,74 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 if (prestasi.isChecked()){
                     tampung_prestasi.setVisibility(View.VISIBLE);
                     checklist.add("prestasi");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    prestasi_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getDataPrestasi(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                try {
+                                    pd.dismiss();
+                                    String daftar_prestasi = "";
+                                    if (!response.body().getKode().equals("0")){
+                                        double nilai = 0;
+                                        for (int i = 0; i < response.body().getHasilPrestasi().size(); i++) {
+                                            String peringkat = response.body().getHasilPrestasi().get(i).getPeringkat_prestasi();
+                                            String tingkat = response.body().getHasilPrestasi().get(i).getTingkat_prestasi();
+                                            int nilai_peringkat = 0;
+                                            int nilai_tingkat = 0;
+
+                                            if (peringkat.equals("1")){
+                                                nilai_peringkat = 100;
+                                            }
+                                            else if (peringkat.equals("2")){
+                                                nilai_peringkat = 80;
+                                            }
+                                            else if (peringkat.equals("3")){
+                                                nilai_peringkat = 50;
+                                            }
+
+                                            switch (tingkat){
+                                                case "Internasional" : nilai_tingkat = 50;
+                                                break;
+                                                case "Nasional" : nilai_tingkat = 40;
+                                                break;
+                                                case "Provinsi" : nilai_tingkat = 30;
+                                                break;
+                                                case "Kabupaten" : nilai_tingkat = 20;
+                                                break;
+                                                case "Kecamatan" : nilai_tingkat = 10;
+                                                break;
+                                            }
+
+                                            nilai += (nilai_peringkat*nilai_tingkat);
+                                        }
+                                        // Tambahkan hasil rata rata prestasi sekolah
+                                        daftar_prestasi+=(df.format(nilai/response.body().getHasilPrestasi().size()));
+                                        // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
+                                        daftar_prestasi+=" "+getData().get(finalI);
+                                        addPrestasi(daftar_prestasi);
+                                    }
+                                } catch (Exception e){
+                                    Log.d("Error  Get Prestasi = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+e);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
                 else if (!prestasi.isChecked()){
                     tampung_prestasi.setVisibility(View.GONE);
@@ -549,6 +617,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 
                 for (int i = 0; i < getKualitas().size(); i++) {
                     Log.d("Isi Get Kualitas", "Sebesar = "+getKualitas().get(i));
+                    Log.d("Isi Get Prestasi", "Sebesar = "+getPrestasi().get(i));
                 }
 
                 go.putStringArrayListExtra("isi_checklist", checklist);
@@ -676,6 +745,20 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 
     private ArrayList<String>  getKualitas (){
         return this.kualitas_sekolah;
+    }
+
+    private ArrayList<String> addPrestasi(String data){
+        this.prestasi_sekolah.add(data);
+
+        return this.prestasi_sekolah;
+    }
+
+    private void removePrestasi(){
+        getPrestasi().clear();
+    }
+
+    private ArrayList<String>  getPrestasi (){
+        return this.prestasi_sekolah;
     }
 
 }
