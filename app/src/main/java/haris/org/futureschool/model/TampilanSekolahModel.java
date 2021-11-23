@@ -18,6 +18,11 @@ public class TampilanSekolahModel {
         this.jarak = jarak;
     }
 
+
+    public String getKoordinat_sekolah() {
+        return koordinat_sekolah;
+    }
+
     public String getVisi_misi_sekolah() {
         return visi_misi_sekolah;
     }
@@ -62,7 +67,4 @@ public class TampilanSekolahModel {
         return status_sekolah;
     }
 
-    public String getKoordinat_sekolah() {
-        return koordinat_sekolah;
-    }
 }

@@ -58,6 +58,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
     String id_sekolah;
     private static final DecimalFormat df = new DecimalFormat("0.00");
     double jumlah;
+    String [][] rumus;
 
     String peringkat_sekolah, nilai_sekolah;
 
@@ -901,6 +902,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         sekolah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // Mengatur nilai fuzzy dari biaya
                 if (checkBiaya(checklist).length() != 0){
                     String biaya = checkBiaya(checklist).replace(",", "");
@@ -947,36 +949,65 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 }
 
                 // Step 2 Moora, memasukkan semua nilai setiap atribut sesuai dengan klasifikasi fuzzynya
-                String [][] rumus = new String [getData().size()][checklist.size()];
+                rumus = new String [getData().size()][checklist.size()];
                 for (int i = 0; i < getData().size(); i++) {
                     for (int j = 0; j < checklist.size(); j++) {
                         if (checklist.get(j).equals("lokasi")){
-                            String ambil[] = getLokasi().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                            for (int k = 0; k < getLokasi().size(); k++) {
+                                String ambil[] = getLokasi().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+//                                    Log.d("Jumpa Lokasi", ambil[1]+" hasil = "+ambil[0]);
+                                }
+                            }
                         }
-                        else if (checklist.get(j).equals("kualitas")){
-                            String ambil[] = getKualitas().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                        if (checklist.get(j).equals("kualitas")){
+                            for (int k = 0; k < getKualitas().size(); k++) {
+                                String ambil[] = getKualitas().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+                                }
+                            }
                         }
-                        else if (checklist.get(j).equals("prestasi")){
-                            String ambil[] = getPrestasi().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                        if (checklist.get(j).equals("prestasi")){
+                            for (int k = 0; k < getPrestasi().size(); k++) {
+                                String ambil[] = getPrestasi().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+                                }
+                            }
                         }
-                        else if (checklist.get(j).equals("akreditasi")){
-                            String ambil[] = getAkreditasi().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                        if (checklist.get(j).equals("akreditasi")){
+                            for (int k = 0; k < getAkreditasi().size(); k++) {
+                                String ambil[] = getAkreditasi().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+                                }
+                            }
                         }
-                        else if (checklist.get(j).equals("biaya")){
-                            String ambil[] = getBiaya().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                        if (checklist.get(j).equals("biaya")){
+                            for (int k = 0; k < getBiaya().size(); k++) {
+                                String ambil[] = getBiaya().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+                                }
+                            }
                         }
-                        else if (checklist.get(j).equals("fasilitas")){
-                            String ambil[] = getFasilitas().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                        if (checklist.get(j).equals("fasilitas")){
+                            for (int k = 0; k < getFasilitas().size(); k++) {
+                                String ambil[] = getFasilitas().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+                                }
+                            }
                         }
-                        else if (checklist.get(j).equals("ekstrakurikuler")){
-                            String ambil[] = getEkstrakurikuler().get(i).split(" ");
-                            rumus[i][j] = ambil[0];
+                        if (checklist.get(j).equals("ekstrakurikuler")){
+                            for (int k = 0; k < getEkstrakurikuler().size(); k++) {
+                                String ambil[] = getEkstrakurikuler().get(k).split(" ");
+                                if (ambil[1].equals(getData().get(i))){
+                                    rumus[i][j] = ambil[0];
+                                }
+                            }
                         }
                     }
                 }
@@ -988,7 +1019,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 //                    for (int j = 0; j < rumus[i].length; j++) {
 //                        data += rumus[i][j] + " ";
 //                    }
-//                    Log.d("Detail", "Sekolah = "+getData().get(i)+" "+data);
+//                    Log.d("Hasil", "Sekolah = "+getData().get(i)+" "+data);
 //                }
 
                 // Step ketiga dan keempat, mendapatkan nilai X1 masing2 elemen dan mengalikannya dengan bobot
@@ -1029,12 +1060,12 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                     for (int j = 0; j < step_tiga[i].length-1; j++) {
                         semuanya += step_tiga[i][j];
                     }
-                    peringkat_sekolah += (int)(step_tiga[i][step_tiga[i].length-1])+" ";
+                    peringkat_sekolah += (int)(step_tiga[i][step_tiga[i].length-1])+"="+df.format(semuanya)+" ";
                     nilai_sekolah += df.format(semuanya)+" ";
 //                    Log.d("Peringkat", "Sekolah = "+step_tiga[i][step_tiga[i].length-1]+" Total = "+semuanya);
                 }
 
-                Log.d("Kirim", "Peringkat = "+peringkat_sekolah+" Nilai = "+nilai_sekolah);
+                Log.d("Kirim", "Peringkat = "+peringkat_sekolah);
                 Intent go = new Intent(PilihKriteriaActivity.this, SekolahRekomendasiActivity.class);
                 // Kirim hasil peringkat ke activity berikutnya
                 go.putExtra("peringkat", peringkat_sekolah);

@@ -121,29 +121,33 @@ public class SekolahFragment extends Fragment {
                         pd.dismiss();
                         try {
                             String url = new BaseUrl().GAMBAR_URL;
-                            // Kode untuk mengukur 2 jarak
-                            Location loc1 = new Location("");
-                            loc1.setLatitude(0.464971);
-                            loc1.setLongitude(101.347580);
-
-                            Location loc2 = new Location("");
-                            loc2.setLatitude(0.465429);
-                            loc2.setLongitude(101.373432);
-
-                            // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
-
-                            float jarak = loc1.distanceTo(loc2)/1000.0f;
 
                             dataTampilanSekolah = response.body().getHasilCariSekolah();
                             if (!response.body().getKode().equals("0")){
                                 for (int i =0; i<dataTampilanSekolah.size(); i++){
+                                    String lokasi = dataTampilanSekolah.get(i).getKoordinat_sekolah().replace(",", "");
+                                    String latlong[] = lokasi.split(" ");
+
+                                    // Kode untuk mengukur 2 jarak
+                                    Location loc1 = new Location("");
+                                    loc1.setLatitude(Double.parseDouble(latlong[0]));
+                                    loc1.setLongitude(Double.parseDouble(latlong[1]));
+
+                                    Location loc2 = new Location("");
+                                    loc2.setLatitude(0.47240675672083277);
+                                    loc2.setLongitude(101.35311354129196);
+
+                                    // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
+
+                                    float jarak = loc1.distanceTo(loc2)/1000.0f;
+
                                     sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
                                     adapter = new SekolahAdapter(sekolahModelArrayList);
                                     rv.setAdapter(adapter);
                                 }
                             }
                         } catch (Exception t){
-                            Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
+                            Log.d("Err Cari Sekolah = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
                         }
                     }
 
@@ -160,20 +164,6 @@ public class SekolahFragment extends Fragment {
             }
         });
 
-        // Kode untuk mengukur 2 jarak
-        Location loc1 = new Location("");
-        loc1.setLatitude(0.464971);
-        loc1.setLongitude(101.347580);
-
-        Location loc2 = new Location("");
-        loc2.setLatitude(0.465429);
-        loc2.setLongitude(101.373432);
-
-        float jarak = loc1.distanceTo(loc2);
-
-        // Ikasari : 0.478355, 101.370420
-//        Toast.makeText(getActivity(), "Jarak = "+jarak+" m", Toast.LENGTH_SHORT).show();
-
         ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
         Call<ResponseModel> send = api.getDataTampilanSekolah();
         send.enqueue(new Callback<ResponseModel>() {
@@ -182,27 +172,33 @@ public class SekolahFragment extends Fragment {
                 pd.dismiss();
                 try {
                     String url = new BaseUrl().GAMBAR_URL;
-                    // Kode untuk mengukur 2 jarak
-                    Location loc1 = new Location("");
-                    loc1.setLatitude(0.464971);
-                    loc1.setLongitude(101.347580);
-
-                    Location loc2 = new Location("");
-                    loc2.setLatitude(0.465429);
-                    loc2.setLongitude(101.373432);
-
-                    float jarak = loc1.distanceTo(loc2)/1000.0f;
 
                     dataTampilanSekolah = response.body().getHasilTampilanSekolah();
                     if (!response.body().getKode().equals("0")){
                         for (int i =0; i<dataTampilanSekolah.size(); i++){
+                            String lokasi = dataTampilanSekolah.get(i).getKoordinat_sekolah().replace(",", "");
+                            String latlong[] = lokasi.split(" ");
+
+                            // Kode untuk mengukur 2 jarak
+                            Location loc1 = new Location("");
+                            loc1.setLatitude(Double.parseDouble(latlong[0]));
+                            loc1.setLongitude(Double.parseDouble(latlong[1]));
+
+                            Location loc2 = new Location("");
+                            loc2.setLatitude(0.47240675672083277);
+                            loc2.setLongitude(101.35311354129196);
+
+                            // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
+
+                            float jarak = loc1.distanceTo(loc2)/1000.0f;
+
                             sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
                             adapter = new SekolahAdapter(sekolahModelArrayList);
                             rv.setAdapter(adapter);
                         }
                     }
                 } catch (Exception t){
-                    Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
+                    Log.d("Err List Sekolah = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
                 }
             }
 
@@ -240,8 +236,55 @@ public class SekolahFragment extends Fragment {
                 Log.d("Kelengkapan = ", sortir+"\n"+tingkat+"\n"+biayaAwal+"\n"+biayaBulanan+"\n"+ketersediaanFasilitas+"\n"+ketersediaanEkstrakurikuler);
 
                 if (sortir == null || tingkat == null || biayaAwal == null || biayaBulanan == null || ketersediaanFasilitas == null || ketersediaanEkstrakurikuler == null){
-                    // nanti set apabila kosong semua
-                    Toast.makeText(getContext(), "KOSONG CUY!", Toast.LENGTH_SHORT).show();
+                    // Jika filter dibatalkan, kembalikan tampilan sekolah seperti di awal
+                    ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                    Call<ResponseModel> send = api.getDataTampilanSekolah();
+                    send.enqueue(new Callback<ResponseModel>() {
+                        @Override
+                        public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                            pd.dismiss();
+                            try {
+                                String url = new BaseUrl().GAMBAR_URL;
+
+                                dataTampilanSekolah = response.body().getHasilTampilanSekolah();
+                                if (!response.body().getKode().equals("0")){
+                                    for (int i =0; i<dataTampilanSekolah.size(); i++){
+                                        String lokasi = dataTampilanSekolah.get(i).getKoordinat_sekolah().replace(",", "");
+                                        String latlong[] = lokasi.split(" ");
+
+                                        // Kode untuk mengukur 2 jarak
+                                        Location loc1 = new Location("");
+                                        loc1.setLatitude(Double.parseDouble(latlong[0]));
+                                        loc1.setLongitude(Double.parseDouble(latlong[1]));
+
+                                        Location loc2 = new Location("");
+                                        loc2.setLatitude(0.47240675672083277);
+                                        loc2.setLongitude(101.35311354129196);
+
+                                        // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
+
+                                        float jarak = loc1.distanceTo(loc2)/1000.0f;
+
+                                        sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
+                                        adapter = new SekolahAdapter(sekolahModelArrayList);
+                                        rv.setAdapter(adapter);
+                                    }
+                                }
+                            } catch (Exception t){
+                                Log.d("Err List Sekolah = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseModel> call, Throwable t) {
+                            new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Terjadi Kesalahan")
+                                    .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                    .show();
+
+                            Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                        }
+                    });
                 }
                 else {
 
@@ -367,27 +410,33 @@ public class SekolahFragment extends Fragment {
                                                 pd.dismiss();
                                                 try {
                                                     String url = new BaseUrl().GAMBAR_URL;
-                                                    // Kode untuk mengukur 2 jarak
-                                                    Location loc1 = new Location("");
-                                                    loc1.setLatitude(0.464971);
-                                                    loc1.setLongitude(101.347580);
-
-                                                    Location loc2 = new Location("");
-                                                    loc2.setLatitude(0.465429);
-                                                    loc2.setLongitude(101.373432);
-
-                                                    float jarak = loc1.distanceTo(loc2)/1000.0f;
 
                                                     dataTampilanSekolah = response.body().getHasilTampilanSekolah();
                                                     if (!response.body().getKode().equals("0")){
                                                         for (int i =0; i<dataTampilanSekolah.size(); i++){
+                                                            String lokasi = dataTampilanSekolah.get(i).getKoordinat_sekolah().replace(",", "");
+                                                            String latlong[] = lokasi.split(" ");
+
+                                                            // Kode untuk mengukur 2 jarak
+                                                            Location loc1 = new Location("");
+                                                            loc1.setLatitude(Double.parseDouble(latlong[0]));
+                                                            loc1.setLongitude(Double.parseDouble(latlong[1]));
+
+                                                            Location loc2 = new Location("");
+                                                            loc2.setLatitude(0.47240675672083277);
+                                                            loc2.setLongitude(101.35311354129196);
+
+                                                            // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
+
+                                                            float jarak = loc1.distanceTo(loc2)/1000.0f;
+
                                                             sekolahModelArrayList.add(new TampilanSekolahModel(dataTampilanSekolah.get(i).getId_sekolah(), url+dataTampilanSekolah.get(i).getGambar_sekolah(), dataTampilanSekolah.get(i).getNama_sekolah(), dataTampilanSekolah.get(i).getAlamat_sekolah(), dataTampilanSekolah.get(i).getDeskripsi_sekolah(), dataTampilanSekolah.get(i).getAkreditasi_sekolah(), dataTampilanSekolah.get(i).getVisi_misi_sekolah(), dataTampilanSekolah.get(i).getKurikulum_sekolah(), dataTampilanSekolah.get(i).getSlide_sekolah(), perbandingan, jarak));
                                                             adapter = new SekolahAdapter(sekolahModelArrayList);
                                                             rv.setAdapter(adapter);
                                                         }
                                                     }
                                                 } catch (Exception t){
-                                                    Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
+                                                    Log.d("Err filter Sekolah = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
                                                 }
                                             }
 
@@ -398,7 +447,7 @@ public class SekolahFragment extends Fragment {
                                                         .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
                                                         .show();
 
-                                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                                                Log.e("Err filter Sekolah", "Error terjadi, masalah = "+t);
                                             }
                                         });
                                     }
@@ -417,7 +466,7 @@ public class SekolahFragment extends Fragment {
                                     .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
                                     .show();
 
-                            Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            Log.e("Err filter Sekolah", "Error terjadi, masalah = "+t);
                         }
                     });
                 }
