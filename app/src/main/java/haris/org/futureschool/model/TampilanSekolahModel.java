@@ -1,7 +1,7 @@
 package haris.org.futureschool.model;
 
 public class TampilanSekolahModel {
-    private String id_sekolah, gambar_sekolah, nama_sekolah, alamat_sekolah, deskripsi_sekolah, akreditasi_sekolah, visi_misi_sekolah, kurikulum_sekolah, slide_sekolah, status_sekolah;
+    private String id_sekolah, gambar_sekolah, nama_sekolah, koordinat_sekolah, alamat_sekolah, deskripsi_sekolah, akreditasi_sekolah, visi_misi_sekolah, kurikulum_sekolah, slide_sekolah, status_sekolah;
     private double jarak;
 
     public TampilanSekolahModel(String id_sekolah, String gambar_sekolah, String nama_sekolah, String alamat_sekolah, String deskripsi_sekolah, String akreditasi_sekolah, String visi_misi_sekolah, String kurikulum_sekolah, String slide_sekolah, String status_sekolah, double jarak) {
@@ -60,5 +60,9 @@ public class TampilanSekolahModel {
 
     public String getStatus_sekolah() {
         return status_sekolah;
+    }
+
+    public String getKoordinat_sekolah() {
+        return koordinat_sekolah;
     }
 }

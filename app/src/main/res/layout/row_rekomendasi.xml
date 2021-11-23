@@ -79,7 +79,7 @@
                 android:layout_height="0dip" />
 
             <TextView
-                android:text="Lihat rincian skor"
+                android:text="Kunjungi Sekolah"
                 android:textColor="#EDEFF1"
                 android:layout_weight=".2"
                 android:textAlignment="center"

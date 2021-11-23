@@ -15,6 +15,7 @@ public class ResponseModel {
     private List<BiayaModel> hasilBiaya;
     private List<KontakModel> hasilKontak;
     private List<TampilanSekolahModel> hasilCariSekolah;
+    private List<TampilanSekolahModel> hasilAkreditasiSekolah;
     private List<FilterEkstrakurikulerModel> filterEkstrakurikuler;
     private List<FilterFasilitasModel> filterFasilitas;
     private List<TampilanSekolahModel> hasilFilterSekolah;
@@ -27,6 +28,11 @@ public class ResponseModel {
     public ResponseModel(String kode, String pesan) {
         this.kode = kode;
         this.pesan = pesan;
+    }
+
+
+    public List<TampilanSekolahModel> getHasilAkreditasiSekolah() {
+        return hasilAkreditasiSekolah;
     }
 
     public List<FilterEkstrakurikulerSekolahModel> getHasilFilterEkstrakurikulerSekolah() {

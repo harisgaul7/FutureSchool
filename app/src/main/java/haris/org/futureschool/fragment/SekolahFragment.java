@@ -130,6 +130,8 @@ public class SekolahFragment extends Fragment {
                             loc2.setLatitude(0.465429);
                             loc2.setLongitude(101.373432);
 
+                            // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
+
                             float jarak = loc1.distanceTo(loc2)/1000.0f;
 
                             dataTampilanSekolah = response.body().getHasilCariSekolah();

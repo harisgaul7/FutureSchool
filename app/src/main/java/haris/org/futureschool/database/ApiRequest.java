@@ -67,6 +67,11 @@ public interface ApiRequest {
     @POST("cari_sekolah")
     Call<ResponseModel> getCariSekolah(@Field("nama_sekolah") String sekolah_nama);
 
+    // Untuk mendapatkan data akreditasi sekolah
+    @FormUrlEncoded
+    @POST("akreditasi_sekolah")
+    Call<ResponseModel> getAkreditasiSekolah(@Field("id_sekolah") int sekolah_id);
+
     // Untuk mendapatkan data filter fasilitas
     @GET("filter_fasilitas")
     Call<ResponseModel> getFilterFasilitas();

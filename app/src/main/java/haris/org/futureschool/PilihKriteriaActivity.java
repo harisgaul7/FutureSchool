@@ -2,6 +2,7 @@ package haris.org.futureschool;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -21,30 +22,44 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import haris.org.futureschool.adapter.BiayaAdapter;
+import haris.org.futureschool.adapter.EkstrakurikulerAdapter;
+import haris.org.futureschool.adapter.FasilitasAdapter;
+import haris.org.futureschool.adapter.SekolahAdapter;
 import haris.org.futureschool.database.ApiRequest;
+import haris.org.futureschool.database.BaseUrl;
 import haris.org.futureschool.database.Retroserver;
+import haris.org.futureschool.model.BiayaModel;
+import haris.org.futureschool.model.EkstrakurikulerModel;
+import haris.org.futureschool.model.FasilitasModel;
 import haris.org.futureschool.model.ResponseModel;
+import haris.org.futureschool.model.TampilanSekolahModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class PilihKriteriaActivity extends AppCompatActivity {
 
-    ArrayList<String> cb_fasilitas, cb_ekstrakulikuler, checklist;
-    CheckBox lokasi, kualitas, prestasi, akreditasi, biaya, fasilitas, ekstrakulikuler;
-    LinearLayout tampung_lokasi, tampung_kualitas,tampung_prestasi,tampung_akreditasi, tampung_biaya, tampung_fasilitas, fasilitas_checkbox, tampung_ekstrakulikuler, ekstrakulikuler_checkbox;
-    SeekBar presentasi_lokasi, presentasi_kualitas, presentasi_prestasi, presentasi_akreditasi, presentasi_biaya, presentasi_fasilitas, presentasi_ekstrakulikuler;
-    TextView nilai_lokasi, nilai_kualitas, nilai_prestasi, nilai_akreditasi, nilai_biaya, nilai_fasilitas, nilai_ekstrakulikuler;
+    ArrayList<String> cb_fasilitas, cb_ekstrakurikuler, checklist;
+    CheckBox lokasi, kualitas, prestasi, akreditasi, biaya, fasilitas, ekstrakurikuler;
+    LinearLayout tampung_lokasi, tampung_kualitas,tampung_prestasi,tampung_akreditasi, tampung_biaya, tampung_fasilitas, fasilitas_checkbox, tampung_ekstrakurikuler, ekstrakurikuler_checkbox;
+    SeekBar presentasi_lokasi, presentasi_kualitas, presentasi_prestasi, presentasi_akreditasi, presentasi_biaya, presentasi_fasilitas, presentasi_ekstrakurikuler;
+    TextView nilai_lokasi, nilai_kualitas, nilai_prestasi, nilai_akreditasi, nilai_biaya, nilai_fasilitas, nilai_ekstrakurikuler;
     EditText input_biaya, input_daftar;
     Button sekolah;
     ProgressDialog pd;
-    private ArrayList<String> isi_sekolah, kualitas_sekolah, prestasi_sekolah;
+    private ArrayList<String> isi_sekolah, lokasi_sekolah, kualitas_sekolah, prestasi_sekolah, akreditasi_sekolah, biaya_sekolah, fasilitas_sekolah, ekstrakurikuler_sekolah, bobot;
     String id_sekolah;
     private static final DecimalFormat df = new DecimalFormat("0.00");
+    double jumlah;
+
+    String peringkat_sekolah, nilai_sekolah;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,7 +79,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         akreditasi = findViewById(R.id.cb_akreditasi);
         biaya = findViewById(R.id.cb_biaya);
         fasilitas = findViewById(R.id.cb_fasilitas);
-        ekstrakulikuler = findViewById(R.id.cb_ekstrakulikuler);
+        ekstrakurikuler = findViewById(R.id.cb_ekstrakurikuler);
 
         tampung_lokasi = findViewById(R.id.ll_lokasi);
         tampung_kualitas = findViewById(R.id.ll_kualitas);
@@ -73,8 +88,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         tampung_biaya = findViewById(R.id.ll_biaya);
         tampung_fasilitas = findViewById(R.id.ll_fasilitas);
 //        fasilitas_checkbox = findViewById(R.id.ll_cb_fasilitas);
-        tampung_ekstrakulikuler = findViewById(R.id.ll_ekstrakulikuler);
-//        ekstrakulikuler_checkbox = findViewById(R.id.ll_cb_ekstrakulikuler);
+        tampung_ekstrakurikuler = findViewById(R.id.ll_ekstrakurikuler);
+//        ekstrakurikuler_checkbox = findViewById(R.id.ll_cb_ekstrakurikuler);
 
         presentasi_lokasi = findViewById(R.id.sb_lokasi);
         presentasi_kualitas = findViewById(R.id.sb_kualitas);
@@ -82,7 +97,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         presentasi_akreditasi = findViewById(R.id.sb_akreditasi);
         presentasi_biaya = findViewById(R.id.sb_biaya);
         presentasi_fasilitas = findViewById(R.id.sb_fasilitas);
-        presentasi_ekstrakulikuler = findViewById(R.id.sb_ekstrakulikuler);
+        presentasi_ekstrakurikuler = findViewById(R.id.sb_ekstrakurikuler);
 
         nilai_lokasi = findViewById(R.id.tv_lokasi);
         nilai_kualitas = findViewById(R.id.tv_kualitas);
@@ -90,7 +105,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         nilai_akreditasi = findViewById(R.id.tv_akreditasi);
         nilai_biaya = findViewById(R.id.tv_biaya);
         nilai_fasilitas = findViewById(R.id.tv_fasilitas);
-        nilai_ekstrakulikuler = findViewById(R.id.tv_ekstrakulikuler);
+        nilai_ekstrakurikuler = findViewById(R.id.tv_ekstrakurikuler);
 
         input_biaya = findViewById(R.id.et_biaya_spp);
         input_daftar = findViewById(R.id.et_biaya_masuk);
@@ -98,7 +113,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         sekolah = findViewById(R.id.btn_kriteria);
 
         cb_fasilitas = new ArrayList<>();
-        cb_ekstrakulikuler = new ArrayList<>();
+        cb_ekstrakurikuler = new ArrayList<>();
 
         // Untuk menampung checklist yang dipilih pengguna
         checklist = new ArrayList<>();
@@ -109,6 +124,66 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 if (lokasi.isChecked()){
                     tampung_lokasi.setVisibility(View.VISIBLE);
                     checklist.add("lokasi");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    lokasi_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getAkreditasiSekolah(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                pd.dismiss();
+                                String daftar_lokasi = "";
+                                try {
+                                    if (!response.body().getKode().equals("0")){
+                                        for (int i =0; i<response.body().getHasilAkreditasiSekolah().size(); i++){
+                                            String bersihkan = response.body().getHasilAkreditasiSekolah().get(i).getKoordinat_sekolah().replace(" ", "");
+                                            String lokasi[] = bersihkan.split(",");
+                                            // Kode untuk mengukur 2 jarak
+                                            Location loc1 = new Location("");
+                                            loc1.setLatitude(Double.parseDouble(lokasi[0]));
+                                            loc1.setLongitude(Double.parseDouble(lokasi[1]));
+
+                                            Location loc2 = new Location("");
+                                            loc2.setLatitude(0.47240675672083277);
+                                            loc2.setLongitude(101.35311354129196);
+
+                                            // Lokasi UIN SUSKA = 0.47240675672083277, 101.35311354129196
+
+                                            float jarak = loc1.distanceTo(loc2)/1000.0f;
+
+                                            if (jarak < 5){
+                                                daftar_lokasi += "50";
+                                            }
+                                            else if (jarak >= 5 && jarak < 15){
+                                                daftar_lokasi += "30";
+                                            }
+                                            else if (jarak > 15){
+                                                daftar_lokasi += "20";
+                                            }
+                                        }
+                                        // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
+                                        daftar_lokasi+=" "+getData().get(finalI);
+                                        addLokasi(daftar_lokasi);
+                                    }
+                                } catch (Exception t){
+                                    Log.d("Error Lokasi = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
                 else if (!lokasi.isChecked()){
                     tampung_lokasi.setVisibility(View.GONE);
@@ -153,7 +228,21 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                                             }
                                         }
                                         // Tambahkan hasil rata rata penilaian kualitas guru
-                                        daftar_kualitas+=(df.format(nilai/response.body().getHasilGuru().size()));
+                                        if ((nilai/response.body().getHasilGuru().size()) < 1.1){
+                                            daftar_kualitas+="10";
+                                        }
+                                        else if ((nilai/response.body().getHasilGuru().size()) >= 1.1 && (nilai/response.body().getHasilGuru().size()) < 1.6){
+                                            daftar_kualitas+="20";
+                                        }
+                                        else if ((nilai/response.body().getHasilGuru().size()) >= 1.6 && (nilai/response.body().getHasilGuru().size()) < 2.1){
+                                            daftar_kualitas+="30";
+                                        }
+                                        else if ((nilai/response.body().getHasilGuru().size()) >= 2.1 && (nilai/response.body().getHasilGuru().size()) < 2.7){
+                                            daftar_kualitas+="40";
+                                        }
+                                        else if ((nilai/response.body().getHasilGuru().size()) >= 2.7){
+                                            daftar_kualitas+="50";
+                                        }
                                         // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
                                         daftar_kualitas+=" "+getData().get(finalI);
                                         addKualitas(daftar_kualitas);
@@ -236,7 +325,21 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                                             nilai += (nilai_peringkat*nilai_tingkat);
                                         }
                                         // Tambahkan hasil rata rata prestasi sekolah
-                                        daftar_prestasi+=(df.format(nilai/response.body().getHasilPrestasi().size()));
+                                        if ((nilai/response.body().getHasilPrestasi().size()) < 1500){
+                                            daftar_prestasi+="10";
+                                        }
+                                        else if ((nilai/response.body().getHasilPrestasi().size()) >= 1500 && (nilai/response.body().getHasilPrestasi().size()) < 1700){
+                                            daftar_prestasi+="20";
+                                        }
+                                        else if ((nilai/response.body().getHasilPrestasi().size()) >= 1700 && (nilai/response.body().getHasilPrestasi().size()) < 1900){
+                                            daftar_prestasi+="30";
+                                        }
+                                        else if ((nilai/response.body().getHasilPrestasi().size()) >= 1900 && (nilai/response.body().getHasilPrestasi().size()) < 2100){
+                                            daftar_prestasi+="40";
+                                        }
+                                        else if ((nilai/response.body().getHasilPrestasi().size()) >= 2100){
+                                            daftar_prestasi+="50";
+                                        }
                                         // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
                                         daftar_prestasi+=" "+getData().get(finalI);
                                         addPrestasi(daftar_prestasi);
@@ -261,6 +364,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 else if (!prestasi.isChecked()){
                     tampung_prestasi.setVisibility(View.GONE);
                     checklist.remove("prestasi");
+                    removePrestasi();
                 }
             }
         });
@@ -271,10 +375,60 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 if (akreditasi.isChecked()){
                     tampung_akreditasi.setVisibility(View.VISIBLE);
                     checklist.add("akreditasi");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    akreditasi_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getAkreditasiSekolah(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                pd.dismiss();
+                                String daftar_akreditasi = "";
+                                try {
+                                    if (!response.body().getKode().equals("0")){
+                                        for (int i =0; i<response.body().getHasilAkreditasiSekolah().size(); i++){
+                                            String akreditasi = response.body().getHasilAkreditasiSekolah().get(i).getAkreditasi_sekolah();
+                                            if (akreditasi.equals("A")){
+                                                daftar_akreditasi += "50";
+                                            }
+                                            else if (akreditasi.equals("B")){
+                                                daftar_akreditasi += "30";
+                                            }
+                                            else if (akreditasi.equals("C")){
+                                                daftar_akreditasi += "20";
+                                            }
+                                            else if (akreditasi.equals("TT")){
+                                                daftar_akreditasi += "10";
+                                            }
+                                        }
+                                        // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
+                                        daftar_akreditasi+=" "+getData().get(finalI);
+                                        addAkreditasi(daftar_akreditasi);
+                                    }
+                                } catch (Exception t){
+                                    Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+t);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
                 else if (!akreditasi.isChecked()){
                     tampung_akreditasi.setVisibility(View.GONE);
                     checklist.remove("akreditasi");
+                    removeAkreditasi();
                 }
             }
         });
@@ -285,10 +439,53 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 if (biaya.isChecked()){
                     tampung_biaya.setVisibility(View.VISIBLE);
                     checklist.add("biaya");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    biaya_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getDataBiaya(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                try {
+                                    pd.dismiss();
+                                    String daftar_biaya = "";
+                                    int total1 = 0;
+                                    int total2 = 0;
+                                    for (int i = 0; i < response.body().getHasilBiaya().size(); i++) {
+                                        if (response.body().getHasilBiaya().get(i).getJenis_biaya().equals("bulanan")){
+                                            total1 += Integer.parseInt(response.body().getHasilBiaya().get(i).getJumlah_biaya());
+                                        }
+                                        else if (response.body().getHasilBiaya().get(i).getJenis_biaya().equals("awal")){
+                                            total2 += Integer.parseInt(response.body().getHasilBiaya().get(i).getJumlah_biaya());
+                                        }
+                                    }
+                                    // Cocokkan rata-rata kualitas guru dengan id sekolah yang dimaksud
+                                    daftar_biaya += total1 +" "+ total2 +" "+getData().get(finalI);
+                                    addBiaya(daftar_biaya);
+                                } catch (Exception e){
+                                    Log.d("Error Biaya = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+e);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
                 else if (!biaya.isChecked()){
                     tampung_biaya.setVisibility(View.GONE);
                     checklist.remove("biaya");
+                    removeBiaya();
                 }
             }
         });
@@ -299,24 +496,120 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 if (fasilitas.isChecked()){
                     tampung_fasilitas.setVisibility(View.VISIBLE);
                     checklist.add("fasilitas");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    fasilitas_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getDataFasilitas(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                pd.dismiss();
+                                try {
+                                    String daftar_fasilitas = "";
+                                    if (!response.body().getKode().equals("0")){
+                                        // Cocokkan jumlah fasilitas dengan id sekolah yang dimaksud
+                                        int jumlah_fasilitas = response.body().getHasilFasilitas().size();
+                                        if (jumlah_fasilitas < 10){
+                                            daftar_fasilitas += "10";
+                                        }
+                                        else if (jumlah_fasilitas >= 10 && jumlah_fasilitas < 15){
+                                            daftar_fasilitas += "20";
+                                        }
+                                        else if (jumlah_fasilitas >= 15 && jumlah_fasilitas < 20){
+                                            daftar_fasilitas += "30";
+                                        }
+                                        else if (jumlah_fasilitas >= 20 && jumlah_fasilitas < 25){
+                                            daftar_fasilitas += "40";
+                                        }
+                                        else if (jumlah_fasilitas >= 25){
+                                            daftar_fasilitas += "50";
+                                        }
+                                        daftar_fasilitas += " " + getData().get(finalI);
+                                        addFasilitas(daftar_fasilitas);
+                                    }
+                                } catch (Exception e){
+                                    Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+e);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
                 else if (!fasilitas.isChecked()){
                     tampung_fasilitas.setVisibility(View.GONE);
                     checklist.remove("fasilitas");
+                    removeFasilitas();
                 }
             }
         });
 
-        ekstrakulikuler.setOnClickListener(new View.OnClickListener() {
+        ekstrakurikuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ekstrakulikuler.isChecked()){
-                    tampung_ekstrakulikuler.setVisibility(View.VISIBLE);
-                    checklist.add("ekstrakulikuler");
+                if (ekstrakurikuler.isChecked()){
+                    tampung_ekstrakurikuler.setVisibility(View.VISIBLE);
+                    checklist.add("ekstrakurikuler");
+
+                    // Kalau mau ambil data dari dalam onResponse, arraylist WAJIB dideklarasikan ulang
+                    ekstrakurikuler_sekolah = new ArrayList<>();
+                    for (int i = 0; i < getData().size(); i++) {
+                        ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
+                        Call<ResponseModel> send = api.getDataEkstrakurikuler(Integer.parseInt(getData().get(i)));
+                        final int finalI = i;
+                        send.enqueue(new Callback<ResponseModel>() {
+                            @Override
+                            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                                pd.dismiss();
+                                try {
+                                    String daftar_ekstrakurikuler = "";
+                                    if (!response.body().getKode().equals("0")){
+                                        // Cocokkan jumlah fasilitas dengan id sekolah yang dimaksud
+                                        int jumlah_ekstrakurikuler = response.body().getHasilEkstrakurikuler().size();
+                                        if (jumlah_ekstrakurikuler < 3){
+                                            daftar_ekstrakurikuler += "20";
+                                        }
+                                        else if (jumlah_ekstrakurikuler >= 3 && jumlah_ekstrakurikuler < 10){
+                                            daftar_ekstrakurikuler += "30";
+                                        }
+                                        else if (jumlah_ekstrakurikuler >= 10){
+                                            daftar_ekstrakurikuler += "50";
+                                        }
+                                        daftar_ekstrakurikuler += " " + getData().get(finalI);
+                                        addEkstrakurikuler(daftar_ekstrakurikuler);
+                                    }
+                                } catch (Exception e){
+                                    Log.d("Error = ", "Sepertinya anda terputus dari server atau server tidak diatur dengan benar. Masalah = "+e);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                                new SweetAlertDialog(PilihKriteriaActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Terjadi Kesalahan")
+                                        .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
+                                        .show();
+
+                                Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
+                            }
+                        });
+                    }
                 }
-                else if (!ekstrakulikuler.isChecked()){
-                    tampung_ekstrakulikuler.setVisibility(View.GONE);
-                    checklist.remove("ekstrakulikuler");
+                else if (!ekstrakurikuler.isChecked()){
+                    tampung_ekstrakurikuler.setVisibility(View.GONE);
+                    checklist.remove("ekstrakurikuler");
+                    removeEkstrakurikuler();
                 }
             }
         });
@@ -423,20 +716,20 @@ public class PilihKriteriaActivity extends AppCompatActivity {
             }
         });
 
-        presentasi_ekstrakulikuler.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        presentasi_ekstrakurikuler.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                nilai_ekstrakulikuler.setText(String.valueOf(presentasi_ekstrakulikuler.getProgress()+1));
+                nilai_ekstrakurikuler.setText(String.valueOf(presentasi_ekstrakurikuler.getProgress()+1));
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                nilai_ekstrakulikuler.setText(String.valueOf(presentasi_ekstrakulikuler.getProgress()+1));
+                nilai_ekstrakurikuler.setText(String.valueOf(presentasi_ekstrakurikuler.getProgress()+1));
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                nilai_ekstrakulikuler.setText(String.valueOf(presentasi_ekstrakulikuler.getProgress()+1));
+                nilai_ekstrakurikuler.setText(String.valueOf(presentasi_ekstrakurikuler.getProgress()+1));
             }
         });
 
@@ -557,21 +850,22 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 //            final CheckBox gg = new CheckBox(getApplicationContext());
 //            gg.setText("Aku angka "+i);
 //            gg.setId(i);
-//            ekstrakulikuler_checkbox.addView(gg);
+//            ekstrakurikuler_checkbox.addView(gg);
 //
 //            gg.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View view) {
 //                    if (gg.isChecked()){
-//                        cb_ekstrakulikuler.add(gg.getText().toString());
+//                        cb_ekstrakurikuler.add(gg.getText().toString());
 //                    }
 //                    else if (!gg.isChecked()){
-//                        cb_ekstrakulikuler.remove(gg.getText().toString());
+//                        cb_ekstrakurikuler.remove(gg.getText().toString());
 //                    }
 //                }
 //            });
 //        }
 
+        // Mencari ID sekolah yang terkait dengan Jurusan yang dipilih oleh calon siswa
         if (getIntent().getStringExtra("id") != null){
             String [] tampung_id = getIntent().getStringExtra("id").split(" ");
 
@@ -607,28 +901,144 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         sekolah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent go = new Intent(PilihKriteriaActivity.this, SekolahRekomendasiActivity.class);
-
-                // Amankan ID jurusan yang akan diteruskan ke proses perankingan sekolah yang paling cocok dengan calon siswa
-                if (getIntent().getStringExtra("id") != null){
-                    go.putExtra("id", getIntent().getStringExtra("id"));
-                }
-
-                for (int i = 0; i < getKualitas().size(); i++) {
-                    Log.d("Isi Get Kualitas", "Sebesar = "+getKualitas().get(i));
-                    Log.d("Isi Get Prestasi", "Sebesar = "+getPrestasi().get(i));
-                }
-
-                go.putStringArrayListExtra("isi_checklist", checklist);
-                go.putStringArrayListExtra("persentase_checklist", nilaiPersentase(checklist));
-
+                // Mengatur nilai fuzzy dari biaya
                 if (checkBiaya(checklist).length() != 0){
-                    go.putExtra("isi_biaya", checkBiaya(checklist));
+                    String biaya = checkBiaya(checklist).replace(",", "");
+                    String rincian[] = biaya.split(" ");
+                    for (int i = 0; i < getData().size(); i++) {
+                        String data_biaya[] = getBiaya().get(i).split(" ");
+                        double bulanan = Double.parseDouble(rincian[0]);
+                        double daftar = Double.parseDouble(rincian[1]);
+
+                        double persen_bulanan = bulanan/Double.parseDouble(data_biaya[0])*100;
+                        double persen_daftar = daftar/Double.parseDouble(data_biaya[1])*100;
+
+//                        Log.d("Rincian Biaya", "Bulanan = "+persen_bulanan+" Daftar = "+persen_daftar+" keduanya = "+((persen_bulanan+persen_daftar)/2));
+
+                        if (((persen_bulanan+persen_daftar)/2) < 100){
+                            getBiaya().set(i, "50 "+data_biaya[2]);
+                        }
+                        else if (((persen_bulanan+persen_daftar)/2) < 110 && ((persen_bulanan+persen_daftar)/2) >=100){
+                            getBiaya().set(i, "40 "+data_biaya[2]);
+                        }
+                        else if (((persen_bulanan+persen_daftar)/2) < 120 && ((persen_bulanan+persen_daftar)/2) >=110){
+                            getBiaya().set(i, "30 "+data_biaya[2]);
+                        }
+                        else if (((persen_bulanan+persen_daftar)/2) < 130 && ((persen_bulanan+persen_daftar)/2) >=120){
+                            getBiaya().set(i, "20 "+data_biaya[2]);
+                        }
+                        else if (((persen_bulanan+persen_daftar)/2) >=130){
+                            getBiaya().set(i, "10 "+data_biaya[2]);
+                        }
+                    }
                 }
-                else if (checkBiaya(checklist).length() == 0){
-                    go.putExtra("isi_biaya", "0");
+
+                jumlah = 0;
+                for (int i = 0; i < checklist.size(); i++) {
+                    jumlah+=Double.parseDouble(nilaiPersentase(checklist).get(i));
                 }
+
+                // Memasukkan bobot atribut kedalam arraylist
+                bobot = new ArrayList<>();
+                for (int i = 0; i < checklist.size(); i++) {
+                    double persentase = Double.parseDouble(nilaiPersentase(checklist).get(i))/jumlah*100;
+                    bobot.add(String.valueOf(persentase));
+//                    Log.d("Checklist", "Kriteria = "+checklist.get(i)+" Bobot = "+df.format(bobot));
+                }
+
+                // Step 2 Moora, memasukkan semua nilai setiap atribut sesuai dengan klasifikasi fuzzynya
+                String [][] rumus = new String [getData().size()][checklist.size()];
+                for (int i = 0; i < getData().size(); i++) {
+                    for (int j = 0; j < checklist.size(); j++) {
+                        if (checklist.get(j).equals("lokasi")){
+                            String ambil[] = getLokasi().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                        else if (checklist.get(j).equals("kualitas")){
+                            String ambil[] = getKualitas().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                        else if (checklist.get(j).equals("prestasi")){
+                            String ambil[] = getPrestasi().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                        else if (checklist.get(j).equals("akreditasi")){
+                            String ambil[] = getAkreditasi().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                        else if (checklist.get(j).equals("biaya")){
+                            String ambil[] = getBiaya().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                        else if (checklist.get(j).equals("fasilitas")){
+                            String ambil[] = getFasilitas().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                        else if (checklist.get(j).equals("ekstrakurikuler")){
+                            String ambil[] = getEkstrakurikuler().get(i).split(" ");
+                            rumus[i][j] = ambil[0];
+                        }
+                    }
+                }
+
+                // Hanya untuk keperluan visualisasi data berbentuk tabel
+//                String data;
+//                for (int i = 0; i < rumus.length; i++) {
+//                    data = "";
+//                    for (int j = 0; j < rumus[i].length; j++) {
+//                        data += rumus[i][j] + " ";
+//                    }
+//                    Log.d("Detail", "Sekolah = "+getData().get(i)+" "+data);
+//                }
+
+                // Step ketiga dan keempat, mendapatkan nilai X1 masing2 elemen dan mengalikannya dengan bobot
+                int jumlah = 0;
+                double pembagi = 0, step_akhir = 0;
+                String [] kumpul = new String[checklist.size()];
+                // Array penampung langkah ketiga, sisakan satu space untuk menyimpan id sekolah
+                double [][] step_tiga = new double[getData().size()][checklist.size()+1];
+                for (int i = 0; i < checklist.size(); i++) {
+                    kumpul[i] = "";
+                    jumlah = 0;
+                    for (int j = 0; j < getData().size(); j++) {
+                        jumlah += (Integer.parseInt(rumus[j][i])*Integer.parseInt(rumus[j][i]));
+                    }
+                    for (int j = 0; j < getData().size(); j++) {
+                        // Step ketiga
+                        pembagi = Double.parseDouble(rumus[j][i])/Math.sqrt(jumlah);
+
+                        // Step keempat
+                        double step_empat = (pembagi*Double.parseDouble(bobot.get(i)))/100;
+
+                        // Masukkan ke array penampung
+                        step_tiga[j][i] = step_empat;
+
+                        // Masukkan id sekolah di ujung
+                        step_tiga[j][checklist.size()] = Double.parseDouble(getData().get(j));
+
+//                        Log.d("Detail", "Sekolah = "+getData().get(j)+" Bagian = "+i+" step tiga = "+pembagi+" bobot = "+bobot.get(i)+" hasil = "+step_empat);
+                    }
+                }
+
+                // Step terakhir moora, mendapatkan peringkat sekolah dan mengirimkannya ke activity selanjutnya
+                double semuanya = 0;
+                peringkat_sekolah = "";
+                nilai_sekolah = "";
+                for (int i = 0; i < step_tiga.length; i++) {
+                    semuanya = 0;
+                    for (int j = 0; j < step_tiga[i].length-1; j++) {
+                        semuanya += step_tiga[i][j];
+                    }
+                    peringkat_sekolah += (int)(step_tiga[i][step_tiga[i].length-1])+" ";
+                    nilai_sekolah += df.format(semuanya)+" ";
+//                    Log.d("Peringkat", "Sekolah = "+step_tiga[i][step_tiga[i].length-1]+" Total = "+semuanya);
+                }
+
+                Log.d("Kirim", "Peringkat = "+peringkat_sekolah+" Nilai = "+nilai_sekolah);
+                Intent go = new Intent(PilihKriteriaActivity.this, SekolahRekomendasiActivity.class);
+                // Kirim hasil peringkat ke activity berikutnya
+                go.putExtra("peringkat", peringkat_sekolah);
+                go.putExtra("nilai", nilai_sekolah);
                 startActivity(go);
             }
         });
@@ -656,8 +1066,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
             if (daftar_checklist.get(i).equals("fasilitas")){
                 nilai.add(nilai_fasilitas.getText().toString());
             }
-            if (daftar_checklist.get(i).equals("ekstrakulikuler")){
-                nilai.add(nilai_ekstrakulikuler.getText().toString());
+            if (daftar_checklist.get(i).equals("ekstrakurikuler")){
+                nilai.add(nilai_ekstrakurikuler.getText().toString());
             }
         }
         return nilai;
@@ -733,6 +1143,20 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         return this.isi_sekolah;
     }
 
+    private ArrayList<String> addLokasi(String data){
+        this.lokasi_sekolah.add(data);
+
+        return this.lokasi_sekolah;
+    }
+
+    private void removeLokasi(){
+        getLokasi().clear();
+    }
+
+    private ArrayList<String>  getLokasi (){
+        return this.lokasi_sekolah;
+    }
+
     private ArrayList<String> addKualitas(String data){
         this.kualitas_sekolah.add(data);
 
@@ -759,6 +1183,63 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 
     private ArrayList<String>  getPrestasi (){
         return this.prestasi_sekolah;
+    }
+
+
+    private ArrayList<String> addAkreditasi(String data){
+        this.akreditasi_sekolah.add(data);
+
+        return this.akreditasi_sekolah;
+    }
+
+    private void removeAkreditasi(){
+        getAkreditasi().clear();
+    }
+
+    private ArrayList<String>  getAkreditasi (){
+        return this.akreditasi_sekolah;
+    }
+
+    private ArrayList<String> addBiaya(String data){
+        this.biaya_sekolah.add(data);
+
+        return this.biaya_sekolah;
+    }
+
+    private void removeBiaya(){
+        getBiaya().clear();
+    }
+
+    private ArrayList<String>  getBiaya (){
+        return this.biaya_sekolah;
+    }
+
+    private ArrayList<String> addFasilitas(String data){
+        this.fasilitas_sekolah.add(data);
+
+        return this.fasilitas_sekolah;
+    }
+
+    private void removeFasilitas(){
+        getFasilitas().clear();
+    }
+
+    private ArrayList<String>  getFasilitas (){
+        return this.fasilitas_sekolah;
+    }
+
+    private ArrayList<String> addEkstrakurikuler(String data){
+        this.ekstrakurikuler_sekolah.add(data);
+
+        return this.ekstrakurikuler_sekolah;
+    }
+
+    private void removeEkstrakurikuler(){
+        getEkstrakurikuler().clear();
+    }
+
+    private ArrayList<String>  getEkstrakurikuler (){
+        return this.ekstrakurikuler_sekolah;
     }
 
 }
