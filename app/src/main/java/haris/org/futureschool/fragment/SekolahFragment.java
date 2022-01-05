@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Set;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import haris.org.futureschool.LoginActivity;
 import haris.org.futureschool.R;
 import haris.org.futureschool.FilterActivity;
 import haris.org.futureschool.adapter.SekolahAdapter;
@@ -102,7 +103,7 @@ public class SekolahFragment extends Fragment {
         sekolahModelArrayList = new ArrayList<>();
 
         pd = new ProgressDialog(getActivity());
-        pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
+        pd.setMessage("Loading . . .\nMohon menunggu dengan sabar");
         pd.show();
 
         final EditText cari = (EditText)view.findViewById(R.id.et_pencarian);
@@ -173,7 +174,6 @@ public class SekolahFragment extends Fragment {
                 pd.dismiss();
                 try {
                     String url = new BaseUrl().GAMBAR_URL;
-
                     dataTampilanSekolah = response.body().getHasilTampilanSekolah();
                     if (!response.body().getKode().equals("0")){
                         for (int i =0; i<dataTampilanSekolah.size(); i++){

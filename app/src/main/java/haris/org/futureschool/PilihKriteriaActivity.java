@@ -74,7 +74,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         this.id_sekolah = "";
 
         pd = new ProgressDialog(PilihKriteriaActivity.this);
-        pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
+
 
         lokasi = findViewById(R.id.cb_lokasi);
         kualitas = findViewById(R.id.cb_kualitas);
@@ -907,7 +907,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         sekolah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                pd.setMessage("Loading . . .\nMohon menunggu dengan sabar");
+                pd.show();
                 // Mengatur nilai fuzzy dari biaya
                 if (checkBiaya(checklist).length() != 0){
                     String biaya = checkBiaya(checklist).replace(",", "");
@@ -1089,6 +1090,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 // Kirim hasil peringkat ke activity berikutnya
                 go.putExtra("data", data_kirim);
                 startActivity(go);
+                pd.dismiss();
             }
         });
     }

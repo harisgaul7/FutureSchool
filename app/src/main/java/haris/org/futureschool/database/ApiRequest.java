@@ -102,4 +102,12 @@ public interface ApiRequest {
     @POST("cek_login")
     Call<ResponseModel> getLoginData(@Field("email") String email,
                                      @Field("password") String password);
+
+    // Daftar akun siswa
+    @FormUrlEncoded
+    @POST("tambah_akun")
+    Call<ResponseModel> addAccount(@Field("nama_depan") String nama_depan,
+                                   @Field("nama_belakang") String nama_belakang,
+                                   @Field("email") String email,
+                                     @Field("password") String password);
 }

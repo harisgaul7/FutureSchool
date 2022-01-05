@@ -38,7 +38,7 @@ public class PilihTopikActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pilih_topik);
 
         pd = new ProgressDialog(PilihTopikActivity.this);
-        pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
+        pd.setMessage("Loading . . .\nMohon menunggu dengan sabar");
         pd.show();
 
         ApiRequest api = Retroserver.getClient().create(ApiRequest.class);

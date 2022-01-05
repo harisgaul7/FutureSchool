@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import haris.org.futureschool.database.ApiRequest;
 import haris.org.futureschool.database.Retroserver;
 import haris.org.futureschool.model.LoginModel;
@@ -57,13 +59,12 @@ public class LoginActivity extends AppCompatActivity {
                 pd.show();
 
                 if (android.util.Patterns.EMAIL_ADDRESS.matcher(user.getText().toString()).matches()){
-                    pd.dismiss();
-
                     ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
                     Call<ResponseModel> send = api.getLoginData(user.getText().toString(), pass.getText().toString());
                     send.enqueue(new Callback<ResponseModel>() {
                         @Override
                         public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                            pd.dismiss();
                             dataLogin = response.body().getHasilLogin();
                             if (!response.body().getKode().equals("0")){
                                 if (response.body().getKode().equals("1")){
@@ -71,20 +72,20 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent in = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(in);
                                 }
-                                else {
-                                    Toast.makeText(LoginActivity.this, "username/password salah", Toast.LENGTH_SHORT).show();
-                                }
                             }
                         }
 
                         @Override
                         public void onFailure(Call<ResponseModel> call, Throwable t) {
+                            pd.dismiss();
+                            new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Periksa Inputan!")
+                                    .setContentText("Email atau Password salah, silakan coba lagi!")
+                                    .show();
 
+                            Log.e("Keterangan Error", "Error terjadi, masalah = "+t);
                         }
                     });
-
-                    Intent i = new Intent(view.getContext(), MainActivity.class);
-                    view.getContext().startActivity(i);
                 }
                 else {
                     pd.dismiss();

@@ -2,7 +2,6 @@ package haris.org.futureschool;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,18 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import haris.org.futureschool.adapter.SekolahAdapter;
 import haris.org.futureschool.database.ApiRequest;
-import haris.org.futureschool.database.BaseUrl;
 import haris.org.futureschool.database.Retroserver;
 import haris.org.futureschool.model.ResponseModel;
-import haris.org.futureschool.model.TampilanSekolahModel;
-import haris.org.futureschool.session.SessionManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DaftarActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
     EditText depan, belakang, email, pass;
     TextView login;
     Button daftar;
@@ -32,7 +27,7 @@ public class DaftarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar);
+        setContentView(R.layout.activity_setting);
 
         depan = (EditText) findViewById(R.id.txt_nama_depan);
         belakang = (EditText) findViewById(R.id.txt_nama_belakang);
@@ -41,7 +36,7 @@ public class DaftarActivity extends AppCompatActivity {
         login = (TextView) findViewById(R.id.txt_login);
         daftar = (Button) findViewById(R.id.btn_daftar);
 
-        pd = new ProgressDialog(DaftarActivity.this);
+        pd = new ProgressDialog(SettingActivity.this);
         pd.setMessage("Loading . . .");
 
         final ApiRequest api = Retroserver.getClient().create(ApiRequest.class);
@@ -66,22 +61,22 @@ public class DaftarActivity extends AppCompatActivity {
                         pd.dismiss();
                         try {
                             if (response.body().getKode().equals("1")){
-                                Intent i = new Intent(DaftarActivity.this, LoginActivity.class);
+                                Intent i = new Intent(SettingActivity.this, LoginActivity.class);
                                 startActivity(i);
 
-                                new SweetAlertDialog(DaftarActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                new SweetAlertDialog(SettingActivity.this, SweetAlertDialog.SUCCESS_TYPE)
                                         .setTitleText("Berhasil!")
                                         .setContentText("Pendaftaran sukses, silakan login!")
                                         .show();
                             }
                             else if (response.body().getKode().equals("2")){
-                                new SweetAlertDialog(DaftarActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                new SweetAlertDialog(SettingActivity.this, SweetAlertDialog.ERROR_TYPE)
                                         .setTitleText("Kesalahan")
                                         .setContentText("Terjadi kesalahan saat pendaftaran, mohon cek inputan anda!")
                                         .show();
                             }
                         } catch (Exception t){
-                            new SweetAlertDialog(DaftarActivity.this, SweetAlertDialog.ERROR_TYPE)
+                            new SweetAlertDialog(SettingActivity.this, SweetAlertDialog.ERROR_TYPE)
                                     .setTitleText("Kesalahan")
                                     .setContentText("Email yang anda daftarkan sudah pernah digunakan, silakan gunakan email lain!")
                                     .show();
@@ -92,7 +87,7 @@ public class DaftarActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ResponseModel> call, Throwable t) {
-                        new SweetAlertDialog(DaftarActivity.this, SweetAlertDialog.ERROR_TYPE)
+                        new SweetAlertDialog(SettingActivity.this, SweetAlertDialog.ERROR_TYPE)
                                 .setTitleText("Terjadi Kesalahan")
                                 .setContentText("Terjadi kesalahan pada server, mohon cek koneksi anda!")
                                 .show();

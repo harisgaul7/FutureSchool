@@ -28,7 +28,7 @@
         android:gravity="center"
         android:textColor="#F7F5F5"
         android:layout_marginTop="2dp"
-        android:text="Temukan Sekolah Terbaikmu!"
+        android:text="Daftarkan dirimu!"
         android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -50,6 +50,24 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="#234233"
+                    android:layout_marginTop="8dp"
+                    android:text="PENDAFTARAN"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:theme="@style/AppTheme"
                 android:layout_marginTop="12dp"
@@ -57,15 +75,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:drawableLeft="@drawable/ic_username"
+                    android:drawableLeft="@drawable/ic_person"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nama Pengguna"
+                    android:hint="  Nama Depan"
+                    android:textColor="#F00"
+                    android:padding="8dp"
+                    android:completionHint="Nama Depan"
+                    android:textSize="13sp"
+                    android:inputType="text"
+                    android:id="@+id/txt_nama_depan"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="  Nama Belakang"
+                    android:textColor="#F00"
+                    android:padding="8dp"
+                    android:completionHint="Nama Belakang"
+                    android:textSize="13sp"
+                    android:inputType="text"
+                    android:id="@+id/txt_nama_belakang"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="  Email Pengguna"
                     android:textColor="#F00"
                     android:padding="8dp"
                     android:completionHint="Username"
                     android:textSize="13sp"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:id="@+id/txt_username"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -80,7 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:hint="Kata Sandi"
+                    android:hint="  Kata Sandi"
                     android:paddingLeft="12dp"
                     android:padding="8dp"
                     android:textSize="13sp"
@@ -97,9 +153,9 @@
                 android:background="@drawable/roundedbutton"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Login"
+                android:text="Daftar"
                 android:textColor="#F6FAF8"
-                android:id="@+id/btnLogin"/>
+                android:id="@+id/btn_daftar"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -111,18 +167,18 @@
                     android:gravity="center"
                     android:textColor="#234233"
                     android:layout_marginTop="8dp"
-                    android:text="Belum punya akun?"
+                    android:text="Sudah punya akun?"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/txt_daftar_akun"
+                    android:id="@+id/txt_login"
                     android:textAlignment="center"
                     android:gravity="center"
                     android:textColor="#14F3F3"
                     android:layout_marginTop="8dp"
-                    android:text="Daftar Disini"
+                    android:text="  Login Disini"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

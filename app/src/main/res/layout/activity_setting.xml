@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@drawable/bg_sipp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="1.0"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:src="@drawable/cogwheel"
+            android:layout_width="0dip"
+            android:layout_weight=".1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textAlignment="textStart"
+            android:textColor="#234554"
+            android:layout_marginTop="8dp"
+            android:text="  Ubah Profil"
+            android:textSize="30sp"
+            android:layout_width="0dip"
+            android:layout_weight=".8"
+            android:layout_height="match_parent"
+            android:gravity="start|center" />
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:adjustViewBounds="true"
+            android:padding="12dp"
+            android:src="@drawable/cancel" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:elevation="8dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="14dp"
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:paddingTop="26dp"
+            android:background="#F7F5F5"
+            android:paddingBottom="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="  Alamat"
+                    android:textColor="#F00"
+                    android:padding="8dp"
+                    android:completionHint="Alamat"
+                    android:textSize="13sp"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/txt_alamat"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_lokasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="  Koordinat"
+                    android:textColor="#F00"
+                    android:padding="8dp"
+                    android:completionHint="Koordinat"
+                    android:textSize="13sp"
+                    android:inputType="text"
+                    android:id="@+id/txt_koordinat"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/ic_alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="#234233"
+                    android:layout_marginTop="12dp"
+                    android:text="  Dapatkan lokasi"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="  Handphone"
+                    android:textColor="#F00"
+                    android:padding="8dp"
+                    android:completionHint="Handphone"
+                    android:textSize="13sp"
+                    android:inputType="phone"
+                    android:id="@+id/txt_username"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_pria"
+                    android:text="Pria"
+                    android:textColor="#050505"
+                    android:buttonTint="#0B0F0D"
+                    android:layout_width="0dip"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content" />
+
+                <CheckBox
+                    android:id="@+id/cb_wanita"
+                    android:text="Wanita"
+                    android:textColor="#050505"
+                    android:buttonTint="#0B0F0D"
+                    android:layout_width="0dip"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:theme="@style/AppTheme"
+                android:background="@drawable/roundedbutton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Simpan"
+                android:textColor="#F6FAF8"
+                android:id="@+id/btn_daftar"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

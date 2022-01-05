@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:drawableLeft="@drawable/ic_username"
+                    android:drawableLeft="@drawable/ic_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="  Email Pengguna"

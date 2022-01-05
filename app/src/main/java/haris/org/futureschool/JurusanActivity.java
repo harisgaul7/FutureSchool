@@ -41,7 +41,8 @@ public class JurusanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_jurusan);
 
         pd = new ProgressDialog(JurusanActivity.this);
-        pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
+        pd.setMessage("Loading . . .\nMohon menunggu dengan sabar");
+        pd.show();
 
         if (getIntent().getStringExtra("topik_id") != null){
             ApiRequest api = Retroserver.getClient().create(ApiRequest.class);

@@ -28,7 +28,7 @@ public class SessionManager {
 
     public void storeLogin(int id, String email, String nama){
         editor.putBoolean(IS_LOGIN, true);
-        editor.putInt(KEY_ID, id);
+        editor.putString(KEY_ID, String.valueOf(id));
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_FULLNAME, nama);
         editor.commit();
