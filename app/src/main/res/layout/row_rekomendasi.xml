@@ -79,6 +79,7 @@
                 android:layout_height="0dip" />
 
             <TextView
+                android:id="@+id/btn_kunjungi_sekolah"
                 android:text="Kunjungi Sekolah"
                 android:textColor="#EDEFF1"
                 android:layout_weight=".2"

@@ -96,4 +96,10 @@ public interface ApiRequest {
     @FormUrlEncoded
     @POST("ambil_id_sekolah_dari_jurusan")
     Call<ResponseModel> getSekolahDariJurusan(@Field("id_jurusan") String id_jurusan);
+
+    // Mengambil data login
+    @FormUrlEncoded
+    @POST("cek_login")
+    Call<ResponseModel> getLoginData(@Field("email") String email,
+                                     @Field("password") String password);
 }

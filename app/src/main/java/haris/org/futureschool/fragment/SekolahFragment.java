@@ -103,6 +103,7 @@ public class SekolahFragment extends Fragment {
 
         pd = new ProgressDialog(getActivity());
         pd.setMessage("Loading ...\nJika menunggu terlalu lama kemungkinan anda terputus dari server");
+        pd.show();
 
         final EditText cari = (EditText)view.findViewById(R.id.et_pencarian);
         final ImageView loop = (ImageView) view.findViewById(R.id.iv_loop);

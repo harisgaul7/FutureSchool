@@ -54,11 +54,12 @@ public class PilihKriteriaActivity extends AppCompatActivity {
     EditText input_biaya, input_daftar;
     Button sekolah;
     ProgressDialog pd;
-    private ArrayList<String> isi_sekolah, lokasi_sekolah, kualitas_sekolah, prestasi_sekolah, akreditasi_sekolah, biaya_sekolah, fasilitas_sekolah, ekstrakurikuler_sekolah, bobot;
+    private ArrayList<String> isi_sekolah, isi_accesory, lokasi_sekolah, kualitas_sekolah, prestasi_sekolah, akreditasi_sekolah, biaya_sekolah, fasilitas_sekolah, ekstrakurikuler_sekolah, bobot;
     String id_sekolah;
     private static final DecimalFormat df = new DecimalFormat("0.00");
     double jumlah;
     String [][] rumus;
+    String data_kirim[];
 
     String peringkat_sekolah, nilai_sekolah;
 
@@ -69,6 +70,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pilih_kriteria);
 
         isi_sekolah = new ArrayList<>();
+        isi_accesory = new ArrayList<>();
         this.id_sekolah = "";
 
         pd = new ProgressDialog(PilihKriteriaActivity.this);
@@ -880,6 +882,7 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                             if (!response.body().getKode().equals("0")){
                                 for (int i =0; i<response.body().getHasilIdSekolah().size(); i++){
                                     addData(response.body().getHasilIdSekolah().get(i).getId_sekolah());
+                                    addAccesory(response.body().getHasilIdSekolah().get(i).getId_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getNama_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getGambar_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getAlamat_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getAkreditasi_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getKurikulum_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getVisi_misi_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getDeskripsi_sekolah()+"="+response.body().getHasilIdSekolah().get(i).getSlide_sekolah());
                                 }
                             }
                         } catch (Exception t){
@@ -898,6 +901,8 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 });
             }
         }
+
+        // Ambil data gambar dan
 
         sekolah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1054,22 +1059,35 @@ public class PilihKriteriaActivity extends AppCompatActivity {
                 // Step terakhir moora, mendapatkan peringkat sekolah dan mengirimkannya ke activity selanjutnya
                 double semuanya = 0;
                 peringkat_sekolah = "";
-                nilai_sekolah = "";
+                double []nilai = new double[step_tiga.length];
+                int[]id_sekolah = new int[step_tiga.length];
                 for (int i = 0; i < step_tiga.length; i++) {
                     semuanya = 0;
                     for (int j = 0; j < step_tiga[i].length-1; j++) {
                         semuanya += step_tiga[i][j];
                     }
-                    peringkat_sekolah += (int)(step_tiga[i][step_tiga[i].length-1])+"="+df.format(semuanya)+" ";
-                    nilai_sekolah += df.format(semuanya)+" ";
+                    peringkat_sekolah += df.format(semuanya*10)+"="+(int)(step_tiga[i][step_tiga[i].length-1])+" ";
+                    nilai[i] = semuanya;
+                    id_sekolah[i] = (int)(step_tiga[i][step_tiga[i].length-1]);
 //                    Log.d("Peringkat", "Sekolah = "+step_tiga[i][step_tiga[i].length-1]+" Total = "+semuanya);
                 }
 
-                Log.d("Kirim", "Peringkat = "+peringkat_sekolah);
+                String [] detail = peringkat_sekolah.split(" ");
+
+                data_kirim = new String[detail.length];
+                for (int i = 0; i < detail.length; i++) {
+                    String pecahkan[] = detail[i].split("=");
+                    for (int j = 0; j < getAccesory().size(); j++) {
+                        String pecah[] = getAccesory().get(j).split("=");
+                        if (pecahkan[1].equals(pecah[0])){
+                            data_kirim[i] = pecah[1]+"="+pecah[0]+"="+pecahkan[0]+"="+pecah[2]+"="+pecah[3]+"="+pecah[4]+"="+pecah[5]+"="+pecah[6]+"="+pecah[7]+"="+pecah[8];
+                        }
+                    }
+                }
+
                 Intent go = new Intent(PilihKriteriaActivity.this, SekolahRekomendasiActivity.class);
                 // Kirim hasil peringkat ke activity berikutnya
-                go.putExtra("peringkat", peringkat_sekolah);
-                go.putExtra("nilai", nilai_sekolah);
+                go.putExtra("data", data_kirim);
                 startActivity(go);
             }
         });
@@ -1172,6 +1190,17 @@ public class PilihKriteriaActivity extends AppCompatActivity {
 
     private ArrayList<String>  getData (){
         return this.isi_sekolah;
+    }
+
+    private ArrayList<String> addAccesory(String data){
+        if (!this.isi_accesory.contains(data)){
+            this.isi_accesory.add(data);
+        }
+        return this.isi_accesory;
+    }
+
+    private ArrayList<String>  getAccesory (){
+        return this.isi_accesory;
     }
 
     private ArrayList<String> addLokasi(String data){

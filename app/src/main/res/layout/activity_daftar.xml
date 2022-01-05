@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@drawable/bg_sipp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:src="@drawable/education"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#F7F5F5"
+        android:layout_marginTop="8dp"
+        android:text="Future School"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#F7F5F5"
+        android:layout_marginTop="2dp"
+        android:text="Temukan Sekolah Terbaikmu!"
+        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.CardView
+        android:elevation="8dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="14dp"
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:paddingTop="26dp"
+            android:background="#F7F5F5"
+            android:paddingBottom="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama Pengguna"
+                    android:textColor="#F00"
+                    android:padding="8dp"
+                    android:completionHint="Username"
+                    android:textSize="13sp"
+                    android:inputType="text"
+                    android:id="@+id/txt_username"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/AppTheme"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:drawableLeft="@drawable/ic_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:hint="Kata Sandi"
+                    android:paddingLeft="12dp"
+                    android:padding="8dp"
+                    android:textSize="13sp"
+                    android:textColorHint="@color/colorAccent"
+                    android:completionHint="Password"
+                    android:id="@+id/txt_password"
+                    android:inputType="textPassword"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:theme="@style/AppTheme"
+                android:background="@drawable/roundedbutton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Login"
+                android:textColor="#F6FAF8"
+                android:id="@+id/btnLogin"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="#234233"
+                    android:layout_marginTop="8dp"
+                    android:text="Belum punya akun?"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txt_daftar_akun"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="#14F3F3"
+                    android:layout_marginTop="8dp"
+                    android:text="Daftar Disini"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
