@@ -110,6 +110,7 @@
                     android:layout_height="match_parent"/>
 
                 <TextView
+                    android:id="@+id/txt_ambil_lokasi"
                     android:gravity="start"
                     android:fontFamily="@font/amaranth"
                     android:text="Ambil lokasi saat ini"

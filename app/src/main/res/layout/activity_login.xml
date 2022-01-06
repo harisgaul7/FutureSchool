@@ -19,7 +19,8 @@
         android:textColor="#F7F5F5"
         android:layout_marginTop="8dp"
         android:text="Future School"
-        android:textSize="16sp"
+        android:fontFamily="@font/molengo"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -29,7 +30,8 @@
         android:textColor="#F7F5F5"
         android:layout_marginTop="2dp"
         android:text="Temukan Sekolah Terbaikmu!"
-        android:textSize="12sp"
+        android:fontFamily="@font/molengo"
+        android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -61,6 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="  Email Pengguna"
+                    android:fontFamily="@font/amaranth"
                     android:textColor="#F00"
                     android:padding="8dp"
                     android:completionHint="Email"
@@ -81,12 +84,12 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
                     android:hint="  Kata Sandi"
+                    android:fontFamily="@font/amaranth"
                     android:padding="8dp"
                     android:textSize="13sp"
                     android:textColorHint="@color/colorAccent"
                     android:completionHint="Password"
-                    android:id="@+id/txt_password"
-                    android:inputType="textPassword"/>
+                    android:id="@+id/txt_password"/>
             </android.support.design.widget.TextInputLayout>
 
             <Button
@@ -97,6 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Login"
+                android:fontFamily="@font/abeezee"
                 android:textColor="#F6FAF8"
                 android:id="@+id/btnLogin"/>
 
@@ -111,6 +115,7 @@
                     android:textColor="#234233"
                     android:layout_marginTop="8dp"
                     android:text="Belum punya akun?"
+                    android:fontFamily="@font/amaranth"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -122,6 +127,7 @@
                     android:textColor="#0D93C7"
                     android:layout_marginTop="8dp"
                     android:text="  Daftar Disini"
+                    android:fontFamily="@font/amaranth"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

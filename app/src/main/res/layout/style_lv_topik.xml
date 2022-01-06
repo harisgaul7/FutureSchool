@@ -3,6 +3,7 @@
     android:id="@+id/gaya"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:fontFamily="@font/amaranth"
     android:background="#92CCAF"
     android:textColor="#060A09"
     android:padding="10dip"

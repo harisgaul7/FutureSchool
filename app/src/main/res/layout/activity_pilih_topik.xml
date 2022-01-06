@@ -11,8 +11,9 @@
         android:text="Pilih Topik"
         android:textColor="#234234"
         android:textAlignment="center"
+        android:gravity="center"
         android:textSize="36sp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/germania_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -21,7 +22,7 @@
         android:textColor="#234234"
         android:textSize="12sp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/molengo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -20,6 +20,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         android:background="#12A8E2"
+        android:theme="@style/Widget.BottomNavigationView"
         app:itemIconTint="@drawable/state_bnve"
         app:itemTextColor="@drawable/state_bnve"
         app:menu="@menu/menu" />

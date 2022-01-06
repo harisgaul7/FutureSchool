@@ -47,6 +47,7 @@
             <TextView
                 android:id="@+id/txt_nama_sekolah"
                 android:textColor="#234232"
+                android:fontFamily="@font/germania_one"
                 android:textStyle="bold"
                 android:layout_weight=".2"
                 android:layout_width="match_parent"
@@ -56,6 +57,7 @@
                 android:id="@+id/txt_alamat_sekolah"
                 android:textColor="#234232"
                 android:layout_weight=".25"
+                android:fontFamily="@font/amaranth"
                 android:textSize="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dip" />
@@ -72,6 +74,7 @@
                 android:layout_weight=".5"
                 android:maxLines="4"
                 android:ellipsize="end"
+                android:fontFamily="@font/amaranth"
                 android:textSize="8dp"
                 android:textStyle="italic"
                 android:layout_width="match_parent"
@@ -96,6 +99,7 @@
                 android:textColor="#030504"
                 android:gravity="center"
                 android:text="Jarak 3 Km"
+                android:fontFamily="@font/amaranth"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

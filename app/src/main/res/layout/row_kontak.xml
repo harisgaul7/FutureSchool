@@ -34,7 +34,7 @@
             <TextView
                 android:id="@+id/txt_nama_kontak"
                 android:textColor="#132131"
-                android:fontFamily="serif"
+                android:fontFamily="@font/amaranth"
                 android:gravity="start|bottom"
                 android:textStyle="bold"
                 android:textSize="16dp"
@@ -53,7 +53,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 tools:ignore="EllipsizeMaxLines"
-                android:fontFamily="serif"
+                android:fontFamily="@font/amaranth"
                 android:gravity="start|top"
                 android:textSize="14dp"
                 android:paddingLeft="10dp"

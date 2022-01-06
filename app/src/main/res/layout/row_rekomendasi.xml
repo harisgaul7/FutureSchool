@@ -54,6 +54,7 @@
             <TextView
                 android:id="@+id/tv_sekolah_rekomendasi"
                 android:text="SMKF Ikasari Pekanbaru"
+                android:fontFamily="@font/germania_one"
                 android:textColor="#234232"
                 android:textStyle="bold"
                 android:layout_weight=".2"
@@ -70,6 +71,7 @@
             <TextView
                 android:id="@+id/tv_skor_rekomendasi"
                 android:text="Skor 9,5"
+                android:fontFamily="@font/amaranth"
                 android:textColor="#234232"
                 android:layout_weight=".3"
                 android:gravity="center"
@@ -80,16 +82,18 @@
 
             <TextView
                 android:id="@+id/btn_kunjungi_sekolah"
-                android:text="Kunjungi Sekolah"
-                android:textColor="#EDEFF1"
-                android:layout_weight=".2"
-                android:textAlignment="center"
-                android:background="@drawable/notif_bg"
-                android:layout_gravity="center_vertical"
-                android:textSize="12dp"
-                android:textStyle="bold"
                 android:layout_width="match_parent"
-                android:layout_height="0dip" />
+                android:layout_height="0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_weight=".2"
+                android:background="@drawable/notif_bg"
+                android:fontFamily="@font/amaranth"
+                android:gravity="center"
+                android:text="Kunjungi Sekolah"
+                android:textAlignment="center"
+                android:textColor="#EDEFF1"
+                android:textSize="12dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

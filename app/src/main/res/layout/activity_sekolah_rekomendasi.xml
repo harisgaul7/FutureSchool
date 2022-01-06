@@ -12,16 +12,17 @@
         android:textColor="#234234"
         android:textAlignment="center"
         android:textSize="36sp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/germania_one"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:text="Inilah sekolah terbaik pilihan kami \nyang sesuai dengan profil kamu"
         android:textColor="#234234"
         android:textSize="12sp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/molengo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

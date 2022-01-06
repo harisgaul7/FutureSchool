@@ -2,9 +2,11 @@ package haris.org.futureschool;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +40,9 @@ public class DaftarActivity extends AppCompatActivity {
         belakang = (EditText) findViewById(R.id.txt_nama_belakang);
         email = (EditText) findViewById(R.id.txt_username);
         pass = (EditText) findViewById(R.id.txt_password);
+        pass.setTypeface(Typeface.DEFAULT);
+        pass.setTransformationMethod(new PasswordTransformationMethod());
+        
         login = (TextView) findViewById(R.id.txt_login);
         daftar = (Button) findViewById(R.id.btn_daftar);
 

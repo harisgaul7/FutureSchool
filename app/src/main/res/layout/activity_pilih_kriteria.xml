@@ -13,7 +13,7 @@
         android:textAlignment="center"
         android:layout_alignParentTop="true"
         android:textSize="36sp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/germania_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -24,7 +24,7 @@
         android:textSize="12sp"
         android:layout_marginBottom="10dp"
         android:layout_below="@id/tv_judul_kriteria"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/molengo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -42,6 +42,7 @@
             <CheckBox
                 android:id="@+id/cb_lokasi"
                 android:text="Lokasi terdekat"
+                android:fontFamily="@font/amaranth"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
                 android:layout_width="match_parent"
@@ -49,6 +50,7 @@
 
             <LinearLayout
                 android:id="@+id/ll_lokasi"
+                android:fontFamily="@font/amaranth"
                 android:visibility="gone"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -60,7 +62,7 @@
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -82,8 +84,10 @@
 
                     <TextView
                         android:id="@+id/tv_lokasi"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
+                        android:gravity="center_horizontal"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
@@ -95,6 +99,7 @@
 
             <CheckBox
                 android:id="@+id/cb_kualitas"
+                android:fontFamily="@font/amaranth"
                 android:text="Kualitas guru"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
@@ -114,7 +119,7 @@
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -136,12 +141,14 @@
 
                     <TextView
                         android:id="@+id/tv_kualitas"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -149,6 +156,7 @@
 
             <CheckBox
                 android:id="@+id/cb_prestasi"
+                android:fontFamily="@font/amaranth"
                 android:text="Banyak prestasi"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
@@ -168,7 +176,7 @@
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -190,12 +198,14 @@
 
                     <TextView
                         android:id="@+id/tv_prestasi"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -203,6 +213,7 @@
 
             <CheckBox
                 android:id="@+id/cb_akreditasi"
+                android:fontFamily="@font/amaranth"
                 android:text="Akreditasi sekolah"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
@@ -222,7 +233,7 @@
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -244,12 +255,14 @@
 
                     <TextView
                         android:id="@+id/tv_akreditasi"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -257,6 +270,7 @@
 
             <CheckBox
                 android:id="@+id/cb_biaya"
+                android:fontFamily="@font/amaranth"
                 android:text="Kesanggupan biaya"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
@@ -282,6 +296,7 @@
                     <TextView
                         android:text="Maksimal SPP yang bisa kamu bayar"
                         android:textColor="#020303"
+                        android:fontFamily="@font/amaranth"
                         android:layout_weight=".5"
                         android:gravity="start|center"
                         android:layout_width="0dip"
@@ -290,6 +305,7 @@
                     <TextView
                         android:text="Rp"
                         android:gravity="center"
+                        android:fontFamily="@font/amaranth"
                         android:textSize="18sp"
                         android:textColor="#020303"
                         android:layout_weight=".07"
@@ -298,6 +314,7 @@
 
                     <EditText
                         android:id="@+id/et_biaya_spp"
+                        android:fontFamily="@font/amaranth"
                         android:layout_width="0dip"
                         android:layout_weight=".43"
                         android:textColor="#020303"
@@ -321,6 +338,7 @@
 
                     <TextView
                         android:text="Maksimal biaya pendaftaran"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#020303"
                         android:layout_weight=".5"
                         android:gravity="start|center"
@@ -329,6 +347,7 @@
 
                     <TextView
                         android:text="Rp"
+                        android:fontFamily="@font/amaranth"
                         android:gravity="center"
                         android:textSize="18sp"
                         android:textColor="#020303"
@@ -338,6 +357,7 @@
 
                     <EditText
                         android:id="@+id/et_biaya_masuk"
+                        android:fontFamily="@font/amaranth"
                         android:layout_width="0dip"
                         android:layout_weight=".43"
                         android:textColor="#020303"
@@ -355,7 +375,7 @@
                     android:textColor="#234234"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -376,12 +396,14 @@
 
                     <TextView
                         android:id="@+id/tv_biaya"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -389,6 +411,7 @@
 
             <CheckBox
                 android:id="@+id/cb_fasilitas"
+                android:fontFamily="@font/amaranth"
                 android:text="Kelengkapan fasilitas"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
@@ -425,7 +448,7 @@
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -447,12 +470,14 @@
 
                     <TextView
                         android:id="@+id/tv_fasilitas"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -460,6 +485,7 @@
 
             <CheckBox
                 android:id="@+id/cb_ekstrakurikuler"
+                android:fontFamily="@font/amaranth"
                 android:text="Kelengkapan ekstrakurikuler"
                 android:textColor="#050505"
                 android:buttonTint="#0B0F0D"
@@ -496,7 +522,7 @@
                     android:layout_marginLeft="32dp"
                     android:textSize="12sp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="monospace"
+                    android:fontFamily="@font/molengo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -518,12 +544,14 @@
 
                     <TextView
                         android:id="@+id/tv_ekstrakurikuler"
+                        android:fontFamily="@font/amaranth"
                         android:textColor="#0E0E0E"
                         android:textAlignment="center"
                         android:text="1"
                         android:layout_weight=".1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -537,6 +565,7 @@
         android:layout_alignParentBottom="true"
         android:text="tampilkan sekolah terbaik untuk saya"
         android:layout_width="match_parent"
+        android:fontFamily="@font/abeezee"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>
