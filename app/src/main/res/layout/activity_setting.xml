@@ -7,45 +7,28 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <ImageView
+        android:src="@drawable/akun"
         android:layout_width="match_parent"
-        android:weightSum="1.0"
-        android:layout_height="60dp">
+        android:layout_height="100dp" />
 
-        <ImageView
-            android:src="@drawable/cogwheel"
-            android:layout_width="0dip"
-            android:layout_weight=".1"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txt_nama_siswa"
+        android:textAlignment="center"
+        android:fontFamily="@font/germania_one"
+        android:textColor="#234554"
+        android:text="Akun"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
 
-        <TextView
-            android:textAlignment="textStart"
-            android:textColor="#234554"
-            android:layout_marginTop="8dp"
-            android:text="  Ubah Profil"
-            android:textSize="30sp"
-            android:layout_width="0dip"
-            android:layout_weight=".8"
-            android:layout_height="match_parent"
-            android:gravity="start|center" />
-
-        <ImageView
-            android:id="@+id/iv_cancel"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:adjustViewBounds="true"
-            android:padding="12dp"
-            android:src="@drawable/cancel" />
-
-    </LinearLayout>
 
     <android.support.v7.widget.CardView
         android:elevation="8dp"
-        android:layout_marginLeft="14dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="14dp"
+        android:layout_marginRight="4dp"
         app:cardCornerRadius="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -59,84 +42,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:theme="@style/AppTheme"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="8dp"
+            <TextView
+                android:gravity="start"
+                android:fontFamily="@font/amaranth"
+                android:text="Alamat"
+                android:textColor="#234234"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:drawableLeft="@drawable/ic_alamat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="  Alamat"
-                    android:textColor="#F00"
-                    android:padding="8dp"
-                    android:completionHint="Alamat"
-                    android:textSize="13sp"
-                    android:inputType="textMultiLine"
-                    android:id="@+id/txt_alamat"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:theme="@style/AppTheme"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:drawableLeft="@drawable/ic_lokasi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="  Koordinat"
-                    android:textColor="#F00"
-                    android:padding="8dp"
-                    android:completionHint="Koordinat"
-                    android:textSize="13sp"
-                    android:inputType="text"
-                    android:id="@+id/txt_koordinat"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@drawable/ic_alamat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:textColor="#234233"
-                    android:layout_marginTop="12dp"
-                    android:text="  Dapatkan lokasi"
-                    android:textSize="16sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:theme="@style/AppTheme"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:drawableLeft="@drawable/ic_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="  Handphone"
-                    android:textColor="#F00"
-                    android:padding="8dp"
-                    android:completionHint="Handphone"
-                    android:textSize="13sp"
-                    android:inputType="phone"
-                    android:id="@+id/txt_username"/>
-            </android.support.design.widget.TextInputLayout>
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -144,28 +56,184 @@
                 android:weightSum="1.0"
                 android:layout_height="wrap_content">
 
-                <CheckBox
-                    android:id="@+id/cb_pria"
-                    android:text="Pria"
-                    android:textColor="#050505"
-                    android:buttonTint="#0B0F0D"
+                <TextView
+                    android:id="@+id/txt_alamat_siswa"
+                    android:gravity="start"
+                    android:fontFamily="@font/molengo"
+                    android:text="Jl. HR. Soebrantas No.Km. 15, Tuah Karya, Kec. Tampan, Kabupaten Kampar, Riau 28293"
+                    android:textColor="#234234"
                     android:layout_width="0dip"
-                    android:layout_weight=".5"
-                    android:layout_height="wrap_content" />
+                    android:layout_weight=".8"
+                    android:layout_height="wrap_content"/>
 
-                <CheckBox
-                    android:id="@+id/cb_wanita"
-                    android:text="Wanita"
-                    android:textColor="#050505"
-                    android:buttonTint="#0B0F0D"
+                <TextView
+                    android:id="@+id/ubah_alamat_siswa"
+                    android:gravity="end|center"
+                    android:fontFamily="@font/amaranth"
+                    android:text="Ubah"
+                    android:textColor="#248FE8"
                     android:layout_width="0dip"
-                    android:layout_weight=".5"
-                    android:layout_height="wrap_content" />
+                    android:layout_weight=".2"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:gravity="start"
+                android:fontFamily="@font/amaranth"
+                android:text="Koordinat"
+                android:layout_marginTop="25dp"
+                android:textColor="#234234"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_koordinat_siswa"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/molengo"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="0.47240675672083277, 101.35311354129196"
+                android:textColor="#234234"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/ic_alamat"
+                    android:layout_width="0dip"
+                    android:layout_weight=".05"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:gravity="start"
+                    android:fontFamily="@font/amaranth"
+                    android:text="Ambil lokasi saat ini"
+                    android:textColor="#E81515"
+                    android:layout_width="0dip"
+                    android:layout_weight=".95"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:gravity="start"
+                android:fontFamily="@font/amaranth"
+                android:text="Jenis Kelamin"
+                android:layout_marginTop="25dp"
+                android:textColor="#234234"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_jenis_kelamin_siswa"
+                    android:layout_width="0dip"
+                    android:fontFamily="@font/molengo"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:gravity="start"
+                    android:text="Pria"
+                    android:textColor="#234234" />
+
+                <TextView
+                    android:id="@+id/ubah_jenis_kelamin_siswa"
+                    android:gravity="end|center"
+                    android:fontFamily="@font/amaranth"
+                    android:text="Ubah"
+                    android:textColor="#248FE8"
+                    android:layout_width="0dip"
+                    android:layout_weight=".2"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:gravity="start"
+                android:fontFamily="@font/amaranth"
+                android:text="Email"
+                android:layout_marginTop="25dp"
+                android:textColor="#234234"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_email_siswa"
+                    android:layout_width="0dip"
+                    android:fontFamily="@font/molengo"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:gravity="start"
+                    android:text="calon.siswa@students.uin-suska.ac.id"
+                    android:textColor="#234234" />
+
+                <TextView
+                    android:id="@+id/ubah_email_siswa"
+                    android:gravity="end|center"
+                    android:fontFamily="@font/amaranth"
+                    android:text="Ubah"
+                    android:textColor="#248FE8"
+                    android:layout_width="0dip"
+                    android:layout_weight=".2"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:gravity="start"
+                android:fontFamily="@font/amaranth"
+                android:text="Nomor HP"
+                android:layout_marginTop="25dp"
+                android:textColor="#234234"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1.0"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_telepon_siswa"
+                    android:layout_width="0dip"
+                    android:fontFamily="@font/molengo"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:gravity="start"
+                    android:text="082285657053"
+                    android:textColor="#234234" />
+
+                <TextView
+                    android:id="@+id/ubah_telepon_siswa"
+                    android:gravity="end|center"
+                    android:fontFamily="@font/amaranth"
+                    android:text="Ubah"
+                    android:textColor="#248FE8"
+                    android:layout_width="0dip"
+                    android:layout_weight=".2"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
             <Button
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/abeezee"
                 android:layout_marginBottom="16dp"
                 android:theme="@style/AppTheme"
                 android:background="@drawable/roundedbutton"
@@ -173,7 +241,7 @@
                 android:layout_height="40dp"
                 android:text="Simpan"
                 android:textColor="#F6FAF8"
-                android:id="@+id/btn_daftar"/>
+                android:id="@+id/btn_ubah"/>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

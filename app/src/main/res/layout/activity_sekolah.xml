@@ -58,7 +58,7 @@
                         android:id="@+id/txt_detail_nama"
                         android:text="Nama Sekolah"
                         android:textColor="#070E0A"
-                        android:fontFamily="serif"
+                        android:fontFamily="@font/germania_one"
                         android:textSize="17sp"
                         android:layout_width="match_parent"
                         android:layout_height="20dp" />
@@ -67,7 +67,7 @@
                         android:id="@+id/txt_detail_alamat"
                         android:text="Alamat Sekolah"
                         android:textColor="#070E0A"
-                        android:fontFamily="serif"
+                        android:fontFamily="@font/amaranth"
                         android:layout_marginBottom="5dp"
                         android:textSize="10sp"
                         android:layout_width="match_parent"
@@ -76,6 +76,7 @@
                     <TextView
                         android:id="@+id/txt_detail_akreditasi"
                         android:text="Akreditasi"
+                        android:fontFamily="@font/molengo"
                         android:textColor="#EDEFF1"
                         android:gravity="start|center"
                         android:background="@drawable/notif_bg"
@@ -102,6 +103,7 @@
                     <TextView
                         android:id="@+id/txt_jumlah_like"
                         android:text="Like"
+                        android:fontFamily="@font/amaranth"
                         android:textSize="10sp"
                         android:textStyle="bold"
                         android:gravity="center"
@@ -128,6 +130,7 @@
             android:minHeight="?actionBarSize"
             app:tabGravity="fill"
             app:tabIndicatorColor="#234333"
+            app:tabTextAppearance="@style/MineCustomTabText"
             app:tabIndicatorHeight="4dp"
             app:tabTextColor="#234323"
             app:tabMode="scrollable">
