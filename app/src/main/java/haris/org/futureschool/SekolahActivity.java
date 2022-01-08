@@ -68,6 +68,7 @@ public class SekolahActivity extends AppCompatActivity {
 
         kontak = (LinearLayout)findViewById(R.id.btn_kontak);
         perbandingan = (LinearLayout)findViewById(R.id.btn_bandingkan);
+        daftar = (LinearLayout)findViewById(R.id.btn_daftar);
 
         kontak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +92,13 @@ public class SekolahActivity extends AppCompatActivity {
             }
         });
 
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent x = new Intent(SekolahActivity.this, DaftarSekolahActivity.class);
+                startActivity(x);
+            }
+        });
 
         alamatSekolah = findViewById(R.id.txt_detail_alamat);
         akreditasiSekolah = findViewById(R.id.txt_detail_akreditasi);

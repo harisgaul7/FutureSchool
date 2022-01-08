@@ -56,14 +56,16 @@
                 android:weightSum="1.0"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_alamat_siswa"
                     android:gravity="start"
                     android:fontFamily="@font/molengo"
                     android:text="Jl. HR. Soebrantas No.Km. 15, Tuah Karya, Kec. Tampan, Kabupaten Kampar, Riau 28293"
                     android:textColor="#234234"
+                    android:enabled="false"
                     android:layout_width="0dip"
                     android:layout_weight=".8"
+                    android:inputType="textMultiLine"
                     android:layout_height="wrap_content"/>
 
                 <TextView
@@ -93,6 +95,7 @@
                 android:fontFamily="@font/molengo"
                 android:layout_height="wrap_content"
                 android:gravity="start"
+                android:textSize="18dp"
                 android:text="0.47240675672083277, 101.35311354129196"
                 android:textColor="#234234"/>
 
@@ -133,27 +136,12 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:weightSum="1.0"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <Spinner
                     android:id="@+id/txt_jenis_kelamin_siswa"
-                    android:layout_width="0dip"
-                    android:fontFamily="@font/molengo"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".8"
-                    android:gravity="start"
-                    android:text="Pria"
-                    android:textColor="#234234" />
-
-                <TextView
-                    android:id="@+id/ubah_jenis_kelamin_siswa"
-                    android:gravity="end|center"
-                    android:fontFamily="@font/amaranth"
-                    android:text="Ubah"
-                    android:textColor="#248FE8"
-                    android:layout_width="0dip"
-                    android:layout_weight=".2"
+                    android:layout_width="match_parent"
+                    android:theme="@style/SpinnerTheme"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
@@ -173,13 +161,15 @@
                 android:weightSum="1.0"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_email_siswa"
                     android:layout_width="0dip"
                     android:fontFamily="@font/molengo"
                     android:layout_height="wrap_content"
                     android:layout_weight=".8"
                     android:gravity="start"
+                    android:inputType="textEmailAddress"
+                    android:enabled="false"
                     android:text="calon.siswa@students.uin-suska.ac.id"
                     android:textColor="#234234" />
 
@@ -210,13 +200,15 @@
                 android:weightSum="1.0"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_telepon_siswa"
                     android:layout_width="0dip"
                     android:fontFamily="@font/molengo"
                     android:layout_height="wrap_content"
                     android:layout_weight=".8"
                     android:gravity="start"
+                    android:inputType="phone"
+                    android:enabled="false"
                     android:text="082285657053"
                     android:textColor="#234234" />
 

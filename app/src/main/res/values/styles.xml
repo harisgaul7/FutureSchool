@@ -25,4 +25,11 @@
         <item name="buttonTint">@color/colorAccent</item>
     </style>
 
+    <style name="SpinnerTheme">
+        <item name="android:textColor">#234234</item>
+        <item name="android:background">#F8F5F8</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/molengo</item>
+    </style>
+
 </resources>
