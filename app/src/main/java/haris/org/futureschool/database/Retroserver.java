@@ -14,8 +14,8 @@ public class Retroserver {
     // Method untuk menghubungkan ke server
     public static Retrofit getClient(){
         final OkHttpClient cobaOk = new OkHttpClient.Builder()
-                .readTimeout(5, TimeUnit.SECONDS)
-                .connectTimeout(5, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .connectTimeout(15, TimeUnit.SECONDS)
                 .build();
 
         if (retro == null){

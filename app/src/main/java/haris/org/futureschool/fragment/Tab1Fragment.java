@@ -26,19 +26,19 @@ public class Tab1Fragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-//        favoritModels = new ArrayList<>();
-//        // Isi model harus disesuaikan dengan urutan yang ada di FavoritModel.java
-//        favoritModels.add(new FavoritModel(R.drawable.smkf_ikasari, 151, 4,67, "SMKF Ikasari Pekanbaru"));
-//        favoritAdapter = new FavoritAdapter(favoritModels);
-//        recyclerView.setAdapter(favoritAdapter);
-//
-//        favoritModels.add(new FavoritModel(R.drawable.sd_al_ulum, 34, 3, 77, "SD Al Ulum Pekanbaru"));
-//        favoritAdapter = new FavoritAdapter(favoritModels);
-//        recyclerView.setAdapter(favoritAdapter);
-//
-//        favoritModels.add(new FavoritModel(R.drawable.smp_babussalam, 87, 5, 89, "SMP Babussalam Pekanbaru"));
-//        favoritAdapter = new FavoritAdapter(favoritModels);
-//        recyclerView.setAdapter(favoritAdapter);
+        favoritModels = new ArrayList<>();
+        // Isi model harus disesuaikan dengan urutan yang ada di FavoritModel.java
+        favoritModels.add(new FavoritModel(R.drawable.smkf_ikasari, 151, 4,67, "SMKF Ikasari Pekanbaru"));
+        favoritAdapter = new FavoritAdapter(favoritModels);
+        recyclerView.setAdapter(favoritAdapter);
+
+        favoritModels.add(new FavoritModel(R.drawable.as, 34, 3, 77, "SMA Islam As-Shofa Pekanbaru"));
+        favoritAdapter = new FavoritAdapter(favoritModels);
+        recyclerView.setAdapter(favoritAdapter);
+
+        favoritModels.add(new FavoritModel(R.drawable.smk_perpajakan, 87, 5, 89, "SMK Perpajakan Riau"));
+        favoritAdapter = new FavoritAdapter(favoritModels);
+        recyclerView.setAdapter(favoritAdapter);
 
         return view;
     }

@@ -48,14 +48,14 @@ public class Tab2Fragment extends Fragment {
 
         float jarak = loc1.distanceTo(loc2)/1000.0f;
 
-//        // Isi model harus disesuaikan dengan urutan yang ada di FavoritModel.java
-//        recentlyModels.add(new RecentlyModel(R.drawable.smkf_ikasari, 3450000, 450000, "SMKF Ikasari Pekanbaru", "Jl. Mawar No.98, Simpang Baru, Kec.Tampan", "Akreditasi A", round(jarak, 2)));
-//        recentlyAdapter = new RecentlyAdapter(recentlyModels);
-//        recyclerView.setAdapter(recentlyAdapter);
-//
-//        recentlyModels.add(new RecentlyModel(R.drawable.sd_al_ulum, 1540000, 150000, "SD Al Ulum Pekanbaru", "Jl. Tuanku Tambusai No.696, Delima, Kec. Tampan", "Akreditasi C", round(jarak, 2)));
-//        recentlyAdapter = new RecentlyAdapter(recentlyModels);
-//        recyclerView.setAdapter(recentlyAdapter);
+        // Isi model harus disesuaikan dengan urutan yang ada di FavoritModel.java
+        recentlyModels.add(new RecentlyModel(R.drawable.smkf_ikasari, 3450000, 450000, "SMKF Ikasari Pekanbaru", "Jl. Mawar No.98, Simpang Baru, Kec.Tampan", "Akreditasi A", round(jarak, 2)));
+        recentlyAdapter = new RecentlyAdapter(recentlyModels);
+        recyclerView.setAdapter(recentlyAdapter);
+
+        recentlyModels.add(new RecentlyModel(R.drawable.as, 1540000, 150000, "SMA Islam As-Shofa Pekanbaru", "Jl. Tuanku Tambusai No.1, Delima, Kec. Tampan", "Akreditasi A", round(jarak, 2)));
+        recentlyAdapter = new RecentlyAdapter(recentlyModels);
+        recyclerView.setAdapter(recentlyAdapter);
 
         return view;
     }

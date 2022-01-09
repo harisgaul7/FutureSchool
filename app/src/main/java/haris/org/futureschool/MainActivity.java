@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -46,14 +47,13 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        loadFragmentUtama(new BerandaFragment());
+        loadFragmentUtama(new SekolahFragment());
 
         Intent intent = getIntent();
 
         // Ini method untuk memilih sekolah yang akan dibandingkan
         if (intent.hasExtra("id")) {
             loadFragmentUtamaWithMessage(new SekolahFragment(), intent.getStringExtra("id"), intent.getStringExtra("nama_sekolah"));
-//            Toast.makeText(this, "Pesan sudah disampaikan = "+intent.getStringExtra("id"), Toast.LENGTH_SHORT).show();
         }
 
         btnNavView = findViewById(R.id.bn_main);
@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
         switch (item.getItemId()){
-            case R.id.beranda_menu:
-                fragment = new BerandaFragment();
-                break;
+//            case R.id.beranda_menu:
+//                fragment = new BerandaFragment();
+//                break;
             case R.id.sekolah_menu:
                 fragment = new SekolahFragment();
                 break;

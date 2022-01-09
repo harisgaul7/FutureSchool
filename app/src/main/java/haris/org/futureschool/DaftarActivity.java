@@ -71,12 +71,18 @@ public class DaftarActivity extends AppCompatActivity {
                         pd.dismiss();
                         try {
                             if (response.body().getKode().equals("1")){
-                                Intent i = new Intent(DaftarActivity.this, LoginActivity.class);
-                                startActivity(i);
-
                                 new SweetAlertDialog(DaftarActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Berhasil!")
-                                        .setContentText("Pendaftaran sukses, silakan login!")
+                                        .setTitleText("Berhasil")
+                                        .setContentText("Akun berhasil ditambahkan!")
+                                        .setConfirmText("Kembali ke login")
+                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sDialog) {
+                                                Intent i = new Intent(DaftarActivity.this, LoginActivity.class);
+                                                startActivity(i);
+                                                sDialog.dismissWithAnimation();
+                                            }
+                                        })
                                         .show();
                             }
                             else if (response.body().getKode().equals("2")){
